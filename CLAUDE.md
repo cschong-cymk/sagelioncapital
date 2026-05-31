@@ -43,6 +43,7 @@ The site styling register is **"studio" — warm paper, rounded cards, gold acce
 
 ## External dependencies worth knowing
 
-- Workflows CTA links to `https://flowdaptorai.vercel.app/store` (sister project, free n8n workflow library).
+- Workflows CTA links to `https://flowdaptor.ai/store/` (sister project, free n8n workflow library).
 - Contact email is `contact@sagelioncapital.org`.
-- The hero/journal videos are hosted locally (`assets/hero-video-xs.mp4`) and remotely (`art.sagelioncapital.org/wp-content/uploads/...`).
+- The hero video is hosted locally (`assets/hero-video-xs.mp4`). The Journal's "AI movie studio" card embeds a TikTok clip via `https://www.tiktok.com/embed.js` (script loaded at the end of `<body>`); social handle is `@8ktogo`. (The old remote `art.sagelioncapital.org/...` journal video has been removed.)
+- Deployed via GitHub Pages from the `cschong-cymk/sagelioncapital` repo; custom domain `sagelioncapital.org` set by the `CNAME` file. CSS is cache-busted with a `?v=YYYYMMDD` query on the `styles.css` link (and its `@import` of `colors_and_type.css`) — bump the date whenever you edit CSS so deploys don't serve stale styles. A `vercel.json` carries `Cache-Control` headers for any future Vercel deploy (ignored by GitHub Pages).
