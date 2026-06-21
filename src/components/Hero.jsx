@@ -83,7 +83,7 @@ export default function Hero() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
           className="relative"
         >
-          <div className="overflow-hidden rounded-[28px] bg-white p-2 shadow-2xl">
+          <div className="overflow-hidden rounded-[28px] bg-cloud-100 p-2 shadow-2xl">
             <div
               className="aspect-[16/11] w-full rounded-3xl bg-cover bg-center bg-transform-gradient"
               style={{ backgroundImage: `url(${images.heroStore})` }}
@@ -109,7 +109,7 @@ export default function Hero() {
             initial={reduce ? false : { opacity: 0, x: 16 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.65, duration: 0.5 }}
-            className="absolute -bottom-5 right-2 rounded-2xl bg-white px-4 py-3 text-ink shadow-xl ring-1 ring-ink/5"
+            className="absolute -bottom-5 right-2 rounded-2xl bg-cloud-100 px-4 py-3 text-ink shadow-xl ring-1 ring-ink/5"
           >
             <div className="flex items-center gap-2">
               <span className="grid h-8 w-8 place-items-center rounded-full bg-mint/15 text-mint-dark">

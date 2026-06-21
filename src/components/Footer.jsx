@@ -29,7 +29,7 @@ export default function Footer() {
         <div>
           <Link to="/" className="flex items-center gap-2.5">
             <img
-              src={`${import.meta.env.BASE_URL}logo-light.png`}
+              src={`${import.meta.env.BASE_URL}logo-for-dark-bg.png`}
               alt=""
               className="h-8 w-auto"
               width="168"

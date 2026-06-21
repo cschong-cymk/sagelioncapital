@@ -15,7 +15,7 @@ function Logo() {
   return (
     <Link to="/" className="flex items-center gap-2.5" aria-label={`${site.name} home`}>
       <img
-        src={`${import.meta.env.BASE_URL}logo-dark.png`}
+        src={`${import.meta.env.BASE_URL}logo-for-light-bg.png`}
         alt=""
         className="h-8 w-auto"
         width="168"

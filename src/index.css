@@ -44,7 +44,7 @@
   }
 
   .btn-ghost {
-    @apply btn border border-ink/15 bg-white px-6 py-3 text-ink
+    @apply btn border border-ink/15 bg-cloud-100 px-6 py-3 text-ink
       hover:border-flame/40 hover:text-flame;
   }
 
@@ -53,7 +53,7 @@
   }
 
   .card {
-    @apply rounded-3xl bg-white p-7 shadow-card ring-1 ring-ink/5 transition-all duration-300;
+    @apply rounded-3xl bg-cloud-100 p-7 shadow-card ring-1 ring-ink/5 transition-all duration-300;
   }
 }
 

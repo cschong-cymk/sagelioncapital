@@ -35,7 +35,7 @@ export default function Contact() {
   }
 
   const field =
-    'w-full rounded-2xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink placeholder:text-slate-soft/70 focus:border-flame focus-visible:ring-2 focus-visible:ring-flame/40'
+    'w-full rounded-2xl border border-ink/12 bg-cloud-100 px-4 py-3 text-sm text-ink placeholder:text-slate-soft/70 focus:border-flame focus-visible:ring-2 focus-visible:ring-flame/40'
 
   return (
     <PageTransition>

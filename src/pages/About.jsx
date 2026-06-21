@@ -73,7 +73,7 @@ export default function About() {
               className="aspect-[4/5] w-full rounded-[28px] bg-cover bg-center bg-transform-gradient shadow-card"
               style={{ backgroundImage: `url(${images.team})` }}
             />
-            <div className="absolute -bottom-6 -left-6 hidden rounded-2xl bg-white p-5 shadow-xl ring-1 ring-ink/5 sm:block">
+            <div className="absolute -bottom-6 -left-6 hidden rounded-2xl bg-cloud-100 p-5 shadow-xl ring-1 ring-ink/5 sm:block">
               <p className="font-mono text-3xl font-bold text-flame">2018</p>
               <p className="text-sm text-slate-soft">helping SG stores grow</p>
             </div>
