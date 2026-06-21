@@ -7,7 +7,152 @@
   <meta name="description" content="Sagelion is a small Singapore studio making AI-inspired art and teaching people how to actually use these tools." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=20260621" />
+  <style>
+    /* ── Workshop session list ──────────────────────────── */
+    .workshop-sessions { margin-bottom: 2.5rem; }
+    .session-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .session {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+    .session:last-child { border-bottom: none; }
+    .session-no {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      opacity: 0.35;
+      min-width: 1.5rem;
+      text-align: center;
+    }
+    .session-detail { flex: 1; }
+    .session-date { font-weight: 600; margin: 0 0 0.15rem; font-size: 0.95rem; }
+    .session-time { font-size: 0.82rem; opacity: 0.65; margin: 0 0 0.1rem; }
+    .session-note { font-size: 0.8rem; opacity: 0.55; margin: 0; }
+    .session-note a { opacity: 1; }
+    .session-status {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 0.3em 0.7em;
+      border-radius: 3px;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    .status--done { background: #e8e8e8; color: #555; }
+    .session--done { opacity: 0.6; }
+    .status--next { background: #e8f0e0; color: #2e4a1a; }
+    .session--next { background: rgba(46,74,26,0.03); }
+    .status--open { background: #1a1a1a; color: #fdfcf9; }
+
+    /* Workshop feature block */
+    .workshop-feature {
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 6px;
+      padding: 1.75rem;
+      margin-bottom: 2.5rem;
+    }
+    .workshop-feature-img {
+      width: 100%;
+      aspect-ratio: 16/7;
+      object-fit: cover;
+      border-radius: 4px;
+      margin: 1rem 0 1.25rem;
+    }
+    .workshop-feature h3 { margin: 0.5rem 0 0.25rem; font-size: 1.3rem; }
+
+    /* ── Journal improvements ───────────────────────────── */
+    .journal-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .journal-head h2 { margin-bottom: 0; }
+    .journal-sub {
+      max-width: 34ch;
+      font-size: 0.9rem;
+      opacity: 0.65;
+      line-height: 1.55;
+      margin: 0;
+    }
+    .article-card--fresh { position: relative; }
+    .fresh-badge {
+      position: absolute;
+      top: 1.1rem;
+      left: 1.1rem;
+      background: #1a1a1a;
+      color: #fdfcf9;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.3em 0.75em;
+      border-radius: 2px;
+      z-index: 2;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.2em 0.6em;
+      border-radius: 2px;
+      margin-right: 0.5em;
+    }
+    .tag--event   { background: #e8f0e0; color: #2e4a1a; }
+    .tag--project { background: #e5eaf5; color: #1a2e5a; }
+    .tag--venture { background: #f5eae5; color: #5a2e1a; }
+    .tag--bts     { background: #f5f0e5; color: #4a3a10; }
+    .journal-grid { margin-top: 2rem; }
+    .journal-grid .article-card .article-image {
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      width: 100%;
+    }
+    .article-link {
+      margin-top: 0.75rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .article-link a { text-decoration: none; border-bottom: 1.5px solid currentColor; }
+
+    /* Past workshop footnote */
+    .workshop-past {
+      margin-top: 2.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      font-size: 0.82rem;
+      opacity: 0.5;
+    }
+    .workshop-past a { opacity: 1; }
+
+    /* TikTok embed in journal */
+    .tiktok-embed-wrap {
+      margin: 1.5rem 0;
+      padding: 1.25rem;
+      background: rgba(0,0,0,0.03);
+      border-left: 3px solid rgba(0,0,0,0.1);
+      border-radius: 0 4px 4px 0;
+    }
+  </style>
 </head>
 <body>
 
@@ -258,87 +403,64 @@
     <!-- ─── WORKSHOP ─────────────────────────────────────────── -->
     <section id="workshop" data-screen-label="Workshop">
       <div class="container workshop">
+
+        <!-- Featured: Aug 5 — the live action item -->
         <header class="workshop-head">
-          <p class="section-label">Workshop</p>
-          <span class="workshop-free">Free</span>
-          <h2>Our first proper AI workshop.</h2>
-          <p class="workshop-hook">Less talking about AI. More using it.</p>
-          <p class="workshop-why">Donors covered the seats so you don't have to.</p>
-          <p class="workshop-lede">
-            We take people from "wait, what's ChatGPT" to running real workflows of their own — in days, not months.
-          </p>
+          <p class="section-label">Next free workshop</p>
+          <span class="workshop-free">Free · Seniors 55+</span>
+          <h2>Stories of Singapore: Seniors Capture National Day</h2>
+          <p class="workshop-hook">A free 3-hour digital storytelling workshop.</p>
+          <p class="workshop-lede">Share your Singapore story. Leave a legacy for the next generation. Donors cover every seat — you just show up.</p>
         </header>
 
         <dl class="workshop-meta">
-          <div><dt>Date</dt><dd>20 June 2026</dd></div>
-          <div><dt>Time</dt><dd>9.30am – 12 noon</dd></div>
-          <div><dt>Venue</dt><dd>To be announced</dd></div>
-          <div><dt>Audience</dt><dd>PMETs · educators · young seniors</dd></div>
+          <div><dt>When</dt><dd>5 Aug 2026 · 2.00pm</dd></div>
+          <div><dt>Where</dt><dd>Community venue · TBC</dd></div>
+          <div><dt>Who</dt><dd>Seniors 55+</dd></div>
+          <div><dt>Length</dt><dd>3 hours</dd></div>
           <div><dt>Cost</dt><dd>Free</dd></div>
+          <div><dt>Access</dt><dd>Step-free · Deaf-friendly</dd></div>
+          <div><dt>Bring</dt><dd>A laptop &amp; curiosity</dd></div>
         </dl>
 
         <div class="workshop-visual">
-          <a href="https://aiworkshop.sagelioncapital.org"><img src="assets/ALLBIZ.png" alt="Sagelion AI workshop visual" /></a>
+          <img src="assets/seniors.jpg" alt="Singapore seniors creating digital stories together at a Sagelion workshop" style="width:100%;border-radius:4px;" />
         </div>
 
         <div class="workshop-chapters">
           <div class="workshop-chapter">
-            <p class="chapter-label">The gap.</p>
-            <p>Everyone's heard about AI. Hardly anyone's using it properly. The setup's a mess, the workflows break halfway through, and there's just too much friction in the way.</p>
-          </div>
-
-          <div class="workshop-chapter">
             <p class="chapter-label">What you'll walk out with.</p>
             <ul class="bullet-list">
-              <li>Foundation models (GPT, Gemini, Kimi) → agent frameworks (OpenClaw, LangChain, n8n) → actual business uses.</li>
-              <li>The difference between <em>generative</em> AI (which makes stuff) and <em>agentic</em> AI (which goes off and does stuff).</li>
-              <li>A full stack — from free public tools to no-code automation you can run in production.</li>
+              <li>Create TikTok &amp; Instagram content from your own National Day moments.</li>
+              <li>Use AI tools to make short music &amp; videos — no experience needed.</li>
+              <li>A digital story your family will actually want to watch.</li>
             </ul>
           </div>
 
           <div class="workshop-chapter">
-            <p class="chapter-label">Pain we actually help with.</p>
+            <p class="chapter-label">Who it's for.</p>
             <ul class="bullet-list">
-              <li>PMETs drowning in reports.</li>
-              <li>Teachers buried in admin.</li>
-              <li>Retirees who feel a bit left behind.</li>
+              <li>Anyone 55 and over with a Singapore story worth telling.</li>
+              <li>No tech background needed — we go slow, skip the jargon.</li>
+              <li>Bring a friend. Every story matters more with company.</li>
             </ul>
           </div>
 
           <div class="workshop-chapter">
-            <p class="chapter-label">Things we've actually shipped.</p>
-            <ul class="bullet-list">
-              <li>Nejilock Property AI — proof of concept.</li>
-              <li>FlowDaptor Operating Backbone.</li>
-              <li>Sagelion Grant Engine.</li>
-            </ul>
+            <p class="chapter-label">More sessions coming.</p>
+            <p>We run these through 2026 for PMETs, educators, and community groups too. If this date doesn't fit, <a href="mailto:contact@sagelioncapital.org?subject=Future%20workshop%20interest">tell us you're keen</a> and we'll hold a seat at the next one.</p>
           </div>
-
-          <div class="workshop-chapter">
-            <p class="chapter-label">Security, not an afterthought.</p>
-            <p>Human in the loop, less data than you think, proper audit trails, PDPA-friendly. We're not interested in cowboy automation.</p>
-          </div>
-
-          <div class="workshop-chapter">
-            <p class="chapter-label">Where to start.</p>
-            <ul class="bullet-list">
-              <li>Pilot one workflow — live in 2–3 days.</li>
-              <li>A free consult, no strings.</li>
-              <li>Hand-held setup for retirees who'd rather not Google it.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="workshop-path">
-          <p class="chapter-label">The path.</p>
-          <p class="path-steps">Learn <span>→</span> Build <span>→</span> Deploy <span>→</span> Secure <span>→</span> Ship</p>
         </div>
 
         <div class="workshop-cta">
-          <a class="button primary" href="mailto:contact@sagelioncapital.org?subject=Workshop%20seat%20%E2%80%94%2020%20June%202026">Save a free seat</a>
-          <a class="button secondary" href="mailto:contact@sagelioncapital.org?subject=Workshop%20pilot">Pilot a workflow</a>
+          <a class="button primary" href="mailto:contact@sagelioncapital.org?subject=Stories%20of%20Singapore%20%E2%80%94%20free%20seat&body=Hi%20Sagelion%2C%20I%27d%20like%20a%20free%20seat%20at%20Stories%20of%20Singapore%20(Seniors%2055%2B).">Reserve a free seat</a>
+          <a class="button secondary" href="mailto:contact@sagelioncapital.org?subject=Future%20workshop%20interest">Notify me of future dates</a>
         </div>
-        <p class="workshop-cta-note">1-minute RSVP. We only use your email to send the venue.</p>
+        <p class="workshop-cta-note">1-minute RSVP. We only use your email to send the venue once it's confirmed.</p>
+
+        <!-- Past session — quiet, not competing -->
+        <p class="workshop-past">Our first session ran 20 June 2026 at Emmaus Church. <a href="#journal">Read the field notes →</a></p>
+
       </div>
     </section>
 
@@ -456,36 +578,69 @@
     <!-- ─── JOURNAL ──────────────────────────────────────────── -->
     <section id="journal" class="alt" data-screen-label="Journal">
       <div class="container">
-        <p class="section-label">Journal</p>
-        <h2>Things we've been writing.</h2>
-        <article class="card article-card article-card--feature">
-          <img src="assets/sealion.png" alt="InotGrumpy — a Sagelion research agent built on the SEA-LION model" class="feature-image" />
+        <div class="journal-head">
+          <div>
+            <p class="section-label">Journal</p>
+            <h2>Notes from the work.</h2>
+          </div>
+          <p class="journal-sub">Projects, reflections, the occasional rant. Updated when something's actually worth saying.</p>
+        </div>
+
+        <!-- NEW: June 21 2026 entry — feature -->
+        <article class="card article-card article-card--feature article-card--fresh">
+          <div class="fresh-badge">New · 21 June 2026</div>
+          <img src="assets/workshop-jun2026.jpg" alt="Sagelion AI workshop — participants working together at laptops, 20 June 2026, 10:27am" class="feature-image" style="object-position: center 30%;" />
           <div class="article-body">
-            <p class="meta">June 2026 — Project</p>
-            <h3><a href="https://github.com/mengweetan/aisingapore" target="_blank" rel="noopener">Meet InotGrumpy: he looks things up before he speaks.</a></h3>
-            <p>A small research agent we put together — LangGraph for the plumbing, Singapore's own SEA-LION model running on Ollama, and Tavily for the web-search bit. He looks things up before he answers, which keeps him honest. We built it as much to learn the stack as to ship anything.</p>
-            <p class="meta">Repo: <a href="https://github.com/mengweetan/aisingapore" target="_blank" rel="noopener">github.com/mengweetan/aisingapore</a></p>
+            <p class="meta"><span class="tag tag--event">Field notes</span> 21 June 2026</p>
+            <h3><a href="#">The workshop ran. Here's what actually happened.</a></h3>
+            <p>Yesterday, 9:30am, Emmaus Church. PMETs, educators, retirees — a proper mixed room. We had two and a half hours, a working projector (eventually), and a plan that held up better than expected.</p>
+            <p>We kept the structure lean: thirty minutes of concepts, forty minutes of real examples — report summarisation, meeting notes, data analysis — then a break, then people at actual stations doing it themselves. Three stations: ChatGPT on the web, Otter.ai for transcription, Google Sheets with AI. No logins required, QR codes for access, demo documents already loaded. The goal was to remove every possible reason to not start.</p>
+            <p>The bit that worked best was Part 5 — Julie asked me questions live over Telegram, I responded on screen with step-by-step answers, and she translated the key points for the room in real time. Watching people see an AI reason through something in plain language, in front of them, with someone they trusted doing the asking — that's when the room shifted. Less "interesting technology" and more "oh, this is actually useful."</p>
+            <p>Sean also spoke — a 24-hour OpenClaw user at the time, still finding his feet with it. No polish, no rehearsed pitch. Just someone who'd picked it up the day before and was willing to say what it felt like. That honesty landed harder than any demo we could have run. When the room heard from someone exactly where they were — not an expert, not a salesperson — something unlocked. Afterwards, participants told us: <strong>"their eyes were open."</strong> We'll take that.</p>
+
+            <div class="tiktok-embed-wrap">
+              <p class="chapter-label" style="margin-bottom:0.6rem;">We also screened this during the session.</p>
+              <p style="font-size:0.85rem;opacity:0.65;margin-bottom:1rem;">An AI-generated music video — our own work, made with the same tools we teach. Showing people what's possible before they try it themselves.</p>
+              <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@8ktogo/video/7652809677348130069" data-video-id="7652809677348130069" style="max-width:400px;min-width:300px;">
+                <section><a target="_blank" title="@8ktogo" href="https://www.tiktok.com/@8ktogo?refer=embed">@8ktogo</a></section>
+              </blockquote>
+              <script async src="https://www.tiktok.com/embed.js"></script>
+            </div>
+            <p>What we'll change next time: build in more setup buffer before 9:30. The gap between people who arrived laptop-open and those who needed five minutes just to connect to wifi was wider than we planned for. Not a problem — it's exactly who we're here for. But the agenda needs to absorb it rather than fight it. We're also going to formalise the DeepSeek vs Claude comparison — participants kept coming back to it.</p>
+            <p class="meta">Next session date TBC — <a href="mailto:contact@sagelioncapital.org?subject=Next%20workshop">email us to be notified</a></p>
           </div>
         </article>
 
-        <div class="cards two-up">
+        <div class="cards three-up journal-grid">
+          <article class="card article-card">
+            <img src="assets/sealion.png" alt="InotGrumpy — a Sagelion research agent built on the SEA-LION model" class="article-image" />
+            <div class="article-body">
+              <p class="meta"><span class="tag tag--project">Project</span> June 2026</p>
+              <h3><a href="https://github.com/mengweetan/aisingapore" target="_blank" rel="noopener">Meet InotGrumpy: he looks things up before he speaks.</a></h3>
+              <p>LangGraph, SEA-LION on Ollama, Tavily for search. He checks before he answers, which keeps him honest. Built as much to learn the stack as to ship anything.</p>
+              <p class="article-link"><a href="https://github.com/mengweetan/aisingapore" target="_blank" rel="noopener">View repo →</a></p>
+            </div>
+          </article>
+
           <article class="card article-card">
             <video class="article-image" controls poster="assets/vidposter.png">
               <source src="https://art.sagelioncapital.org/wp-content/uploads/2026/05/Sagelion.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             <div class="article-body">
-              <p class="meta">May 2026 — New venture</p>
+              <p class="meta"><span class="tag tag--venture">New venture</span> May 2026</p>
               <h3><a href="#">From canvas to screen: we started a small AI movie studio.</a></h3>
-              <p>We're moving into AI-driven short films for clients. Generation plus actual editing — turns out you still need an editor with taste. Early days, but the work is starting to feel like ours.</p>
+              <p>AI-driven short films for clients. Generation plus actual editing — turns out you still need taste. Early days, but the work is starting to feel like ours.</p>
             </div>
           </article>
+
           <article class="card article-card">
             <img src="assets/blog1.jpg" alt="Sagelion founders discussing IT setup" class="article-image" />
             <div class="article-body">
-              <p class="meta">March 2026 — Behind the scenes</p>
+              <p class="meta"><span class="tag tag--bts">Behind the scenes</span> March 2026</p>
               <h3><a href="blog-it-setup.html">Kopi, code, and canvas: wiring up the back end.</a></h3>
               <p>Three of us, three kopis, one question — how do we wire up the back end for next year's exhibition without it falling over? Welcome to our newly minted IT department.</p>
+              <p class="article-link"><a href="blog-it-setup.html">Read more →</a></p>
             </div>
           </article>
         </div>
