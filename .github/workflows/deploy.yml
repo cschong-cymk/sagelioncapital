@@ -24,11 +24,11 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      # Using the custom domain (cartXform.com) at the root, so base stays "/".
-      # No custom domain? Deploying to <user>.github.io/cart-transformations/ instead?
-      # Uncomment the next line and delete public/CNAME:
-      # env:
-      #   VITE_BASE: /cart-transformations/
+      # Currently deployed at https://cschong-cymk.github.io/cart-transformation/
+      # (no custom domain yet), so vite.config.js defaults base to
+      # '/cart-transformation/'. Once cartXform.com's DNS is verified and added
+      # as a custom domain in Settings -> Pages, set base back to '/' in
+      # vite.config.js (or pass VITE_BASE: / here) and restore public/CNAME.
       - run: npm run build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
