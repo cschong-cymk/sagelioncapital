@@ -12,11 +12,12 @@ export default {
           700: '#4A413B',
           600: '#5C5049',
         },
-        // Warm off-white for light sections
+        // Warm, deeper off-white/taupe for light sections (darkened to reduce
+        // contrast against the charcoal ink sections)
         cloud: {
-          DEFAULT: '#F4F0EA',
-          100: '#FCFAF6',
-          200: '#E7E0D5',
+          DEFAULT: '#DDD4C5',
+          100: '#F1ECE3',
+          200: '#CFC3AF',
         },
         // Brand orange (from the logo: #F15A25) — the single high-energy accent
         flame: {

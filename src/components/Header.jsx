@@ -68,7 +68,7 @@ export default function Header() {
       <div
         className={`border-b transition-colors duration-300 ${
           scrolled
-            ? 'border-ink/10 bg-white/90 backdrop-blur-md'
+            ? 'border-ink/10 bg-cloud-100/95 backdrop-blur-md'
             : 'border-transparent bg-cloud'
         }`}
       >
@@ -137,7 +137,7 @@ export default function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: 'easeOut' }}
-            className="overflow-hidden border-b border-ink/10 bg-white lg:hidden"
+            className="overflow-hidden border-b border-white/10 bg-ink lg:hidden"
           >
             <nav className="container-x flex flex-col py-4" aria-label="Mobile">
               {nav.map((item) => (
@@ -146,8 +146,8 @@ export default function Header() {
                   to={item.to}
                   end={item.to === '/'}
                   className={({ isActive }) =>
-                    `border-b border-ink/5 py-3 font-display text-base ${
-                      isActive ? 'text-flame' : 'text-ink'
+                    `border-b border-white/10 py-3 font-display text-base ${
+                      isActive ? 'text-flame-light' : 'text-white'
                     }`
                   }
                 >
@@ -155,7 +155,10 @@ export default function Header() {
                 </NavLink>
               ))}
               <div className="mt-4 flex flex-col gap-3">
-                <a href={`tel:${site.phone.tel}`} className="btn-dark w-full">
+                <a
+                  href={`tel:${site.phone.tel}`}
+                  className="btn-ghost w-full border-white/20 bg-white/5 text-white hover:border-flame hover:text-flame-light"
+                >
                   <Phone size={16} /> Call {site.phone.display}
                 </a>
                 <Link to="/contact" className="btn-primary w-full">
