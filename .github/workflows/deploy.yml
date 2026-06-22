@@ -21,7 +21,11 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
+<<<<<<< HEAD
           node-version: 20
+=======
+          node-version: 22
+>>>>>>> 7ccc5bbcb3a989da7d2d972f95eb502f0661dd83
           cache: npm
       - run: npm ci
       # Currently deployed at https://cschong-cymk.github.io/cart-transformation/
@@ -31,6 +35,17 @@ jobs:
       # vite.config.js (or pass VITE_BASE: / here) and restore public/CNAME.
       - run: npm run build
       - uses: actions/configure-pages@v5
+<<<<<<< HEAD
+=======
+        with:
+          # First-time setup: the Pages "site" object isn't registered with
+          # GitHub's API yet even though Settings -> Pages shows "GitHub
+          # Actions" selected (that previously only ever got fulfilled by the
+          # legacy branch-based builder). This flag has the action enable
+          # Pages itself instead of erroring with "Get Pages site failed".
+          # Safe to leave in permanently — it's a no-op once Pages exists.
+          enablement: true
+>>>>>>> 7ccc5bbcb3a989da7d2d972f95eb502f0661dd83
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

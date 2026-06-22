@@ -1,6 +1,10 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+<<<<<<< HEAD
 import { Phone, Mail, Clock, CalendarCheck, CheckCircle2, MessageCircle } from 'lucide-react'
+=======
+import { Phone, Mail, Clock, CalendarCheck, CheckCircle2, MessageCircle, AlertCircle, Loader2 } from 'lucide-react'
+>>>>>>> 7ccc5bbcb3a989da7d2d972f95eb502f0661dd83
 import { PageTransition, Reveal } from '../components/PageTransition.jsx'
 import Seo from '../components/Seo.jsx'
 import MapSection from '../components/MapSection.jsx'
@@ -9,11 +13,25 @@ import { site } from '../config/site.js'
 import { services } from '../data/services.js'
 
 const initial = { name: '', email: '', phone: '', store: '', service: '', message: '' }
+<<<<<<< HEAD
 
 export default function Contact() {
   const [form, setForm] = useState(initial)
   const [sent, setSent] = useState(false)
   const [errors, setErrors] = useState({})
+=======
+// Honeypot: a field real visitors never see or fill. send.php checks this
+// exact field name ($_POST['website']) and silently accepts (no error) if
+// it's non-empty, treating it as a bot.
+const HONEYPOT_FIELD = 'website'
+
+export default function Contact() {
+  const [form, setForm] = useState(initial)
+  const [honeypot, setHoneypot] = useState('')
+  const [sent, setSent] = useState(false)
+  const [errors, setErrors] = useState({})
+  const [status, setStatus] = useState('idle') // idle | sending | error
+>>>>>>> 7ccc5bbcb3a989da7d2d972f95eb502f0661dd83
 
   const update = (e) => setForm({ ...form, [e.target.name]: e.target.value })
 
@@ -26,12 +44,63 @@ export default function Contact() {
     return Object.keys(er).length === 0
   }
 
+<<<<<<< HEAD
   const onSubmit = (e) => {
     e.preventDefault()
     if (!validate()) return
     // ⚠️ Connect this to your backend or a service like Formspree / your own API.
     // Example: fetch('https://formspree.io/f/XXXX', { method: 'POST', body: JSON.stringify(form) })
     setSent(true)
+=======
+  const onSubmit = async (e) => {
+    e.preventDefault()
+    if (honeypot) return // bot — silently drop, no request, no error shown
+    if (!validate()) return
+
+    setStatus('sending')
+    try {
+      // send.php expects classic form-encoded fields, not JSON — and reads
+      // name/email/company/interest/message/website specifically.
+      const body = new URLSearchParams({
+        name: form.name,
+        email: form.email,
+        company: form.store, // PHP's "company" = our "store website" field
+        interest: form.service,
+        message: form.message,
+        website: honeypot, // honeypot, always empty for real users
+      })
+
+      const res = await fetch(site.formEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          // Lets send.php tell this apart from a plain browser form post and
+          // respond with JSON instead of a 303 redirect.
+          'X-Requested-With': 'XMLHttpRequest',
+        },
+        body,
+      })
+
+      // send.php (AJAX path) responds 200 with {ok:true} on success, or a
+      // 4xx/5xx with {ok:false, error:'...'} otherwise.
+      let data = null
+      try {
+        data = await res.json()
+      } catch {
+        /* non-JSON response — fall through to status-code check below */
+      }
+
+      if (!res.ok || (data && data.ok === false)) {
+        throw new Error(data?.error || `Server responded ${res.status}`)
+      }
+
+      setSent(true)
+      setStatus('idle')
+    } catch (err) {
+      console.error('Contact form submission failed:', err)
+      setStatus('error')
+    }
+>>>>>>> 7ccc5bbcb3a989da7d2d972f95eb502f0661dd83
   }
 
   const field =
@@ -84,6 +153,11 @@ export default function Contact() {
                   type="button"
                   onClick={() => {
                     setForm(initial)
+<<<<<<< HEAD
+=======
+                    setHoneypot('')
+                    setStatus('idle')
+>>>>>>> 7ccc5bbcb3a989da7d2d972f95eb502f0661dd83
                     setSent(false)
                   }}
                   className="btn-ghost mt-7"
@@ -93,6 +167,22 @@ export default function Contact() {
               </motion.div>
             ) : (
               <form onSubmit={onSubmit} noValidate>
+<<<<<<< HEAD
+=======
+                {/* Honeypot — hidden from sighted users and screen readers,
+                    but visible to most bots that auto-fill every field. */}
+                <input
+                  type="text"
+                  name={HONEYPOT_FIELD}
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  className="absolute left-[-9999px] h-0 w-0 opacity-0"
+                />
+
+>>>>>>> 7ccc5bbcb3a989da7d2d972f95eb502f0661dd83
                 <h2 className="text-2xl font-bold text-ink">Request a free quote</h2>
                 <p className="mt-2 text-sm text-slate-soft">
                   No obligation. Fields marked with * are required.
@@ -205,9 +295,39 @@ export default function Contact() {
                   </div>
                 </div>
 
+<<<<<<< HEAD
                 <button type="submit" className="btn-primary mt-7 w-full sm:w-auto">
                   <CalendarCheck size={18} /> Request my free audit
                 </button>
+=======
+                <button
+                  type="submit"
+                  disabled={status === 'sending'}
+                  className="btn-primary mt-7 w-full disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+                >
+                  {status === 'sending' ? (
+                    <>
+                      <Loader2 size={18} className="animate-spin" /> Sending…
+                    </>
+                  ) : (
+                    <>
+                      <CalendarCheck size={18} /> Request my free audit
+                    </>
+                  )}
+                </button>
+
+                {status === 'error' && (
+                  <p className="mt-4 flex items-start gap-2 rounded-2xl bg-flame/8 p-3 text-sm text-flame-dark ring-1 ring-flame/15">
+                    <AlertCircle size={16} className="mt-0.5 shrink-0" />
+                    Something went wrong sending your request. Please try again, or call
+                    us directly at{' '}
+                    <a href={`tel:${site.phone.tel}`} className="font-semibold underline">
+                      {site.phone.display}
+                    </a>
+                    .
+                  </p>
+                )}
+>>>>>>> 7ccc5bbcb3a989da7d2d972f95eb502f0661dd83
               </form>
             )}
           </Reveal>

@@ -25,6 +25,7 @@ const values = [
 
 const team = [
   {
+<<<<<<< HEAD
     name: 'Jordan Lim',
     role: 'Founder & Conversion Lead',
     img: images.founder,
@@ -38,6 +39,34 @@ const team = [
   },
 ]
 
+=======
+    name: 'FlowDaptor Pte Ltd',
+    role: 'Accusantium Doloremque',
+    img: images.founder,
+    bio: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem.',
+  },
+  {
+    name: 'Sarah Nguyen',
+    role: 'Voluptas Aspernatur',
+    img: images.founder2,
+    bio: 'Laudantium totam em aperiam, eaque ipsa quae ab illo inventore.',
+  },
+  {
+    name: 'Kevin Chua',
+    role: 'Beatae Vitae Dicta',
+    img: images.founder,
+    bio: 'Veritatis et quasi architecto beatae vitae dicta sunt eplicabo.',
+  },
+  {
+    name: 'Anna',
+    role: 'Magni Dolores Eos',
+    img: images.founder2,
+    bio: 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut fu.',
+  },
+]
+
+
+>>>>>>> 7ccc5bbcb3a989da7d2d972f95eb502f0661dd83
 export default function About() {
   return (
     <PageTransition>

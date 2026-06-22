@@ -10,6 +10,10 @@ import {
 } from 'lucide-react'
 import { site } from '../config/site.js'
 import SectionSeam from './SectionSeam.jsx'
+<<<<<<< HEAD
+=======
+import LogoMark from './LogoMark.jsx'
+>>>>>>> 7ccc5bbcb3a989da7d2d972f95eb502f0661dd83
 
 const socialIcons = [
   { key: 'facebook', Icon: Facebook, label: 'Facebook' },
@@ -28,6 +32,7 @@ export default function Footer() {
         {/* Brand + NAP name */}
         <div>
           <Link to="/" className="flex items-center gap-2.5">
+<<<<<<< HEAD
             <img
               src={`${import.meta.env.BASE_URL}logo-for-dark-bg.png`}
               alt=""
@@ -35,6 +40,9 @@ export default function Footer() {
               width="168"
               height="80"
             />
+=======
+            <LogoMark className="h-7 w-auto text-white" />
+>>>>>>> 7ccc5bbcb3a989da7d2d972f95eb502f0661dd83
             <span className="font-display text-lg font-bold text-white">
               Cart Transformation
             </span>
