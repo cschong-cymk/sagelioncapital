@@ -4,7 +4,6 @@ export default {
   theme: {
     extend: {
       colors: {
-<<<<<<< HEAD
         // Warm charcoal "ink" for dark sections (from the logo: #433B38)
         ink: {
           DEFAULT: '#3E3631',
@@ -19,7 +18,7 @@ export default {
           DEFAULT: '#C3B49C',
           100: '#FAF7F2',
           200: '#B0A088',
-=======
+
         // Softened warm charcoal for dark sections (lifted from near-black so the
         // jump to the light sections is gentle; the gradient seams ease the rest)
         ink: {
@@ -34,18 +33,14 @@ export default {
           DEFAULT: '#E9E1D2',
           100: '#F3EEE4',
           200: '#D6CBB8',
->>>>>>> 7ccc5bbcb3a989da7d2d972f95eb502f0661dd83
         },
         // Brand orange (from the logo: #F15A25) — the single high-energy accent
         flame: {
           DEFAULT: '#F15A25',
-<<<<<<< HEAD
           light: '#F6815A',
           dark: '#CC470F',
-=======
           light: '#F88A57',
           dark: '#B23B0C',
->>>>>>> 7ccc5bbcb3a989da7d2d972f95eb502f0661dd83
         },
         // Reserved strictly for positive metrics
         mint: {
@@ -53,13 +48,10 @@ export default {
           dark: '#0F9E6E',
         },
         slate: {
-<<<<<<< HEAD
           ink: '#2E2926',
           soft: '#6E665F',
-=======
           ink: '#2C2722',
           soft: '#5C544B',
->>>>>>> 7ccc5bbcb3a989da7d2d972f95eb502f0661dd83
         },
       },
       fontFamily: {
@@ -71,15 +63,12 @@ export default {
         container: '1180px',
       },
       boxShadow: {
-<<<<<<< HEAD
         card: '0 1px 2px rgba(62,54,49,0.05), 0 12px 40px -12px rgba(62,54,49,0.20)',
         cardHover: '0 1px 2px rgba(62,54,49,0.05), 0 24px 60px -16px rgba(241,90,37,0.28)',
         cta: '0 10px 30px -8px rgba(241,90,37,0.50)',
-=======
         card: '0 1px 2px rgba(86,74,64,0.05), 0 12px 40px -12px rgba(86,74,64,0.18)',
         cardHover: '0 1px 2px rgba(86,74,64,0.05), 0 24px 60px -16px rgba(241,90,37,0.26)',
         cta: '0 10px 30px -8px rgba(241,90,37,0.45)',
->>>>>>> 7ccc5bbcb3a989da7d2d972f95eb502f0661dd83
       },
       backgroundImage: {
         'transform-gradient':

@@ -1,10 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-<<<<<<< HEAD
 import { Phone, Mail, Clock, CalendarCheck, CheckCircle2, MessageCircle } from 'lucide-react'
-=======
 import { Phone, Mail, Clock, CalendarCheck, CheckCircle2, MessageCircle, AlertCircle, Loader2 } from 'lucide-react'
->>>>>>> 7ccc5bbcb3a989da7d2d972f95eb502f0661dd83
 import { PageTransition, Reveal } from '../components/PageTransition.jsx'
 import Seo from '../components/Seo.jsx'
 import MapSection from '../components/MapSection.jsx'
@@ -13,13 +10,11 @@ import { site } from '../config/site.js'
 import { services } from '../data/services.js'
 
 const initial = { name: '', email: '', phone: '', store: '', service: '', message: '' }
-<<<<<<< HEAD
 
 export default function Contact() {
   const [form, setForm] = useState(initial)
   const [sent, setSent] = useState(false)
   const [errors, setErrors] = useState({})
-=======
 // Honeypot: a field real visitors never see or fill. send.php checks this
 // exact field name ($_POST['website']) and silently accepts (no error) if
 // it's non-empty, treating it as a bot.
@@ -31,8 +26,6 @@ export default function Contact() {
   const [sent, setSent] = useState(false)
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('idle') // idle | sending | error
->>>>>>> 7ccc5bbcb3a989da7d2d972f95eb502f0661dd83
-
   const update = (e) => setForm({ ...form, [e.target.name]: e.target.value })
 
   const validate = () => {
@@ -44,14 +37,13 @@ export default function Contact() {
     return Object.keys(er).length === 0
   }
 
-<<<<<<< HEAD
   const onSubmit = (e) => {
     e.preventDefault()
     if (!validate()) return
     // ⚠️ Connect this to your backend or a service like Formspree / your own API.
     // Example: fetch('https://formspree.io/f/XXXX', { method: 'POST', body: JSON.stringify(form) })
     setSent(true)
-=======
+
   const onSubmit = async (e) => {
     e.preventDefault()
     if (honeypot) return // bot — silently drop, no request, no error shown
@@ -100,7 +92,6 @@ export default function Contact() {
       console.error('Contact form submission failed:', err)
       setStatus('error')
     }
->>>>>>> 7ccc5bbcb3a989da7d2d972f95eb502f0661dd83
   }
 
   const field =
@@ -153,11 +144,8 @@ export default function Contact() {
                   type="button"
                   onClick={() => {
                     setForm(initial)
-<<<<<<< HEAD
-=======
                     setHoneypot('')
                     setStatus('idle')
->>>>>>> 7ccc5bbcb3a989da7d2d972f95eb502f0661dd83
                     setSent(false)
                   }}
                   className="btn-ghost mt-7"
@@ -167,8 +155,6 @@ export default function Contact() {
               </motion.div>
             ) : (
               <form onSubmit={onSubmit} noValidate>
-<<<<<<< HEAD
-=======
                 {/* Honeypot — hidden from sighted users and screen readers,
                     but visible to most bots that auto-fill every field. */}
                 <input
@@ -182,7 +168,6 @@ export default function Contact() {
                   className="absolute left-[-9999px] h-0 w-0 opacity-0"
                 />
 
->>>>>>> 7ccc5bbcb3a989da7d2d972f95eb502f0661dd83
                 <h2 className="text-2xl font-bold text-ink">Request a free quote</h2>
                 <p className="mt-2 text-sm text-slate-soft">
                   No obligation. Fields marked with * are required.
@@ -295,11 +280,9 @@ export default function Contact() {
                   </div>
                 </div>
 
-<<<<<<< HEAD
                 <button type="submit" className="btn-primary mt-7 w-full sm:w-auto">
                   <CalendarCheck size={18} /> Request my free audit
                 </button>
-=======
                 <button
                   type="submit"
                   disabled={status === 'sending'}
@@ -327,7 +310,6 @@ export default function Contact() {
                     .
                   </p>
                 )}
->>>>>>> 7ccc5bbcb3a989da7d2d972f95eb502f0661dd83
               </form>
             )}
           </Reveal>

@@ -25,21 +25,6 @@ const values = [
 
 const team = [
   {
-<<<<<<< HEAD
-    name: 'Jordan Lim',
-    role: 'Founder & Conversion Lead',
-    img: images.founder,
-    bio: '12 years building and rescuing online stores across SE Asia.',
-  },
-  {
-    name: 'Mei Chen',
-    role: 'Head of Engineering',
-    img: images.founder2,
-    bio: 'WooCommerce and headless specialist obsessed with page speed.',
-  },
-]
-
-=======
     name: 'FlowDaptor Pte Ltd',
     role: 'Accusantium Doloremque',
     img: images.founder,
@@ -66,7 +51,6 @@ const team = [
 ]
 
 
->>>>>>> 7ccc5bbcb3a989da7d2d972f95eb502f0661dd83
 export default function About() {
   return (
     <PageTransition>
