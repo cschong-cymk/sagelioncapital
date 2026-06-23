@@ -26,9 +26,9 @@ const values = [
 const team = [
   {
     name: 'FlowDaptor Pte Ltd',
-    role: 'Accusantium Doloremque',
+    role: 'AI Automation Company',
     img: images.founder,
-    bio: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem.',
+    bio: 'Helps SMEs implement self-hosted automation solutions using n8n and OpenClaw. By handling installation, customization, training, and support, FlowDaptor enables businesses to adopt AI and workflow automation without needing an internal technical team. Their one-time implementation model gives companies full ownership and control of PDPA-compliant automation systems on their own infrastructure, turning automation into a long-term business asset instead of a recurring subscription cost. https://flowdaptor.ai/',
   },
   {
     name: 'Sarah Nguyen',
@@ -38,9 +38,9 @@ const team = [
   },
   {
     name: 'Kevin Chua',
-    role: 'Beatae Vitae Dicta',
+    role: 'Project Director',
     img: images.founder3,
-    bio: 'Veritatis et quasi architecto beatae vitae dicta sunt eplicabo.',
+    bio: '15+ years in technology programme management and digital transformation. Keeps complex AI automation engagements on track from scoping through production — with a particular focus on regulated industries and risk governance across Southeast Asia.',
   },
   {
     name: 'Anna',
