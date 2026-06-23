@@ -146,7 +146,6 @@ export default function About() {
                       {m.role}
                     </p>
                     <p className="mt-2 text-sm text-slate-soft">{m.bio}</p>
-                    <p className="mt-2 text-sm text-slate-soft">{m.url}</p>
                     <p className="mt-2 text-sm text-slate-soft"><a href={m.url} target="_blank">{m.url}</a></p>
                   </div>
                 </div>
