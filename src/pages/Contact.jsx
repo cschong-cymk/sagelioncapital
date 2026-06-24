@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Phone, Mail, Clock, CalendarCheck, CheckCircle2, MessageCircle } from 'lucide-react'
+import { Phone, Mail, Clock, CalendarCheck, CheckCircle2, MessageCircle, AlertCircle, Loader2 } from 'lucide-react'
 import { PageTransition, Reveal } from '../components/PageTransition.jsx'
 import Seo from '../components/Seo.jsx'
 import MapSection from '../components/MapSection.jsx'
@@ -10,10 +10,17 @@ import { services } from '../data/services.js'
 
 const initial = { name: '', email: '', phone: '', store: '', service: '', message: '' }
 
+// Honeypot: a field real visitors never see or fill. send.php checks this
+// exact field name ($_POST['website']) and silently accepts (no error) if
+// it's non-empty, treating it as a bot.
+const HONEYPOT_FIELD = 'website'
+
 export default function Contact() {
   const [form, setForm] = useState(initial)
+  const [honeypot, setHoneypot] = useState('')
   const [sent, setSent] = useState(false)
   const [errors, setErrors] = useState({})
+  const [status, setStatus] = useState('idle') // idle | sending | error
 
   const update = (e) => setForm({ ...form, [e.target.name]: e.target.value })
 
@@ -26,12 +33,43 @@ export default function Contact() {
     return Object.keys(er).length === 0
   }
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault()
+    if (honeypot) return // bot — silently drop, no request, no error shown
     if (!validate()) return
-    // ⚠️ Connect this to your backend or a service like Formspree / your own API.
-    // Example: fetch('https://formspree.io/f/XXXX', { method: 'POST', body: JSON.stringify(form) })
-    setSent(true)
+    setStatus('sending')
+    try {
+      const body = new URLSearchParams({
+        name: form.name,
+        email: form.email,
+        company: form.store,
+        interest: form.service,
+        message: form.message,
+        website: honeypot,
+      })
+      const res = await fetch(site.formEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'X-Requested-With': 'XMLHttpRequest',
+        },
+        body,
+      })
+      let data = null
+      try {
+        data = await res.json()
+      } catch {
+        /* non-JSON response — fall through to status-code check below */
+      }
+      if (!res.ok || (data && data.ok === false)) {
+        throw new Error(data?.error || `Server responded ${res.status}`)
+      }
+      setSent(true)
+      setStatus('idle')
+    } catch (err) {
+      console.error('Contact form submission failed:', err)
+      setStatus('error')
+    }
   }
 
   const field =
@@ -58,7 +96,6 @@ export default function Contact() {
         </div>
         <SectionSeam position="bottom" />
       </section>
-
       {/* Form + quick contact */}
       <section className="py-16 md:py-24">
         <div className="container-x grid gap-10 lg:grid-cols-[1.3fr_0.7fr]">
@@ -84,6 +121,8 @@ export default function Contact() {
                   type="button"
                   onClick={() => {
                     setForm(initial)
+                    setHoneypot('')
+                    setStatus('idle')
                     setSent(false)
                   }}
                   className="btn-ghost mt-7"
@@ -93,11 +132,21 @@ export default function Contact() {
               </motion.div>
             ) : (
               <form onSubmit={onSubmit} noValidate>
+                {/* Honeypot */}
+                <input
+                  type="text"
+                  name={HONEYPOT_FIELD}
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  className="absolute left-[-9999px] h-0 w-0 opacity-0"
+                />
                 <h2 className="text-2xl font-bold text-ink">Request a free quote</h2>
                 <p className="mt-2 text-sm text-slate-soft">
                   No obligation. Fields marked with * are required.
                 </p>
-
                 <div className="mt-7 grid gap-5 sm:grid-cols-2">
                   <div className="sm:col-span-1">
                     <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-ink">
@@ -116,7 +165,6 @@ export default function Contact() {
                       <p className="mt-1 text-xs text-flame-dark">{errors.name}</p>
                     )}
                   </div>
-
                   <div>
                     <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-ink">
                       Email *
@@ -135,7 +183,6 @@ export default function Contact() {
                       <p className="mt-1 text-xs text-flame-dark">{errors.email}</p>
                     )}
                   </div>
-
                   <div>
                     <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-ink">
                       Phone
@@ -150,7 +197,6 @@ export default function Contact() {
                       autoComplete="tel"
                     />
                   </div>
-
                   <div>
                     <label htmlFor="store" className="mb-1.5 block text-sm font-medium text-ink">
                       Store website
@@ -164,7 +210,6 @@ export default function Contact() {
                       placeholder="yourstore.com"
                     />
                   </div>
-
                   <div className="sm:col-span-2">
                     <label htmlFor="service" className="mb-1.5 block text-sm font-medium text-ink">
                       What do you need help with?
@@ -185,7 +230,6 @@ export default function Contact() {
                       <option value="Not sure">Not sure yet</option>
                     </select>
                   </div>
-
                   <div className="sm:col-span-2">
                     <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-ink">
                       Tell us about your store *
@@ -204,14 +248,35 @@ export default function Contact() {
                     )}
                   </div>
                 </div>
-
-                <button type="submit" className="btn-primary mt-7 w-full sm:w-auto">
-                  <CalendarCheck size={18} /> Request my free audit
+                <button
+                  type="submit"
+                  disabled={status === 'sending'}
+                  className="btn-primary mt-7 w-full disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+                >
+                  {status === 'sending' ? (
+                    <>
+                      <Loader2 size={18} className="animate-spin" /> Sending…
+                    </>
+                  ) : (
+                    <>
+                      <CalendarCheck size={18} /> Request my free audit
+                    </>
+                  )}
                 </button>
+                {status === 'error' && (
+                  <p className="mt-4 flex items-start gap-2 rounded-2xl bg-flame/8 p-3 text-sm text-flame-dark ring-1 ring-flame/15">
+                    <AlertCircle size={16} className="mt-0.5 shrink-0" />
+                    Something went wrong sending your request. Please try again, or call
+                    us directly at{' '}
+                    <a href={`tel:${site.phone.tel}`} className="font-semibold underline">
+                      {site.phone.display}
+                    </a>
+                    .
+                  </p>
+                )}
               </form>
             )}
           </Reveal>
-
           {/* Quick contact */}
           <Reveal delay={0.1} className="flex flex-col gap-5">
             <a href={`tel:${site.phone.tel}`} className="card flex items-center gap-4 hover:shadow-cardHover">
@@ -223,7 +288,6 @@ export default function Contact() {
                 <p className="font-display font-bold text-ink">{site.phone.display}</p>
               </div>
             </a>
-
             <a
               href={site.socials.whatsapp}
               target="_blank"
@@ -238,7 +302,6 @@ export default function Contact() {
                 <p className="font-display font-bold text-ink">Chat with us</p>
               </div>
             </a>
-
             <a href={`mailto:${site.email}`} className="card flex items-center gap-4 hover:shadow-cardHover">
               <span className="grid h-12 w-12 place-items-center rounded-2xl bg-flame/12 text-flame">
                 <Mail size={20} />
@@ -248,7 +311,6 @@ export default function Contact() {
                 <p className="font-display font-bold text-ink">{site.email}</p>
               </div>
             </a>
-
             <div className="card">
               <h3 className="flex items-center gap-2 font-display font-bold text-ink">
                 <Clock size={18} className="text-flame" /> Opening hours
@@ -267,7 +329,6 @@ export default function Contact() {
           </Reveal>
         </div>
       </section>
-
       <MapSection />
     </PageTransition>
   )

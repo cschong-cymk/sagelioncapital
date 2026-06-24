@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Phone, Clock, Menu, X } from 'lucide-react'
 import { site } from '../config/site.js'
+import LogoMark from './LogoMark.jsx'
 
 const nav = [
   { to: '/', label: 'Home' },
@@ -14,14 +15,9 @@ const nav = [
 function Logo() {
   return (
     <Link to="/" className="flex items-center gap-2.5" aria-label={`${site.name} home`}>
-      <img
-        src={`${import.meta.env.BASE_URL}logo-for-light-bg.png`}
-        alt=""
-        className="h-8 w-auto"
-        width="168"
-        height="80"
-      />
-      <span className="flex flex-col leading-none">
+      <LogoMark className="h-7 w-auto text-ink" />
+      {/* Hide text on small screens to prevent overflow */}
+      <span className="hidden sm:flex flex-col leading-none">
         <span className="font-display text-lg font-bold text-ink">Cart Transformation</span>
         <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-soft">
           {site.tagline}

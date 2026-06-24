@@ -25,18 +25,32 @@ const values = [
 
 const team = [
   {
-    name: 'Jordan Lim',
-    role: 'Founder & Conversion Lead',
+    name: 'FlowDaptor Pte Ltd',
+    role: 'AI Automation Company',
     img: images.founder,
-    bio: '12 years building and rescuing online stores across SE Asia.',
+    bio: 'Helping SMEs implement self-hosted automation solutions using n8n and OpenClaw. By handling installation, customization, training, and support, FlowDaptor enables businesses to adopt AI and workflow automation without needing an internal technical team. Their one-time implementation model gives companies full ownership and control of PDPA-compliant automation systems on their own infrastructure, turning automation into a long-term business asset instead of a recurring subscription cost.',
+    url: 'https://flowdaptor.ai/',
   },
   {
-    name: 'Mei Chen',
-    role: 'Head of Engineering',
+    name: 'Sarah Nguyen',
+    role: 'Voluptas Aspernatur',
     img: images.founder2,
-    bio: 'WooCommerce and headless specialist obsessed with page speed.',
+    bio: 'Laudantium totam em aperiam, eaque ipsa quae ab illo inventore.',
+  },
+  {
+    name: 'Kevin Chua',
+    role: 'Project Director',
+    img: images.founder3,
+    bio: '15+ years in technology programme management and digital transformation. Keeps complex AI automation engagements on track from scoping through production — with a particular focus on regulated industries and risk governance across Southeast Asia.',
+  },
+  {
+    name: 'Anna',
+    role: 'Magni Dolores Eos',
+    img: images.founder4,
+    bio: 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut fu.',
   },
 ]
+
 
 export default function About() {
   return (
@@ -132,6 +146,7 @@ export default function About() {
                       {m.role}
                     </p>
                     <p className="mt-2 text-sm text-slate-soft">{m.bio}</p>
+                    <p className="mt-2 text-sm text-slate-soft"><a href={m.url} target="_blank">{m.url}</a></p>
                   </div>
                 </div>
               </Reveal>

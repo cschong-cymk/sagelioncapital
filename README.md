@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # sagelioncapital
 =======
 # Cart Transformation — Website
@@ -30,6 +29,11 @@ Almost everything you need to personalize lives in **one file**:
 - `public/logo-dark.png` / `logo-light.png` / `favicon.png` — generated from your
   uploaded logo. Re-export at higher resolution from source artwork if you need
   crisper edges at large sizes.
+=======
+- The logo is an inline SVG (`src/components/LogoMark.jsx`) — the orange X is
+  fixed and the secondary stroke uses `currentColor`, so it renders charcoal on
+  light surfaces and white on dark ones automatically. `public/logo.svg` is a
+  standalone copy; `public/favicon.png` is the browser-tab icon.
 - `index.html` — the `og:image` in the JSON-LD points to `og-image.jpg`, which
   doesn't exist yet. Add a 1200×630 social-share image at `public/og-image.jpg`
   before launch (this powers link previews on Facebook/LinkedIn/WhatsApp/iMessage).
@@ -110,4 +114,4 @@ npx gh-pages -d dist   # or upload the dist/ folder however you like
 ### Other static hosts
 `public/_redirects` (Netlify / Cloudflare Pages) and `vercel.json` (Vercel) are included
 for SPA routing if you deploy there instead.
->>>>>>> 98a38af3224994f0bda660550dcd7b15c9eecf35
+# cart-transformation-2
