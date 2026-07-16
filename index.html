@@ -183,7 +183,16 @@
       </nav>
     </div>
   </header>
- 
+
+  <!-- Mobile hamburger menu -->
+  <div class="menu-wrapper">
+    <button class="menu-toggle" aria-label="Toggle navigation menu">
+      <span class="menu-toggle-bar"></span>
+      <span class="menu-toggle-bar"></span>
+      <span class="menu-toggle-bar"></span>
+    </button>
+  </div>
+
   <main id="top">
  
     <!-- ─── HERO ─────────────────────────────────────────────── -->
@@ -282,6 +291,42 @@
               </svg>
             </a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── TEAM ─────────────────────────────────────────────── -->
+    <section id="team" class="alt" data-screen-label="Team">
+      <div class="container">
+        <p class="section-label">Leadership</p>
+        <h2>Meet the team.</h2>
+        <div class="team-grid cards three-up">
+          <!-- Meng Wee - Chairman -->
+          <article class="card team-member">
+            <img src="assets/profile-mengweee.jpg" alt="Tan Meng Wee" class="team-photo" />
+            <h3>Tan Meng Wee</h3>
+            <p class="team-role"><strong>Chairman</strong></p>
+            <p>CFA, CAIA. Hitotsubashi University valedictorian. Former government officer and investment banker with 30 years across policy, finance, and technology. Founded Orange Gum (EDB-backed enterprise messaging venture). Currently: Chairman of Sagelion Capital, overseeing technology investments and strategic advisory. Through Sagelion, promoting AI literacy workshops for underserved communities to bridge the digital divide.</p>
+            <p class="team-links"><a href="https://www.linkedin.com/in/mengweetan/" target="_blank" rel="noopener">LinkedIn →</a></p>
+          </article>
+
+          <!-- Sam Heng - Director Partnership -->
+          <article class="card team-member">
+            <img src="assets/profile-sam.jpeg" alt="Sam Heng" class="team-photo" />
+            <h3>Sam Heng</h3>
+            <p class="team-role"><strong>Director Partnership</strong></p>
+            <p>Focuses on inclusive pathways for neurodivergent adults, green solutions (organic, biodegradable products), and sustainability advocacy to reduce carbon footprint across urban settings, hospitality, and food processing sectors.</p>
+            <p class="team-links"><a href="https://www.linkedin.com/in/sam-heng2265/" target="_blank" rel="noopener">LinkedIn →</a></p>
+          </article>
+
+          <!-- Sean Ghee - Director Training -->
+          <article class="card team-member">
+            <img src="assets/profle-sean.jpeg" alt="Sean Ghee" class="team-photo" />
+            <h3>Sean Ghee</h3>
+            <p class="team-role"><strong>Director Training</strong></p>
+            <p>15+ years in consulting, business matching, finance (trade, commodity, structured finance), and treasury. Facilitated USD 6M trade financing and SGD 400K project financing. Built treasury functions, managed bank/NBFI relationships. ESG-certified (NTU associate alumnus).</p>
+            <p class="team-links"><a href="https://www.linkedin.com/in/sean-ghee-gsk/" target="_blank" rel="noopener">LinkedIn →</a></p>
+          </article>
         </div>
       </div>
     </section>
@@ -452,15 +497,14 @@
  
         <!-- Featured: Aug 5 — the live action item -->
         <header class="workshop-head">
-          <p class="section-label">Next free workshop</p>
-          <span class="workshop-free">Free · Seniors 55+</span>
+          <p class="section-label">Next Workshop</p>
           <h2>Stories of Singapore: Seniors Capture National Day</h2>
-          <p class="workshop-hook">A free 3-hour digital storytelling workshop.</p>
-          <p class="workshop-lede">Share your Singapore story. Leave a legacy for the next generation. Donors cover every seat — you just show up.</p>
+          <p class="workshop-hook">3-hour digital storytelling workshop.</p>
+          <p class="workshop-lede">Share your Singapore story. Leave a legacy for the next generation.</p>
         </header>
  
         <div class="workshop-sessions">
-          <p class="sessions-label">Upcoming free sessions</p>
+          <p class="sessions-label">Upcoming Sessions</p>
           <ol class="session-list">
             <li class="session session--next">
               <div class="session-when">
@@ -501,13 +545,12 @@
         <article class="workshop-feature" aria-labelledby="feature-title">
           <div class="feature-banner">
             <span class="feature-flag">📱 Featured workshop · Seniors 55+</span>
-            <span class="feature-free">Completely free</span>
           </div>
           <img class="feature-image" src="assets/seniors.jpg" alt="Singapore seniors creating digital stories together at a Sagelion workshop" />
           <div class="feature-grid">
             <div class="feature-main">
               <h3 id="feature-title">Stories of Singapore: Seniors Capture National Day</h3>
-              <p class="feature-sub">A free 3-hour digital storytelling workshop.</p>
+              <p class="feature-sub">3-hour digital storytelling workshop.</p>
               <p class="feature-lede">Share your Singapore story. Leave a legacy for the next generation.</p>
  
               <p class="feature-h">What you'll learn</p>
@@ -525,7 +568,7 @@
                 <div><dt>Where</dt><dd>Care Corner AAC <span>Toa Payoh Blk 261A</span></dd></div>
                 <div><dt>Who</dt><dd>Seniors 55+</dd></div>
                 <div><dt>Length</dt><dd>3 hours</dd></div>
-                <div><dt>Cost</dt><dd>Free</dd></div>
+                <div><dt>Cost</dt><dd>Donor-funded</dd></div>
               </dl>
             </aside>
               <div class="feature-cta">
@@ -564,7 +607,7 @@
         </div>
  
         <div class="workshop-cta">
-          <a class="button primary" href="https://luma.com/ef59w3ld" target="_blank" rel="noopener">Reserve a free seat</a>
+          <a class="button primary" href="https://luma.com/ef59w3ld" target="_blank" rel="noopener">Reserve a seat</a>
           <a class="button secondary" href="mailto:contact@sagelioncapital.org?subject=Future%20workshop%20interest">Notify me of future dates</a>
         </div>
         <p class="workshop-cta-note">Registration is hosted on Luma.</p>
@@ -697,6 +740,21 @@
           <p class="journal-sub">Projects, reflections, the occasional rant. Updated when something's actually worth saying.</p>
         </div>
  
+        <!-- NEW: July 16 2026 entry — feature -->
+        <article class="card article-card article-card--feature article-card--fresh">
+          <div class="fresh-badge">New · 16 July 2026</div>
+          <img src="assets/samxrossa.jpeg" alt="Sam Heng discussing Forward Deployed Engineer program with Rossa" class="feature-image" />
+          <div class="article-body">
+            <p class="meta"><span class="tag tag--project">Programme</span> 16 July 2026</p>
+            <h3><a href="#">Forward Deployed Engineer programme — upskilling disadvantaged Singaporeans for AI deployment roles</a></h3>
+            <p>This week, Sam Heng (Director, Partnership) met with training partner Rossa to advance planning for the Forward Deployed Engineer programme — a new initiative to develop talent from disadvantaged and physically challenged communities for AI implementation roles in key Singapore industries.</p>
+            <p>Together with Rossa, we are designing a comprehensive curriculum that bridges the gap between foundational AI literacy and practical implementation. Participants will gain expertise in prompt engineering, model fine-tuning, and deploying AI solutions to real-world business problems.</p>
+            <p><strong>Deployment Strategy:</strong> Our graduates will be placed directly within organisations we serve — accounting firms, law firms, advertising agencies, and SMEs — where they will immediately contribute to workflow optimisation and productivity enhancement. This creates a sustainable talent pipeline: industries receive AI-literate talent trained to their specific needs, while disadvantaged Singaporeans gain meaningful career pathways in the digital economy.</p>
+            <p>The programme features inclusive design principles — accessible technology, hands-on workshops, and industry mentorship — ensuring participants can succeed regardless of physical ability or socioeconomic background. The first cohort is scheduled to launch Q4 2026.</p>
+            <p class="meta">For partnership and investment opportunities, please contact us at <a href="mailto:contact@sagelioncapital.org">contact@sagelioncapital.org</a></p>
+          </div>
+        </article>
+
         <!-- NEW: June 21 2026 entry — feature -->
         <article class="card article-card article-card--feature article-card--fresh">
           <div class="fresh-badge">New · 21 June 2026</div>
@@ -914,81 +972,23 @@
  
   <!-- TikTok embed renderer (loads the @8ktogo clip in the Journal) -->
   <script async src="https://www.tiktok.com/embed.js"></script>
+
+  <!-- Mobile menu toggle -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', function() {
+          this.classList.toggle('active');
+          navLinks.classList.toggle('active');
+        });
+      }
+    });
+  </script>
  
 </body>
  
-<html lang="en-SG" class="no-js">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#564A40" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
- 
-    <!-- Title, description, canonical, and OG tags are injected per route at
-         build time by the <Seo> component (src/components/Seo.jsx). -->
-    <meta property="og:type" content="business.business" />
-    <meta property="og:locale" content="en_SG" />
- 
-    <!-- No-JS safety: remove the .no-js class as early as possible so that,
-         when scripts run, entrance animations behave normally. If JS is off,
-         the .no-js rule in index.css keeps all content visible. -->
-    <script>
-      document.documentElement.classList.remove('no-js')
-    </script>
- 
-    <!-- Fonts: Space Grotesk (display) + Inter (body) + Space Mono (data) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
- 
-    <!-- LocalBusiness structured data for local SEO (shared across all pages) -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Cart Transformation",
-        "url": "https://cartXform.com",
-        "image": "https://cartXform.com/og-image.jpg",
-        "description": "E-commerce conversion specialists helping Singapore merchants recover abandoned carts, optimize checkout, and scale revenue.",
-        "telephone": "+65-8000-0000",
-        "priceRange": "$$",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "13 Lorong 8 Toa Payoh, #04-11, Braddell Tech",
-          "addressLocality": "Singapore",
-          "postalCode": "319261",
-          "addressCountry": "SG"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 1.3346,
-          "longitude": 103.8568
-        },
-        "areaServed": "Singapore",
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            "opens": "09:00",
-            "closes": "18:00"
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": "Saturday",
-            "opens": "10:00",
-            "closes": "14:00"
-          }
-        ]
-      }
-    </script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-
 </html>
  
