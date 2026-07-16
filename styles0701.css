@@ -4,7 +4,7 @@
    gold accent) — not museum mode.
    ============================================================ */
 
-@import url("colors_and_type.css?v=202605311715");
+@import url("colors_and_type.css?v=202607161854");
 
 * { box-sizing: border-box; }
 
@@ -2026,7 +2026,7 @@ main > section.warm-band {
     justify-content: space-between;
   }
   .nav-links {
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     gap: 6px 14px;
     font-size: 11px;
@@ -2035,18 +2035,6 @@ main > section.warm-band {
     justify-content: flex-start;
     padding-top: 4px;
     border-top: 1px solid var(--line);
-  }
-
-  /* Mobile hamburger menu */
-  .menu-toggle {
-    display: flex;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-  }
-  .menu-toggle.active + .nav-links {
-    display: flex;
-    flex-direction: column;
     position: absolute;
     top: 76px;
     left: 0;
@@ -2058,12 +2046,15 @@ main > section.warm-band {
     gap: 8px;
     z-index: 25;
   }
-  .menu-toggle.active + .nav-links a {
+  .nav-links.active {
+    display: flex;
+  }
+  .nav-links a {
     display: block;
     padding: 12px 0;
     border-bottom: 0;
   }
-  .menu-toggle.active + .nav-links a.nav-donate {
+  .nav-links a.nav-donate {
     background: var(--gold);
     padding: 10px 16px;
     border-radius: var(--r-pill);
@@ -2071,6 +2062,14 @@ main > section.warm-band {
     text-align: center;
     color: var(--ink);
     box-shadow: var(--shadow-card);
+  }
+
+  /* Mobile hamburger menu */
+  .menu-toggle {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: 20px;
   }
 
   .gallery-item.large { grid-column: span 1; }
