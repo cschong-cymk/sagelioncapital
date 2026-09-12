@@ -70,7 +70,25 @@
     background: var(--ink); color: var(--paper);
     padding: 9px 16px; text-decoration:none; border-radius: 2px;
   }
-  @media (max-width: 760px){ nav.links{ display:none; } }
+  .menu-toggle {
+    display:none;
+    background: transparent; border: 1px solid var(--ink);
+    color: var(--ink); font-family: var(--font-mono); font-size: 1rem;
+    padding: 6px 10px; border-radius: 2px; cursor: pointer;
+  }
+  @media (max-width: 760px){
+    .menu-toggle { display:block; }
+    nav.links {
+      display:none;
+      position: absolute; top: 100%; left: 0; right: 0;
+      background: var(--paper); border-bottom: 1px solid var(--rule);
+      flex-direction: column; gap: 0; padding: 8px 0;
+    }
+    nav.links.open { display:flex; }
+    nav.links a { padding: 12px 28px; border-top: 1px solid var(--rule); }
+    nav.links a:first-child { border-top: none; }
+    header.site { position: relative; }
+  }
 
   section { padding: 64px 0; }
   section.alt { background: var(--paper-deep); }
@@ -155,6 +173,7 @@
 <header class="site">
   <div class="nav-inner">
     <a class="logo" href="/">Sagelion<span>AI EDUCATION &amp; ART STUDIO — SINGAPORE</span></a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" onclick="document.querySelector('nav.links').classList.toggle('open'); this.setAttribute('aria-expanded', document.querySelector('nav.links').classList.contains('open')); this.textContent = document.querySelector('nav.links').classList.contains('open') ? '✕' : '☰';">☰</button>
     <nav class="links">
       <a href="/mission.html">Mission</a>
       <a href="/for-pmets.html">For PMETs</a>
