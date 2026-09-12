@@ -117,6 +117,11 @@
   strong { color: var(--ink); }
 
   .hero { padding: 76px 0 56px; }
+  .hero-grid { display:grid; grid-template-columns: 1.25fr 0.85fr; gap: 56px; align-items:start; }
+  .hero-figure { margin: 0; }
+  .hero-figure img { width: 100%; height: auto; border: 1px solid var(--rule); display: block; }
+  .hero-figure figcaption { font-family: var(--font-mono); font-size: 0.72rem; color: var(--mono-mute); margin-top: 10px; line-height: 1.45; }
+  @media (max-width: 760px){ .hero-grid{ grid-template-columns: 1fr; } }
   .cta-row { display:flex; gap: 14px; flex-wrap:wrap; margin-top: 28px; }
   .btn { font-family: var(--font-body); font-weight: 700; text-decoration:none; padding: 13px 22px; border-radius: 2px; font-size: 0.97rem; display:inline-block; }
   .btn-primary { background: var(--rust); color: var(--paper); }
@@ -201,10 +206,16 @@
 
 <main>
 <section class="hero">
-  <div class="wrap">
-    <div class="section-tag">Programme</div>
-    <h1 class="page-title">Workforce transition.</h1>
-    <p class="lead">Built for PMETs facing restructuring. Read the risk, build a real toolkit, walk out with something to show for it.</p>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="section-tag">Programme</div>
+      <h1 class="page-title">Workforce transition.</h1>
+      <p class="lead">Built for PMETs facing restructuring. Read the risk, build a real toolkit, walk out with something to show for it.</p>
+    </div>
+    <figure class="hero-figure">
+      <img src="/assets/hero-workforce-transition.jpg" alt="PMETs in a workforce transition workshop, working in small groups">
+      <figcaption>Workforce transition workshop, June 2026 — PMETs working through the tools together.</figcaption>
+    </figure>
   </div>
 </section>
 
