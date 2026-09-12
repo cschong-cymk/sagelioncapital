@@ -173,6 +173,17 @@
   .journal-item h3 { font-family: var(--font-display); font-weight:500; font-size: 1.15rem; margin: 0 0 6px; }
   .journal-item p { color: var(--ink-soft); font-size: 0.93rem; margin:0; max-width: 62ch; }
 
+  .journal-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  .journal-card { background: var(--paper-deep); border: 1px solid var(--rule); }
+  .journal-card img { width:100%; aspect-ratio: 16/10; object-fit:cover; border-bottom: 1px solid var(--rule); }
+  .journal-card-body { padding: 18px; }
+  .journal-card-body .date { font-family: var(--font-mono); font-size: 0.72rem; color: var(--mono-mute); margin-bottom: 6px; }
+  .journal-card-body h3 { font-family: var(--font-display); font-weight:500; font-size: 1.15rem; margin: 0 0 8px; }
+  .journal-card-body h3 a { color: inherit; text-decoration:none; }
+  .journal-card-body h3 a:hover { color: var(--rust); }
+  .journal-card-body p { color: var(--ink-soft); font-size: 0.92rem; margin:0; }
+  @media (max-width: 760px){ .journal-grid{ grid-template-columns: 1fr; } }
+
   footer { padding: 50px 0 36px; border-top: 1px solid var(--rule); }
   footer .foot-grid { display:flex; justify-content:space-between; flex-wrap:wrap; gap: 20px; align-items:flex-end; }
   footer .fine { font-family: var(--font-mono); font-size: 0.78rem; color: var(--mono-mute); }
@@ -390,19 +401,42 @@
     <div class="wrap">
       <div class="section-tag">Journal</div>
       <h2>Notes from the work, updated when something's worth saying.</h2>
-      <div class="journal-list">
-        <div class="journal-item">
-          <div class="date">09 SEP 2026</div>
-          <div><h3><a href="/journal/linyan-vs-openart.html" style="color:inherit;text-decoration:none;">Same prompt, two machines: what Linyan and OpenArt heard</a></h3><p>A small test from the studio — same idea, two AI video tools, two very different results. The lesson for teaching: the tool shapes the message.</p></div>
-        </div>
-        <div class="journal-item">
-          <div class="date">06 AUG 2026</div>
-          <div><h3><a href="/journal/tiktok-capcut-seniors.html" style="color:inherit;text-decoration:none;">TikTok &amp; CapCut with seniors at Care Corner Toa Payoh</a></h3><p>20+ seniors, one unplanned piano performance during the tea break, and a curriculum pilot for the Forward Deployed Engineer programme.</p></div>
-        </div>
-        <div class="journal-item">
-          <div class="date">21 JUN 2026</div>
-          <div><h3><a href="/journal/workshop-ran.html" style="color:inherit;text-decoration:none;">The workshop ran. Here's what actually happened.</a></h3><p>Field notes from Emmaus Church: three stations, no logins required, and the moment the room stopped seeing AI as "interesting" and started seeing it as useful.</p></div>
-        </div>
+      <div class="journal-grid">
+        <article class="journal-card">
+          <img src="/assets/26-9-9/frames/linyan/frame_003.jpg" alt="Linyan vs OpenArt">
+          <div class="journal-card-body">
+            <div class="date">09 SEP 2026</div>
+            <h3><a href="/journal/linyan-vs-openart.html">Same prompt, two machines</a></h3>
+            <p>What Linyan and OpenArt heard from the same idea. The tool shapes the message.</p>
+          </div>
+        </article>
+        <article class="journal-card">
+          <img src="/assets/26-8-4/2.jpeg" alt="TikTok workshop with seniors">
+          <div class="journal-card-body">
+            <div class="date">06 AUG 2026</div>
+            <h3><a href="/journal/tiktok-capcut-seniors.html">TikTok &amp; CapCut with seniors</a></h3>
+            <p>20+ seniors, one unplanned piano performance, and a curriculum pilot.</p>
+          </div>
+        </article>
+        <article class="journal-card">
+          <img src="/assets/workshop-jun2026.jpg" alt="Agentic AI workshop">
+          <div class="journal-card-body">
+            <div class="date">21 JUN 2026</div>
+            <h3><a href="/journal/workshop-ran.html">The workshop ran</a></h3>
+            <p>Three stations, no logins required, and the moment the room shifted.</p>
+          </div>
+        </article>
+        <article class="journal-card">
+          <img src="/assets/samxrossa.jpeg" alt="Forward Deployed Engineer programme">
+          <div class="journal-card-body">
+            <div class="date">16 JUL 2026</div>
+            <h3><a href="/journal/forward-deployed-engineer.html">Forward Deployed Engineer</a></h3>
+            <p>Upskilling disadvantaged Singaporeans for AI deployment roles.</p>
+          </div>
+        </article>
+      </div>
+      <div class="cta-row" style="margin-top:28px;">
+        <a class="btn btn-secondary" href="/journal.html">View all journal entries →</a>
       </div>
     </div>
   </section>
