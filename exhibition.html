@@ -163,6 +163,9 @@
   .article-hero-img, .article-inline-img {
     width:100%; max-height: 480px; object-fit: cover; border: 1px solid var(--rule); margin: 28px 0;
   }
+  .subhero-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 28px 0; }
+  .subhero-grid img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border: 1px solid var(--rule); display: block; }
+  @media (max-width: 760px){ .subhero-grid{ grid-template-columns: 1fr; } }
   .video-pair { display:grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin: 28px 0; }
   .video-pair video { width:100%; border: 1px solid var(--rule); }
 
@@ -191,6 +194,7 @@
       <a href="/programmes.html">Programmes</a>
       <a href="/catalogue.html">Catalogue</a>
       <a href="/exhibition.html">Exhibition</a>
+      <a href="/studio.html">Studio</a>
       <a href="/journal.html">Journal</a>
       <a href="/#support">Support</a>
     </nav>
@@ -209,7 +213,11 @@
 
 <section>
   <div class="wrap">
-    <img class="article-hero-img" src="/assets/adversity.jpg" alt="To AI or not AI — exhibition poster featuring Adversity, oil on paper">
+    <div class="subhero-grid">
+      <img src="/assets/adversity.jpg" alt="To AI or not AI — exhibition poster featuring Adversity, oil on paper">
+      <img src="/assets/exhibition-subhero-1.jpg" alt="Mixed-media artwork with swirling paint and embedded glass marbles">
+      <img src="/assets/exhibition-subhero-2.jpg" alt="Textured mixed-media panel with dark swirling impasto and bright spiral bursts">
+    </div>
     <h2>What to expect</h2>
     <div class="card-grid" style="margin-top: 18px;">
       <div class="card">

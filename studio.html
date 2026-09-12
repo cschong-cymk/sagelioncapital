@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Forward Deployed Engineer programme — Sagelion Journal</title>
-<meta name="description" content="Sagelion's Forward Deployed Engineer programme develops AI implementation talent from disadvantaged and physically challenged communities in Singapore.">
-<meta property="og:title" content="Forward Deployed Engineer programme — Sagelion Journal">
-<meta property="og:description" content="Sagelion's Forward Deployed Engineer programme develops AI implementation talent from disadvantaged and physically challenged communities in Singapore.">
+<title>Studio — Sagelion</title>
+<meta name="description" content="Sagelion Studio — AI video production in Singapore. Storyboard-to-video, generative visuals, and hands-on experiments for education, art, and communication.">
+<meta property="og:title" content="Studio — Sagelion">
+<meta property="og:description" content="Sagelion Studio — AI video production in Singapore. Storyboard-to-video, generative visuals, and hands-on experiments.">
 <meta property="og:type" content="website">
-<link rel="canonical" href="https://sagelioncapital.org/journal/forward-deployed-engineer.html">
+<link rel="canonical" href="https://sagelioncapital.org/studio.html">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=Atkinson+Hyperlegible:wght@400;700&display=swap');
 
@@ -117,6 +117,18 @@
   strong { color: var(--ink); }
 
   .hero { padding: 76px 0 56px; }
+  .hero-grid { display:grid; grid-template-columns: 1.25fr 0.85fr; gap: 56px; align-items:start; }
+  @media (max-width: 760px){ .hero-grid{ grid-template-columns: 1fr; } }
+
+  .hero-video {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+    border: 1px solid var(--rule);
+    display: block;
+    background: var(--paper-deep);
+  }
+
   .cta-row { display:flex; gap: 14px; flex-wrap:wrap; margin-top: 28px; }
   .btn { font-family: var(--font-body); font-weight: 700; text-decoration:none; padding: 13px 22px; border-radius: 2px; font-size: 0.97rem; display:inline-block; }
   .btn-primary { background: var(--rust); color: var(--paper); }
@@ -136,43 +148,9 @@
   .card a { font-family: var(--font-mono); font-size: 0.85rem; }
   @media (max-width: 760px){ .card-grid{ grid-template-columns: 1fr; } }
 
-  .journal-list { display:flex; flex-direction:column; }
-  .journal-item { display:grid; grid-template-columns: 110px 1fr; gap: 20px; padding: 22px 0; border-bottom: 1px solid var(--rule); }
-  .journal-item .date { font-family: var(--font-mono); font-size: 0.78rem; color: var(--mono-mute); padding-top: 4px; }
-  .journal-item h3 { font-family: var(--font-display); font-weight:500; font-size: 1.15rem; margin: 0 0 6px; }
-  .journal-item p { color: var(--ink-soft); font-size: 0.93rem; margin:0; max-width: 62ch; }
-
-  .journal-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
-  .journal-card { background: var(--paper-deep); border: 1px solid var(--rule); }
-  .journal-card img { width:100%; aspect-ratio: 16/10; object-fit:cover; border-bottom: 1px solid var(--rule); }
-  .journal-card-body { padding: 18px; }
-  .journal-card-body .date { font-family: var(--font-mono); font-size: 0.72rem; color: var(--mono-mute); margin-bottom: 6px; }
-  .journal-card-body h3 { font-family: var(--font-display); font-weight:500; font-size: 1.15rem; margin: 0 0 8px; }
-  .journal-card-body h3 a { color: inherit; text-decoration:none; }
-  .journal-card-body h3 a:hover { color: var(--rust); }
-  .journal-card-body p { color: var(--ink-soft); font-size: 0.92rem; margin:0; }
-  @media (max-width: 760px){ .journal-grid{ grid-template-columns: 1fr; } }
-
-  .article-body { max-width: 680px; }
-  .article-body p { color: var(--ink-soft); margin-bottom: 18px; }
-  .article-meta { font-family: var(--font-mono); font-size: 0.78rem; color: var(--mono-mute); margin-bottom: 22px; }
-  .article-meta .tag {
-    background: var(--paper-deep); border: 1px solid var(--rule);
-    padding: 2px 8px; border-radius: 2px; margin-right: 8px; color: var(--rust);
-  }
-  .article-hero-img, .article-inline-img {
-    width:100%; max-height: 480px; object-fit: cover; border: 1px solid var(--rule); margin: 28px 0;
-  }
   .video-pair { display:grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin: 28px 0; }
   .video-pair video { width:100%; border: 1px solid var(--rule); }
-
-  .cat-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 28px; margin-top: 32px; }
-  .cat-item { background: var(--paper-deep); border: 1px solid var(--rule); padding: 16px; }
-  .cat-item img { width:100%; aspect-ratio: 1/1; object-fit:cover; border: 1px solid var(--rule); margin-bottom: 14px; }
-  .cat-item .cat-no { font-family: var(--font-mono); font-size: 0.72rem; color: var(--mono-mute); margin-bottom: 4px; }
-  .cat-item .cat-title { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 4px; }
-  .cat-item .cat-meta { color: var(--ink-soft); font-size: 0.85rem; }
-  .cat-item .cat-note { display:inline-block; font-family: var(--font-mono); font-size: 0.68rem; color: var(--rust); border: 1px solid var(--rule); padding: 1px 5px; margin-left: 6px; }
+  @media (max-width: 760px){ .video-pair{ grid-template-columns: 1fr; } }
 
   footer { padding: 50px 0 36px; border-top: 1px solid var(--rule); }
   footer .foot-grid { display:flex; justify-content:space-between; flex-wrap:wrap; gap: 20px; align-items:flex-end; }
@@ -201,23 +179,60 @@
 
 <main>
 <section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="section-tag">AI Video Production Studio</div>
+      <h1 class="page-title">We make moving pictures out of prompts, pixels, and patience.</h1>
+      <p class="lead">Sagelion Studio explores what AI video can do for education, art, and communication. Storyboard-to-video, generative visuals, and side-by-side tool tests — built slowly, shown honestly.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#work">See recent work</a>
+        <a class="btn btn-secondary" href="https://www.youtube.com/@SAGELIONCAPITAL" target="_blank" rel="noopener">Watch on YouTube →</a>
+      </div>
+    </div>
+    <video class="hero-video" controls muted playsinline poster="/assets/vidposter.png">
+      <source src="/assets/hero-video-xs.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
+
+<section class="alt" id="work">
   <div class="wrap">
-    <p class="article-meta"><span class="tag">Programme</span> 16 July 2026</p>
-    <h1 class="page-title">Forward Deployed Engineer programme</h1>
-    <p class="lead">Upskilling disadvantaged Singaporeans for AI deployment roles — and placing them directly with the organisations we serve.</p>
+    <h2>Same prompt, two machines</h2>
+    <p>A studio test from September 2026. We gave the same idea to two video generators to see how the tool shapes the message.</p>
+    <div class="video-pair">
+      <video controls muted playsinline poster="/assets/26-9-9/frames/linyan/frame_003.jpg">
+        <source src="/assets/26-9-9/linyan.mp4" type="video/mp4">
+      </video>
+      <video controls muted playsinline poster="/assets/26-9-9/frames/openart/frame_004.jpg">
+        <source src="/assets/26-9-9/openart.mp4" type="video/mp4">
+      </video>
+    </div>
+    <p><strong>Linyan</strong> kept the idea literal and intact: a cream cat in a navy bow-tie, a cross at the centre, three pom-poms on a sunlit table. <strong>OpenArt</strong> turned it into mood: soft anime light, a sleeping cat, human hands. Both are useful. The lesson is that the tool shapes the story — which is exactly what we teach.</p>
+    <div class="cta-row">
+      <a class="btn btn-secondary" href="/journal/linyan-vs-openart.html">Read the full breakdown →</a>
+      <a class="btn btn-secondary" href="https://www.youtube.com/@SAGELIONCAPITAL" target="_blank" rel="noopener">Subscribe on YouTube →</a>
+    </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="article-body">
-      <img class="article-hero-img" src="/assets/samxrossa.jpeg" alt="Sam Heng discussing the Forward Deployed Engineer programme with training partner Rossa">
-      <p>Sam Heng (Director, Partnership) met with training partner Rossa to advance the Forward Deployed Engineer programme — developing talent from disadvantaged and physically challenged communities for AI implementation roles.</p>
-      <p>Graduates will be placed directly with the organisations we serve — accounting firms, law firms, agencies, SMEs. Not a certificate programme that ends in a job board. A pipeline that ends in a desk.</p>
-      <p>First cohort launches Q4 2026.</p>
-      <div class="cta-row">
-        <a class="btn btn-secondary" href="/journal.html">← Back to journal</a>
-        <a class="btn btn-primary" href="mailto:contact@sagelioncapital.org?subject=Forward%20Deployed%20Engineer%20programme">Partner with us →</a>
+    <h2>What the studio does</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="mark">◌</div>
+        <h3>Storyboard to video</h3>
+        <p>Turn sketches and sequences into short generative films. Good for proofs-of-concept, pitches, and teaching.</p>
+      </div>
+      <div class="card">
+        <div class="mark">◇</div>
+        <h3>Tool comparisons</h3>
+        <p>We test the same prompt across models so you can see the difference before committing time or budget.</p>
+      </div>
+      <div class="card">
+        <div class="mark">✦</div>
+        <h3>Workshop content</h3>
+        <p>Short videos, explainers, and visual assets for our education programmes — made with the same tools we teach.</p>
       </div>
     </div>
   </div>

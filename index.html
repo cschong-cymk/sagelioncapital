@@ -94,6 +94,9 @@
   /* ---------- HERO ---------- */
   .hero { padding: 76px 0 56px; }
   .hero-grid { display:grid; grid-template-columns: 1.25fr 0.85fr; gap: 56px; align-items:start; }
+  .hero-figure { margin: 0; }
+  .hero-figure img { width: 100%; height: auto; border: 1px solid var(--rule); display: block; }
+  .hero-figure figcaption { font-family: var(--font-mono); font-size: 0.72rem; color: var(--mono-mute); margin-top: 10px; line-height: 1.45; }
   .kicker { font-family: var(--font-mono); font-size: 0.78rem; color: var(--mono-mute); margin-bottom: 18px; }
   .kicker::before { content: "// "; }
   h1.headline {
@@ -139,6 +142,7 @@
   .prog-card .mark { font-family: var(--font-mono); color: var(--rust); font-size: 0.9rem; }
   .prog-card h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.25rem; margin: 10px 0 8px; }
   .prog-card p { color: var(--ink-soft); font-size: 0.95rem; margin:0; }
+  .prog-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border: 1px solid var(--rule); margin-bottom: 16px; display: block; }
   @media (max-width: 760px){ .prog-grid{ grid-template-columns: 1fr; } .hero-grid{ grid-template-columns: 1fr; } }
 
   /* catalogue */
@@ -201,6 +205,7 @@
       <a href="/programmes.html">Programmes</a>
       <a href="/catalogue.html">Catalogue</a>
       <a href="/exhibition.html">Exhibition</a>
+      <a href="/studio.html">Studio</a>
       <a href="/journal.html">Journal</a>
       <a href="/#support">Support</a>
     </nav>
@@ -221,13 +226,10 @@
           <a class="btn btn-secondary" href="#programmes">Join a free workshop</a>
         </div>
       </div>
-      <div class="receipt">
-        <div class="receipt-head">Sagelion — running total</div>
-        <div class="ledger-row"><span class="label">Workshops delivered</span><span class="figure">2</span></div>
-        <div class="ledger-row"><span class="label">Seniors &amp; PMETs taught, hands-on</span><span class="figure">20+</span></div>
-        <div class="ledger-row"><span class="label">Charged to learners</span><span class="figure">S$0</span></div>
-        <div class="ledger-row"><span class="label">To overhead, ever</span><span class="figure">S$0</span></div>
-      </div>
+      <figure class="hero-figure">
+        <img src="/assets/hero-workshop-2026-06-20.jpg" alt="Sagelion workshop: a speaker walks a room of seniors and PMETs through the AI shift">
+        <figcaption>Workshop run, June 2026 — seniors and PMETs working through the AI shift together.</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -289,18 +291,21 @@
       <h2>Three things, mostly.</h2>
       <div class="prog-grid">
         <div class="prog-card">
+          <img src="/assets/card-workforce-transition.jpg" alt="PMETs in a workforce transition workshop, working together around tables">
           <div class="mark">◌</div>
           <h3><a href="/programmes/workforce-transition.html" style="color:inherit;text-decoration:none;">Workforce transition</a></h3>
           <p>Sessions built for PMETs facing restructuring — reading the risk, building a real toolkit, walking out with something to show for it.</p>
           <a href="/programmes/workforce-transition.html" style="font-family:var(--font-mono);font-size:0.85rem;">Read more →</a>
         </div>
         <div class="prog-card">
+          <img src="/assets/card-access-workshops.jpg" alt="Seniors gathered around a keyboard in a community access workshop">
           <div class="mark">◇</div>
           <h3><a href="/programmes/access-workshops.html" style="color:inherit;text-decoration:none;">Access workshops</a></h3>
           <p>Hands-on sessions for the deaf community, people with disabilities, and young seniors. You touch the tools — files, not vibes.</p>
           <a href="/programmes/access-workshops.html" style="font-family:var(--font-mono);font-size:0.85rem;">Read more →</a>
         </div>
         <div class="prog-card">
+          <img src="/assets/card-ai-inspired-art.jpg" alt="A mixed-media collage made with swirling fibres and glass pebbles">
           <div class="mark">✦</div>
           <h3><a href="/programmes/ai-inspired-art.html" style="color:inherit;text-decoration:none;">AI-inspired art</a></h3>
           <p>We use AI to push our own work further. The hand is still in there somewhere — that's the point.</p>
