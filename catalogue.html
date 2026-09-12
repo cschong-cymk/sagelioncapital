@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catalogue — Sagelion</title>
+<meta name="description" content="Seventeen works on the books: oil on canvas, acrylic, pencil, and mixed media. Selected works 2017–2026.">
+<meta property="og:title" content="Catalogue — Sagelion">
+<meta property="og:description" content="Seventeen works on the books: oil on canvas, acrylic, pencil, and mixed media. Selected works 2017–2026.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://sagelioncapital.org/catalogue.html">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=Atkinson+Hyperlegible:wght@400;700&display=swap');
+
+  :root{
+    --paper: #EDE7D9;
+    --paper-deep: #E3D9C1;
+    --ink: #241F17;
+    --ink-soft: #4A4234;
+    --rule: #C3B692;
+    --rust: #A23B2E;
+    --pine: #3F5745;
+    --mono-mute: #6E6650;
+
+    --font-display: 'Newsreader', Georgia, serif;
+    --font-body: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.55;
+  }
+  img { max-width:100%; display:block; }
+  video { max-width:100%; display:block; }
+  a { color: var(--rust); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--rust); outline-offset: 3px; }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+  .rule { border: none; border-top: 1px solid var(--rule); margin: 0; }
+
+  header.site {
+    position: sticky; top: 0; z-index: 20;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-inner {
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 16px 28px;
+    max-width: 1080px; margin: 0 auto;
+  }
+  .logo {
+    font-family: var(--font-display);
+    font-size: 1.3rem; font-weight: 600;
+    text-decoration:none; color: var(--ink);
+    letter-spacing: 0.01em;
+  }
+  .logo span { color: var(--mono-mute); font-family: var(--font-mono); font-size: 0.62rem; display:block; letter-spacing: 0.08em; margin-top:2px; }
+  nav.links { display:flex; gap: 26px; }
+  nav.links a { color: var(--ink-soft); text-decoration:none; font-size: 0.96rem; }
+  nav.links a:hover { color: var(--rust); }
+  .nav-cta {
+    font-family: var(--font-mono); font-size: 0.85rem;
+    background: var(--ink); color: var(--paper);
+    padding: 9px 16px; text-decoration:none; border-radius: 2px;
+  }
+  @media (max-width: 760px){ nav.links{ display:none; } }
+
+  section { padding: 64px 0; }
+  section.alt { background: var(--paper-deep); }
+  .section-tag { font-family: var(--font-mono); font-size: 0.76rem; color: var(--rust); margin-bottom: 10px; }
+  .section-tag::before { content: "// "; }
+  h1.page-title {
+    font-family: var(--font-display); font-weight: 500;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.12; margin: 0 0 22px; color: var(--ink); max-width: 26ch;
+  }
+  h2 {
+    font-family: var(--font-display); font-weight: 500;
+    font-size: clamp(1.35rem, 2.4vw, 1.9rem);
+    margin: 0 0 20px; max-width: 34ch; color: var(--ink);
+  }
+  h3 {
+    font-family: var(--font-display); font-weight: 500;
+    font-size: 1.25rem; margin: 0 0 10px; color: var(--ink);
+  }
+  p.lead {
+    font-size: 1.1rem; color: var(--ink-soft); max-width: 58ch; margin: 0 0 28px;
+  }
+  p { max-width: 64ch; }
+  ul, ol { padding-left: 22px; margin: 0 0 22px; color: var(--ink-soft); }
+  li { margin-bottom: 8px; max-width: 60ch; }
+  strong { color: var(--ink); }
+
+  .hero { padding: 76px 0 56px; }
+  .cta-row { display:flex; gap: 14px; flex-wrap:wrap; margin-top: 28px; }
+  .btn { font-family: var(--font-body); font-weight: 700; text-decoration:none; padding: 13px 22px; border-radius: 2px; font-size: 0.97rem; display:inline-block; }
+  .btn-primary { background: var(--rust); color: var(--paper); }
+  .btn-secondary { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+
+  .ledger-row { display:flex; justify-content:space-between; align-items:baseline; padding: 18px 0; border-bottom: 1px solid var(--rule); }
+  .ledger-row:last-child { border-bottom: none; }
+  .ledger-row .label { font-family: var(--font-display); font-size: 1.15rem; color: var(--ink); display:block; }
+  .ledger-row .note { color: var(--ink-soft); font-size: 0.94rem; display:block; margin-top: 4px; max-width: 52ch; }
+  .ledger-row .figure { font-family: var(--font-mono); font-size: 0.85rem; color: var(--pine); align-self: flex-start; padding-top: 4px; }
+
+  .card-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border:1px solid var(--rule); margin-top: 28px; }
+  .card { background: var(--paper); padding: 26px; }
+  .card .mark { font-family: var(--font-mono); color: var(--rust); font-size: 0.9rem; }
+  .card h3 { margin: 10px 0 8px; }
+  .card p { color: var(--ink-soft); font-size: 0.95rem; margin:0 0 14px; }
+  .card a { font-family: var(--font-mono); font-size: 0.85rem; }
+  @media (max-width: 760px){ .card-grid{ grid-template-columns: 1fr; } }
+
+  .journal-list { display:flex; flex-direction:column; }
+  .journal-item { display:grid; grid-template-columns: 110px 1fr; gap: 20px; padding: 22px 0; border-bottom: 1px solid var(--rule); }
+  .journal-item .date { font-family: var(--font-mono); font-size: 0.78rem; color: var(--mono-mute); padding-top: 4px; }
+  .journal-item h3 { font-family: var(--font-display); font-weight:500; font-size: 1.15rem; margin: 0 0 6px; }
+  .journal-item p { color: var(--ink-soft); font-size: 0.93rem; margin:0; max-width: 62ch; }
+
+  .article-body { max-width: 680px; }
+  .article-body p { color: var(--ink-soft); margin-bottom: 18px; }
+  .article-meta { font-family: var(--font-mono); font-size: 0.78rem; color: var(--mono-mute); margin-bottom: 22px; }
+  .article-meta .tag {
+    background: var(--paper-deep); border: 1px solid var(--rule);
+    padding: 2px 8px; border-radius: 2px; margin-right: 8px; color: var(--rust);
+  }
+  .article-hero-img, .article-inline-img {
+    width:100%; max-height: 480px; object-fit: cover; border: 1px solid var(--rule); margin: 28px 0;
+  }
+  .video-pair { display:grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin: 28px 0; }
+  .video-pair video { width:100%; border: 1px solid var(--rule); }
+
+  .cat-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 28px; margin-top: 32px; }
+  .cat-item { background: var(--paper-deep); border: 1px solid var(--rule); padding: 16px; }
+  .cat-item img { width:100%; aspect-ratio: 1/1; object-fit:cover; border: 1px solid var(--rule); margin-bottom: 14px; }
+  .cat-item .cat-no { font-family: var(--font-mono); font-size: 0.72rem; color: var(--mono-mute); margin-bottom: 4px; }
+  .cat-item .cat-title { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 4px; }
+  .cat-item .cat-meta { color: var(--ink-soft); font-size: 0.85rem; }
+  .cat-item .cat-note { display:inline-block; font-family: var(--font-mono); font-size: 0.68rem; color: var(--rust); border: 1px solid var(--rule); padding: 1px 5px; margin-left: 6px; }
+
+  footer { padding: 50px 0 36px; border-top: 1px solid var(--rule); }
+  footer .foot-grid { display:flex; justify-content:space-between; flex-wrap:wrap; gap: 20px; align-items:flex-end; }
+  footer .fine { font-family: var(--font-mono); font-size: 0.78rem; color: var(--mono-mute); }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav-inner">
+    <a class="logo" href="/">Sagelion<span>AI EDUCATION &amp; ART STUDIO — SINGAPORE</span></a>
+    <nav class="links">
+      <a href="/mission.html">Mission</a>
+      <a href="/for-pmets.html">For PMETs</a>
+      <a href="/programmes.html">Programmes</a>
+      <a href="/catalogue.html">Catalogue</a>
+      <a href="/journal.html">Journal</a>
+      <a href="/#support">Support</a>
+    </nav>
+    <a class="nav-cta" href="/#support">Fund a seat →</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div class="section-tag">Catalogue</div>
+    <h1 class="page-title">Selected works, 2017–2026.</h1>
+    <p class="lead">Seventeen works on the books. Oil, acrylic, pencil, mixed media.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cat-grid">
+      <div class="cat-item">
+        <img src="/assets/art3.jpg" alt="Angel Fish">
+        <div class="cat-no">No. 01</div>
+        <div class="cat-title">Angel Fish</div>
+        <div class="cat-meta">Oil on canvas · 2017 · 60 × 80 cm</div>
+      </div>
+      <div class="cat-item">
+        <img src="/assets/visual-asset.jpg" alt="Kanbarei">
+        <div class="cat-no">No. 02</div>
+        <div class="cat-title">Kanbarei</div>
+        <div class="cat-meta">Oil on canvas · 2017 · 50 × 60 cm</div>
+      </div>
+      <div class="cat-item">
+        <img src="/assets/dog.jpg" alt="Young Tom Tom">
+        <div class="cat-no">No. 03</div>
+        <div class="cat-title">Young Tom Tom</div>
+        <div class="cat-meta">Pencil sketch · 2017 · 25 × 35 cm</div>
+      </div>
+      <div class="cat-item">
+        <img src="/assets/my-sisters-friend.jpg" alt="My Sister's Friend">
+        <div class="cat-no">No. 04</div>
+        <div class="cat-title">My Sister's Friend</div>
+        <div class="cat-meta">Oil on canvas · 2018 · 45 × 55 cm</div>
+      </div>
+      <div class="cat-item">
+        <img src="/assets/artsg.jpeg" alt="Singapore Troublemakers">
+        <div class="cat-no">No. 05</div>
+        <div class="cat-title">Singapore Troublemakers</div>
+        <div class="cat-meta">Oil on canvas · 2018 · 70 × 90 cm</div>
+      </div>
+      <div class="cat-item">
+        <img src="/assets/visual-asset-2.jpg" alt="Textured landscape">
+        <div class="cat-no">No. 06</div>
+        <div class="cat-title">Textured landscape<span class="cat-note">['Title TBD']</span></div>
+        <div class="cat-meta">Oil on canvas · 2018 · 55 × 70 cm</div>
+      </div>
+      <div class="cat-item">
+        <img src="/assets/marys-friend.jpg" alt="Mary's Friend">
+        <div class="cat-no">No. 07</div>
+        <div class="cat-title">Mary's Friend</div>
+        <div class="cat-meta">Oil on canvas · 2019 · 40 × 50 cm</div>
+      </div>
+      <div class="cat-item">
+        <img src="/assets/adversity.jpg" alt="Adversity">
+        <div class="cat-no">No. 08</div>
+        <div class="cat-title">Adversity</div>
+        <div class="cat-meta">Oil on canvas · 2019 · 60 × 80 cm</div>
+      </div>
+      <div class="cat-item">
+        <img src="/assets/happy-cny.jpeg" alt="Happy CNY">
+        <div class="cat-no">No. 09</div>
+        <div class="cat-title">Happy CNY</div>
+        <div class="cat-meta">Acrylic on paper · 2019 · 30 × 40 cm</div>
+      </div>
+      <div class="cat-item">
+        <img src="/assets/l.png" alt="Lamb on upcycled glass">
+        <div class="cat-no">No. 10</div>
+        <div class="cat-title">Lamb on upcycled glass<span class="cat-note">['Not for sale']</span></div>
+        <div class="cat-meta">Mixed media · 2026 · 45 × 60 cm</div>
+      </div>
+      <div class="cat-item">
+        <img src="/assets/mixmedium.jpg" alt="Unusual places on earth">
+        <div class="cat-no">No. 11</div>
+        <div class="cat-title">Unusual places on earth</div>
+        <div class="cat-meta">Mixed media · 2026 · 70 × 100 cm</div>
+      </div>
+      <div class="cat-item">
+        <img src="/assets/art1.jpg" alt="Hibiscus">
+        <div class="cat-no">No. 12</div>
+        <div class="cat-title">Hibiscus</div>
+        <div class="cat-meta">Oil on canvas · 2026 · 50 × 70 cm</div>
+      </div>
+      <div class="cat-item">
+        <img src="/assets/flowering-of-flowdaptor.png" alt="Flowering of Flowdaptor">
+        <div class="cat-no">No. 13</div>
+        <div class="cat-title">Flowering of Flowdaptor</div>
+        <div class="cat-meta">Oil on canvas · 2026 · 60 × 80 cm</div>
+      </div>
+      <div class="cat-item">
+        <img src="/assets/26-8-14/bush.png" alt="The Burning Bush">
+        <div class="cat-no">No. 14</div>
+        <div class="cat-title">The Burning Bush</div>
+        <div class="cat-meta">Oil on canvas · 2026 · 70 × 90 cm</div>
+      </div>
+      <div class="cat-item">
+        <img src="/assets/26-8-14/pool.png" alt="The Living Water">
+        <div class="cat-no">No. 15</div>
+        <div class="cat-title">The Living Water</div>
+        <div class="cat-meta">Acrylic on paper · 2026 · 60 × 80 cm</div>
+      </div>
+      <div class="cat-item">
+        <img src="/assets/26-8-14/flowwr.png" alt="Blessing Bloom">
+        <div class="cat-no">No. 16</div>
+        <div class="cat-title">Blessing Bloom</div>
+        <div class="cat-meta">Oil · 2026 · 15 × 15 cm</div>
+      </div>
+      <div class="cat-item">
+        <img src="/assets/prophetic-creatures.jpg" alt="Prophetic Creatures">
+        <div class="cat-no">No. 17</div>
+        <div class="cat-title">Prophetic Creatures</div>
+        <div class="cat-meta">Oil on canvas · 2026 · 55 × 45 cm</div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <hr class="rule" style="margin-bottom:28px;">
+    <div class="foot-grid">
+      <div>
+        <div class="logo" style="margin-bottom:6px;">Sagelion</div>
+        <div class="fine">AI-inspired art, education, and events — SageLion Capital Ltd.</div>
+      </div>
+      <div class="fine">Crafted with care in Singapore</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
