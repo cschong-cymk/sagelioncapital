@@ -126,6 +126,7 @@
   .hero-figure { margin: 0; }
   .hero-figure img { width: 100%; height: auto; border: 1px solid var(--rule); display: block; }
   .hero-figure figcaption { font-family: var(--font-mono); font-size: 0.72rem; color: var(--mono-mute); margin-top: 10px; line-height: 1.45; }
+  .hero-img-block + .hero-img-block { margin-top: 18px; }
   @media (max-width: 760px){ .hero-grid{ grid-template-columns: 1fr; } }
   .cta-row { display:flex; gap: 14px; flex-wrap:wrap; margin-top: 28px; }
   .btn { font-family: var(--font-body); font-weight: 700; text-decoration:none; padding: 13px 22px; border-radius: 2px; font-size: 0.97rem; display:inline-block; }
@@ -218,8 +219,14 @@
       <p class="lead">Built for PMETs facing restructuring. Read the risk early, build a real toolkit, and walk out with work you can actually show.</p>
     </div>
     <figure class="hero-figure">
-      <img src="/assets/hero-workforce-transition.jpg" alt="PMETs in a workforce transition workshop, working in small groups">
-      <figcaption>Workforce transition workshop, June 2026 — PMETs working through the tools together.</figcaption>
+      <div class="hero-img-block">
+        <img src="/assets/hero-workforce-transition-promo.jpg" alt="Sagelion AI Workshop promotional illustration with lion mascot presenting to a group">
+        <figcaption>Sagelion AI Workshop — co-design custom AI workshops for your community.</figcaption>
+      </div>
+      <div class="hero-img-block">
+        <img src="/assets/hero-workforce-transition.jpg" alt="PMETs in a workforce transition workshop, working in small groups">
+        <figcaption>Workforce transition workshop, June 2026 — PMETs working through the tools together.</figcaption>
+      </div>
     </figure>
   </div>
 </section>
