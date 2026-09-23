@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leadership — Sagelion</title>
+<meta name="description" content="Meet the leadership team behind Sagelion, a donor-funded Singapore studio teaching AI for free to PMETs, the Deaf community, people with disabilities, and young seniors.">
+<meta property="og:title" content="Leadership — Sagelion">
+<meta property="og:description" content="Meet the leadership team behind Sagelion, a donor-funded Singapore studio teaching AI for free.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://sagelioncapital.org/leadership.html">
+<link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/public/apple-touch-icon.png">
+<link rel="manifest" href="/public/site.webmanifest">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=Atkinson+Hyperlegible:wght@400;700&display=swap');
+
+  :root{
+    --paper: #EDE7D9;
+    --paper-deep: #E3D9C1;
+    --ink: #241F17;
+    --ink-soft: #4A4234;
+    --rule: #C3B692;
+    --rust: #A23B2E;
+    --pine: #3F5745;
+    --mono-mute: #6E6650;
+
+    --font-display: 'Newsreader', Georgia, serif;
+    --font-body: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.55;
+  }
+  img { max-width:100%; display:block; }
+  a { color: var(--rust); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--rust); outline-offset: 3px; }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+  .rule { border: none; border-top: 1px solid var(--rule); margin: 0; }
+
+  header.site {
+    position: sticky; top: 0; z-index: 20;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-inner {
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 16px 28px;
+    max-width: 1080px; margin: 0 auto;
+  }
+  .logo {
+    font-family: var(--font-display);
+    font-size: 1.3rem; font-weight: 600;
+    text-decoration:none; color: var(--ink);
+    letter-spacing: 0.01em;
+  }
+  .logo span { color: var(--mono-mute); font-family: var(--font-mono); font-size: 0.62rem; display:block; letter-spacing: 0.08em; margin-top:2px; }
+  nav.links { display:flex; gap: 26px; }
+  nav.links a { color: var(--ink-soft); text-decoration:none; font-size: 0.96rem; }
+  nav.links a:hover { color: var(--rust); }
+  .nav-cta {
+    font-family: var(--font-mono); font-size: 0.85rem;
+    background: var(--ink); color: var(--paper);
+    padding: 9px 16px; text-decoration:none; border-radius: 2px;
+    margin-left: 12px;
+  }
+  .menu-toggle {
+    display:none;
+    background: transparent; border: 1px solid var(--ink);
+    color: var(--ink); font-family: var(--font-mono); font-size: 1rem;
+    padding: 6px 10px; border-radius: 2px; cursor: pointer;
+  }
+  @media (max-width: 760px){
+    .menu-toggle { display:block; }
+    nav.links {
+      display:none;
+      position: absolute; top: 100%; left: 0; right: 0;
+      background: var(--paper); border-bottom: 1px solid var(--rule);
+      flex-direction: column; gap: 0; padding: 8px 0;
+    }
+    nav.links.open { display:flex; }
+    nav.links a { padding: 12px 28px; border-top: 1px solid var(--rule); }
+    nav.links a:first-child { border-top: none; }
+    header.site { position: relative; }
+  }
+
+  section { padding: 64px 0; }
+  section.alt { background: var(--paper-deep); }
+  .section-tag { font-family: var(--font-mono); font-size: 0.76rem; color: var(--rust); margin-bottom: 10px; }
+  .section-tag::before { content: "// "; }
+  h1.page-title {
+    font-family: var(--font-display); font-weight: 500;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.12; margin: 0 0 22px; color: var(--ink); max-width: 26ch;
+  }
+  h2 {
+    font-family: var(--font-display); font-weight: 500;
+    font-size: clamp(1.35rem, 2.4vw, 1.9rem);
+    margin: 0 0 20px; max-width: 34ch; color: var(--ink);
+  }
+  h3 {
+    font-family: var(--font-display); font-weight: 500;
+    font-size: 1.25rem; margin: 0 0 10px; color: var(--ink);
+  }
+  p.lead {
+    font-size: 1.1rem; color: var(--ink-soft); max-width: 58ch; margin: 0 0 28px;
+  }
+  p { max-width: 64ch; color: var(--ink-soft); }
+  strong { color: var(--ink); }
+
+  .hero { padding: 76px 0 56px; }
+
+  .team-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border:1px solid var(--rule); margin-top: 28px; }
+  .team-member { background: var(--paper); padding: 26px; }
+  .team-member img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border: 1px solid var(--rule);
+    margin-bottom: 18px;
+  }
+  .team-member h3 { margin: 0 0 4px; }
+  .team-role {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--rust);
+    margin: 0 0 14px;
+  }
+  .team-member p { font-size: 0.95rem; margin: 0 0 14px; }
+  .team-links { margin: 0; }
+  .team-links a { font-family: var(--font-mono); font-size: 0.85rem; }
+  @media (max-width: 980px){ .team-grid{ grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 760px){ .team-grid{ grid-template-columns: 1fr; } }
+
+  footer { padding: 50px 0 36px; border-top: 1px solid var(--rule); }
+  footer .foot-grid { display:flex; justify-content:space-between; flex-wrap:wrap; gap: 20px; align-items:flex-end; }
+  footer .fine { font-family: var(--font-mono); font-size: 0.78rem; color: var(--mono-mute); }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav-inner">
+    <a class="logo" href="/">Sagelion<span>AI EDUCATION &amp; ART STUDIO — SINGAPORE</span></a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" onclick="document.querySelector('nav.links').classList.toggle('open'); this.setAttribute('aria-expanded', document.querySelector('nav.links').classList.contains('open')); this.textContent = document.querySelector('nav.links').classList.contains('open') ? '✕' : '☰';">☰</button>
+    <nav class="links">
+      <a href="/mission.html">Mission</a>
+      <a href="/for-pmets.html">For PMETs</a>
+      <a href="/programmes.html">Programmes</a>
+      <a href="/catalogue.html">Catalogue</a>
+      <a href="/exhibition.html">Exhibition</a>
+      <a href="/studio.html">Studio</a>
+      <a href="/journal.html">Journal</a>
+      <a href="/leadership.html">Leadership</a>
+      <a href="/leadership.html">Leadership</a>
+      <a href="/#support">Support</a>
+    </nav>
+    <a class="nav-cta" href="/#support">Fund a seat →</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div class="section-tag">Leadership</div>
+    <h1 class="page-title">Meet the team.</h1>
+    <p class="lead">Sagelion is run by people who've spent decades inside finance, tech, and restructuring. We're putting that experience to work for the communities the AI rollout leaves behind.</p>
+
+    <div class="team-grid">
+      <!-- Meng Wee - Chairman -->
+      <article class="team-member">
+        <img src="/assets/profile-mengweee.jpg" alt="Tan Meng Wee">
+        <h3>Tan Meng Wee</h3>
+        <p class="team-role"><strong>Chairman</strong></p>
+        <p>CFA, CAIA. Hitotsubashi University valedictorian. Former government officer and investment banker with 30 years of experience across policy, finance, and technology. Founded Orange Gum, an EDB-backed enterprise messaging venture. As Chairman of Sagelion Capital, he oversees technology investments and strategic advisory, while using his deep tech background to promote AI literacy workshops for underserved communities. His personal mission is to help corporates and investors "up their game" in a digitally connected world — sensing investment opportunities, managing risk, and improving strategic competitiveness through technological disruption, enterprise reengineering, and continuous improvement (kaizen).</p>
+        <p class="team-links"><a href="https://www.linkedin.com/in/mengweetan/" target="_blank" rel="noopener">LinkedIn →</a></p>
+      </article>
+
+      <!-- Sam Heng - Director Partnership -->
+      <article class="team-member">
+        <img src="/assets/profile-sam.jpeg" alt="Sam Heng">
+        <h3>Sam Heng</h3>
+        <p class="team-role"><strong>Director of Strategic Partnership</strong></p>
+        <p>Sam Heng brings over 25 years of experience in corporate and investment banking, business development, and strategic partnerships across Singapore and Southeast Asia. Passionate about creating meaningful social impact, he is committed to building collaborations between community organisations, businesses, educational institutions, and public sector partners to advance digital inclusion and lifelong learning.</p>
+        <p>At Sagelion Capital, Sam leads strategic partnerships to expand AI education and outreach programmes for underserved communities. He believes that AI should be an enabler of opportunity rather than a source of inequality, and is dedicated to ensuring that people of all ages, abilities, and backgrounds are equipped to embrace the opportunities of an AI-enabled future.</p>
+        <p>His vision is to mobilise community resources and cross-sector partnerships to empower individuals with practical AI skills, foster lifelong learning, and create pathways to meaningful employment and community participation.</p>
+        <p class="team-links"><a href="https://www.linkedin.com/in/sam-heng2265/" target="_blank" rel="noopener">LinkedIn →</a></p>
+      </article>
+
+      <!-- Sean Ghee - Director Training -->
+      <article class="team-member">
+        <img src="/assets/profle-sean.jpeg" alt="Sean Ghee">
+        <h3>Sean Ghee</h3>
+        <p class="team-role"><strong>Director, Training</strong></p>
+        <p>15+ years in consulting, business matching, finance (trade, commodity, structured finance), and treasury. Facilitated USD 6M trade financing and SGD 400K project financing. Built treasury functions, managed bank/NBFI relationships. ESG-certified (NTU associate alumnus).</p>
+        <p class="team-links"><a href="https://www.linkedin.com/in/sean-ghee-gsk/" target="_blank" rel="noopener">LinkedIn →</a></p>
+      </article>
+
+      <!-- Boon Chye -->
+      <article class="team-member">
+        <img src="/assets/bc.png" alt="Lim Boon Chye">
+        <h3>Lim Boon Chye</h3>
+        <p class="team-role"><strong>Director, Consulting</strong></p>
+        <p>With over 37 years of industry experience, Lim Boon Chye is a Certified Management Consultant and former Director of Technology Consulting at CapGemini E&amp;Y. He has a strong corporate track record advising MNCs and governments across 20+ countries, specializing in strategic IT planning, business process re-engineering, and complex stakeholder management.</p>
+      </article>
+
+      <!-- Robin Ng - Director, Corporate Governance -->
+      <article class="team-member">
+        <img src="/assets/profile-robin.jpeg" alt="Robin Ng">
+        <h3>Robin Ng</h3>
+        <p class="team-role"><strong>Director, Corporate Governance</strong></p>
+        <p>Almost 30 years career in Finance, Information Technology (IT) and Information Communications Technology (ICT) industry. 25 years of experience running businesses from start-up to Global MNC. 19 years as company director with global business experience. Went through 8 Mergers &amp; Acquisitions exercises. Senior Accredited Director of Singapore Institute of Directors since 23 Jan 2024.</p>
+        <p class="team-links"><a href="https://www.linkedin.com/in/robin-ng-b3ba2a6/" target="_blank" rel="noopener">LinkedIn →</a></p>
+      </article>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <hr class="rule" style="margin-bottom:28px;">
+    <div class="foot-grid">
+      <div>
+        <div class="logo" style="margin-bottom:6px;">Sagelion</div>
+        <div class="fine">AI-inspired art, education, and events — SageLion Capital Ltd.</div>
+      </div>
+      <div class="fine">Crafted with care in Singapore</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
