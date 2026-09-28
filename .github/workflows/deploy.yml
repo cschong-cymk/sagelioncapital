@@ -18,7 +18,7 @@ jobs:
       - name: Assemble static site
         run: |
           mkdir -p dist
-          cp -R *.html assets fonts journal programmes public dist/
+          cp -R *.html assets fonts journal programmes public custom-workshop dist/
           cp CNAME dist/CNAME
       - uses: actions/configure-pages@v5
         with:
