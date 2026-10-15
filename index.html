@@ -57,6 +57,14 @@
     letter-spacing: 0.01em;
   }
   .logo span { color: var(--mono-mute); font-family: var(--font-mono); font-size: 0.62rem; display:block; letter-spacing: 0.08em; margin-top:2px; }
+  .logo img { width: 24px; height: 24px; border-radius: 3px; display: block; }
+  .menu-toggle {
+    display:none;
+    background: transparent; border: 1px solid var(--ink);
+    font-family: var(--font-mono); font-size: 1.1rem;
+    padding: 6px 10px; cursor: pointer;
+  }
+  @media (max-width: 760px){ .menu-toggle{ display:block; } nav.links{ display:none; position:absolute; top:100%; left:0; right:0; background:var(--paper); border-bottom:1px solid var(--rule); flex-direction:column; padding:16px 28px; } nav.links.open{ display:flex; } }
   nav.links { display:flex; gap: 26px; }
   nav.links a { color: var(--ink-soft); text-decoration:none; font-size: 0.96rem; }
   nav.links a:hover { color: var(--rust); }
@@ -168,19 +176,39 @@
 </head>
 <body>
 
-<div class="strip"><div class="wrap"><b>Upcoming camp · 8–10 December 2026</b><span>Sound &amp; Machine Minds: a three-day AI and sound science camp for Primary 1–6.</span><a href="https://sound-machine-minds.sagelioncapital.org/">Find out more →</a></div></div>
+<section class="camp-promo" style="background: linear-gradient(135deg, #1a0f2e 0%, #2d1b4e 100%); color: #EDE7D9; padding: 56px 0;">
+    <div class="wrap">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;">
+        <div>
+          <div style="font-family: var(--font-mono); font-size: 0.78rem; color: #ffce32; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.08em;">Upcoming camp · 8–10 December 2026</div>
+          <h2 style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 16px; line-height: 1.1; color: #EDE7D9;">Sound &amp; Machine Minds</h2>
+          <p style="font-size: 1.1rem; color: #d4c9b8; max-width: 48ch; margin: 0 0 24px;">A no-stress, three-day AI and sound science camp for Primary 1–6. Children observe, experiment and collect data — then see what AI does with it.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://sound-machine-minds.sagelioncapital.org/" style="background: #ffce32; color: #1a0f2e;">Find out more →</a>
+          </div>
+        </div>
+        <figure style="margin: 0;">
+          <img src="/assets/sound-machine-minds-hero.jpg" alt="Sagelion Sound &amp; Machine Minds — Children AI Camp. Learn. Explore. Create. Have Fun!" style="width: 100%; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15);">
+        </figure>
+      </div>
+    </div>
+  </section>
 
 <header class="site">
   <div class="nav-inner">
-    <a class="logo" href="#top">Sagelion<span>AI EDUCATION &amp; ART STUDIO — SINGAPORE</span></a>
+    <a class="logo" href="/"><img src="/public/apple-touch-icon.png" alt="">Sagelion<span>AI EDUCATION &amp; ART STUDIO — SINGAPORE</span></a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" onclick="document.querySelector('nav.links').classList.toggle('open'); this.setAttribute('aria-expanded', document.querySelector('nav.links').classList.contains('open')); this.textContent = document.querySelector('nav.links').classList.contains('open') ? '✕' : '☰';">☰</button>
     <nav class="links">
-      <a href="#mission">Mission</a>
-      <a href="#pmet">For PMETs</a>
-      <a href="#programmes">Programmes</a>
-      <a href="#journal">Journal</a>
-      <a href="#support">Support</a>
+      <a href="/mission.html">Mission</a>
+      <a href="/for-pmets.html">For PMETs</a>
+      <a href="/programmes.html">Programmes</a>
+      <a href="/exhibition.html">Exhibition</a>
+      <a href="/studio.html">Studio</a>
+      <a href="/journal.html">Journal</a>
+      <a href="/leadership.html">Leadership</a>
+      <a href="/#support">Support</a>
     </nav>
-    <a class="nav-cta" href="#support">Fund a seat →</a>
+    <a class="nav-cta" href="/#support">Fund a seat →</a>
   </div>
 </header>
 
@@ -194,13 +222,13 @@
         <p class="lede">Mainly for PMETs in their 30s and 40s who can feel restructuring getting closer. Just as open to the deaf community, people with disabilities, and young seniors. Free, jargon-free, no sales pitch — donors cover the seat, we close the gap between worried and capable.</p>
         <div class="cta-row">
           <a class="btn btn-primary" href="#support">Support the work</a>
-          <a class="btn btn-secondary" href="#programmes">Join a free workshop</a>
+          <a class="btn btn-secondary" href="mailto:contact@sagelioncapital.org?subject=Next%20workshop">Get notified of open workshops</a>
         </div>
       </div>
       <div class="receipt">
         <div class="receipt-head">Sagelion — running total</div>
         <div class="ledger-row"><span class="label">People trained, hands-on</span><span class="figure">~80</span></div>
-        <div class="ledger-row"><span class="label">Next session</span><span class="figure">22 Oct</span></div>
+        <div class="ledger-row"><span class="label">Next open session</span><span class="figure">TBC</span></div>
         <div class="ledger-row"><span class="label">Charged to community learners</span><span class="figure">S$0</span></div>
         <div class="ledger-row"><span class="label">To overhead, ever</span><span class="figure">S$0</span></div>
       </div>
@@ -213,12 +241,12 @@
     <div class="wrap">
       <div class="next-card">
         <div style="max-width:60ch;">
-          <div class="when">Thursday 22 October 2026</div>
-          <h3>Next session, run with AWWA</h3>
-          <p>We're teaching this one with <a href="https://awwa.org.sg/our-services/rehab-and-day-care-centre/">AWWA's Rehab and Day Care Centre</a>, which supports seniors and people with physical disabilities through rehabilitation, day programmes, and caregiver support. Registration is handled by AWWA.</p>
-          <p style="margin-top:8px;font-size:0.88rem;">Centre: 126 Ang Mo Kio Ave 3, #01-1929, Singapore 560126. Want to hear about the sessions after this one? <a href="mailto:contact@sagelioncapital.org?subject=Next%20workshop">Get notified</a>.</p>
+          <div class="when">Thursday 22 October 2026 · AWWA participants only</div>
+          <h3>Next session, with AWWA</h3>
+          <p>We're teaching this one with <a href="https://awwa.org.sg/our-services/rehab-and-day-care-centre/">AWWA's Rehab and Day Care Centre</a>, which supports seniors and people with physical disabilities through rehabilitation, day programmes, and caregiver support. It's for AWWA participants only. If that's you, register on +65 6511 6790.</p>
+          <p style="margin-top:8px;font-size:0.92rem;">Not with AWWA? We haven't scheduled an open session yet. Tell us you're interested and you'll hear first.</p>
         </div>
-        <a class="btn btn-primary" href="#">Register through AWWA</a>
+        <a class="btn btn-primary" href="mailto:contact@sagelioncapital.org?subject=Next%20workshop">Get notified of open sessions</a>
       </div>
     </div>
   </section>
