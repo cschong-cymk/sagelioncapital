@@ -144,7 +144,7 @@
   .mission-ledger .figure { font-size: 0.8rem; align-self: flex-start; padding-top: 4px; }
 
   /* programmes */
-  .prog-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border:1px solid var(--rule); }
+  .prog-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px; background: var(--rule); border:1px solid var(--rule); }
   .prog-card { background: var(--paper); padding: 26px; }
   .prog-card .mark { font-family: var(--font-mono); color: var(--rust); font-size: 0.9rem; }
   .prog-card h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.25rem; margin: 10px 0 8px; }
@@ -296,7 +296,8 @@
   <section id="programmes">
     <div class="wrap">
       <div class="section-tag">What we do</div>
-      <h2>Three things, mostly.</h2>
+      <h2>Programmes for people who don't think of themselves as "tech people".</h2>
+      <p style="max-width:58ch;color:var(--ink-soft);margin:-8px 0 28px;">Everything here is donor-funded and hands-on. You'll use the tools, not watch slides about them.</p>
       <div class="prog-grid">
         <div class="prog-card">
           <img src="/assets/card-workforce-transition.jpg" alt="PMETs in a workforce transition workshop, working together around tables">
@@ -318,6 +319,18 @@
           <h3><a href="/programmes/ai-inspired-art.html" style="color:inherit;text-decoration:none;">AI-inspired art</a></h3>
           <p>We use AI to push our own work further. The hand is still in there somewhere — that's the point.</p>
           <a href="/programmes/ai-inspired-art.html" style="font-family:var(--font-mono);font-size:0.85rem;">Read more →</a>
+        </div>
+        <div class="prog-card">
+          <div class="mark">◈</div>
+          <h3><a href="/programmes.html#train" style="color:inherit;text-decoration:none;">Train-the-Trainer</a></h3>
+          <p>Become a confident facilitator for our community workshops. One session gets you ready to teach three of them — no coding or AI background needed.</p>
+          <a href="/programmes.html#train" style="font-family:var(--font-mono);font-size:0.85rem;">Read more →</a>
+        </div>
+        <div class="prog-card">
+          <div class="mark">◉</div>
+          <h3><a href="/programmes.html#operator" style="color:inherit;text-decoration:none;">OPERATOR</a></h3>
+          <p>The Enterprise AI Certification. 3 days, live multi-agent systems, real certification — for operations leads, analysts, and team leads.</p>
+          <a href="/programmes.html#operator" style="font-family:var(--font-mono);font-size:0.85rem;">Read more →</a>
         </div>
       </div>
     </div>
