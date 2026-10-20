@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI for Social Media &amp; Everyday Productivity — SaDeaf Workshop | Sagelion</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=Atkinson+Hyperlegible:wght@400;700&display=swap');
+
+  :root{
+    --paper: #EDE7D9;
+    --paper-deep: #E3D9C1;
+    --ink: #241F17;
+    --ink-soft: #4A4234;
+    --rule: #C3B692;
+    --rust: #A23B2E;
+    --pine: #3F5745;
+    --mono-mute: #6E6650;
+
+    --font-display: 'Newsreader', Georgia, serif;
+    --font-body: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.55;
+  }
+  img { max-width:100%; display:block; }
+  a { color: var(--rust); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--rust); outline-offset: 3px; }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+  .rule { border: none; border-top: 1px solid var(--rule); margin: 0; }
+
+  header.site {
+    position: sticky; top: 0; z-index: 20;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-inner {
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 16px 28px;
+    max-width: 1080px; margin: 0 auto;
+  }
+  .logo {
+    font-family: var(--font-display);
+    font-size: 1.3rem; font-weight: 600;
+    text-decoration:none; color: var(--ink);
+    letter-spacing: 0.01em;
+  }
+  .logo span { color: var(--mono-mute); font-family: var(--font-mono); font-size: 0.62rem; display:block; letter-spacing: 0.08em; margin-top:2px; }
+  .logo img { width: 24px; height: 24px; border-radius: 3px; display: block; }
+  .menu-toggle {
+    display:none;
+    background: transparent; border: 1px solid var(--ink);
+    font-family: var(--font-mono); font-size: 1.1rem;
+    padding: 6px 10px; cursor: pointer;
+  }
+  @media (max-width: 760px){ .menu-toggle{ display:block; } nav.links{ display:none; position:absolute; top:100%; left:0; right:0; background:var(--paper); border-bottom:1px solid var(--rule); flex-direction:column; padding:16px 28px; } nav.links.open{ display:flex; } }
+  nav.links { display:flex; gap: 26px; }
+  nav.links a { color: var(--ink-soft); text-decoration:none; font-size: 0.96rem; }
+  nav.links a:hover { color: var(--rust); }
+  .nav-cta {
+    font-family: var(--font-mono); font-size: 0.85rem;
+    background: var(--ink); color: var(--paper);
+    padding: 9px 16px; text-decoration:none; border-radius: 2px;
+    border: 1px solid var(--rule);
+    margin-left: 16px;
+  }
+  @media (max-width: 760px){ nav.links{ display:none; } }
+
+  .hero { padding: 64px 0 44px; }
+  .kicker { font-family: var(--font-mono); font-size: 0.78rem; color: var(--mono-mute); margin-bottom: 14px; }
+  .kicker::before { content: "// "; }
+  h1.headline {
+    font-family: var(--font-display); font-weight: 500;
+    font-size: clamp(2rem, 4vw, 2.9rem);
+    line-height: 1.15; margin: 0 0 20px; color: var(--ink);
+    max-width: 26ch;
+  }
+  .lede { font-size: 1.08rem; color: var(--ink-soft); max-width: 56ch; margin: 0 0 28px; }
+
+  section { padding: 52px 0; }
+  section.alt { background: var(--paper-deep); }
+  .section-tag { font-family: var(--font-mono); font-size: 0.76rem; color: var(--rust); margin-bottom: 10px; }
+  h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.4rem, 2.6vw, 1.9rem); margin: 0 0 20px; max-width: 34ch; color: var(--ink); }
+  h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.25rem; margin: 0 0 8px; color: var(--ink); }
+  p { margin: 0 0 16px; color: var(--ink-soft); max-width: 64ch; }
+  ul { margin: 0 0 18px; padding-left: 22px; color: var(--ink-soft); }
+  li { margin-bottom: 8px; max-width: 64ch; }
+  li strong { color: var(--ink); }
+
+  .btn { font-family: var(--font-body); font-weight: 700; text-decoration:none; padding: 13px 22px; border-radius: 2px; font-size: 0.97rem; display:inline-block; }
+  .btn-primary { background: var(--rust); color: var(--paper); }
+  .btn-secondary { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+  .cta-row { display:flex; gap: 14px; flex-wrap:wrap; margin-top: 22px; }
+
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    max-width: 72ch;
+    margin-bottom: 28px;
+  }
+  .meta-card {
+    background: var(--paper-deep);
+    border: 1px solid var(--rule);
+    padding: 18px 20px;
+  }
+  .meta-card .label {
+    font-family: var(--font-mono); font-size: 0.72rem; color: var(--mono-mute); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;
+  }
+  .meta-card .value { color: var(--ink); font-size: 1rem; }
+  @media (max-width: 640px){ .meta-grid { grid-template-columns: 1fr; } }
+
+  .module { padding: 22px 0; border-bottom: 1px solid var(--rule); }
+  .module:last-child { border-bottom: none; }
+  .module .length { font-family: var(--font-mono); font-size: 0.78rem; color: var(--pine); }
+  .module p:last-child { margin-bottom: 0; }
+
+  .checklist { list-style: none; padding-left: 0; }
+  .checklist li { position: relative; padding-left: 28px; }
+  .checklist li::before {
+    content: "☐"; position: absolute; left: 0; top: 0;
+    font-family: var(--font-mono); color: var(--mono-mute);
+  }
+
+  footer { padding: 50px 0 36px; border-top: 1px solid var(--rule); }
+  footer .foot-grid { display:flex; justify-content:space-between; flex-wrap:wrap; gap: 20px; align-items:flex-end; }
+  footer .fine { font-family: var(--font-mono); font-size: 0.78rem; color: var(--mono-mute); }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav-inner">
+    <a class="logo" href="/"><img src="/public/apple-touch-icon.png" alt="">Sagelion<span>AI EDUCATION &amp; ART STUDIO — SINGAPORE</span></a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" onclick="document.querySelector('nav.links').classList.toggle('open'); this.setAttribute('aria-expanded', document.querySelector('nav.links').classList.contains('open')); this.textContent = document.querySelector('nav.links').classList.contains('open') ? '✕' : '☰';">☰</button>
+    <nav class="links">
+      <a href="/mission.html">Mission</a>
+      <a href="/for-pmets.html">For PMETs</a>
+      <a href="/programmes.html">Programmes</a>
+      <a href="/exhibition.html">Exhibition</a>
+      <a href="/studio.html">Studio</a>
+      <a href="/journal.html">Journal</a>
+      <a href="/leadership.html">Leadership</a>
+      <a href="/#support">Support</a>
+    </nav>
+    <a class="nav-cta" href="/#support">Fund a seat →</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="kicker">Community workshop</div>
+      <h1 class="headline">AI for Social Media &amp; Everyday Productivity</h1>
+      <p class="lede">A half-day, hands-on workshop for the SaDeaf community. No jargon, no sales pitch — just practical AI tools for social media and daily life, with sign language interpreters throughout.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="mailto:contact@sagelioncapital.org?subject=SaDeaf%20workshop%20interest">Register interest</a>
+        <a class="btn btn-secondary" href="/#support">Support the work</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-tag">At a glance</div>
+      <div class="meta-grid">
+        <div class="meta-card">
+          <div class="label">Date</div>
+          <div class="value">12 December 2026</div>
+        </div>
+        <div class="meta-card">
+          <div class="label">Time</div>
+          <div class="value">1:00 PM – 5:00 PM</div>
+        </div>
+        <div class="meta-card">
+          <div class="label">Facilitators</div>
+          <div class="value">Meng Wee Tan &amp; Julie</div>
+        </div>
+        <div class="meta-card">
+          <div class="label">Assistant facilitators</div>
+          <div class="value">Sam Heng &amp; 2× sign language interpreters</div>
+        </div>
+        <div class="meta-card">
+          <div class="label">Expected size</div>
+          <div class="value">20–25 participants</div>
+        </div>
+        <div class="meta-card">
+          <div class="label">Logistics</div>
+          <div class="value">Projector provided; participants bring own laptop</div>
+        </div>
+      </div>
+      <p>Interpreters will be positioned with clear sightlines throughout the session. The workshop is designed for SaDeaf community members who want to use AI for social media and everyday productivity.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-tag">Agenda</div>
+      <h2>What we'll cover</h2>
+
+      <div class="module">
+        <h3>Module 1: Foundations — AI for Everyday Life <span class="length">30 mins</span></h3>
+        <ul>
+          <li><strong>Welcome &amp; setup:</strong> WiFi, BYO laptop check, interpreter sightlines.</li>
+          <li><strong>What is AI? No jargon:</strong> Level 1 AI (ChatGPT, Comet) vs Level 2 agentic AI (OpenClaw). What AI can and cannot do.</li>
+          <li><strong>Basic prompting:</strong> simple, visual prompting concepts for everyday tasks.</li>
+        </ul>
+      </div>
+
+      <div class="module">
+        <h3>Module 2: Talk — TikTok vs Instagram &amp; AI Tools <span class="length">30 mins</span></h3>
+        <ul>
+          <li>Platform introduction: audience, style, and content types.</li>
+          <li>How AI can help with captions, hooks, hashtags, and short-form video ideas.</li>
+          <li>Choose your track: <strong>TikTok</strong> or <strong>Instagram</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="module">
+        <h3>Module 3: Hands-On — Create Social Media Content with AI <span class="length">45 mins</span></h3>
+        <ul>
+          <li><strong>TikTok Track:</strong> generate video hooks, captions, and hashtag sets for a sample topic.</li>
+          <li><strong>Instagram Track:</strong> draft a carousel outline, caption, and hashtag set for a sample topic.</li>
+          <li>Volunteers share what they created; tips for posting and iterating.</li>
+        </ul>
+      </div>
+
+      <div class="module">
+        <h3>☕ Mid-session break <span class="length">30 mins</span></h3>
+      </div>
+
+      <div class="module">
+        <h3>Module 4: Talk / Demo — Dola, Your AI Calendar Assistant <span class="length">15 mins</span></h3>
+        <ul>
+          <li>What Dola is and how it handles scheduling, reminders, and calendar management via chat or voice.</li>
+          <li>Live demo: add an event with natural language, set a recurring reminder, and show follow-up understanding.</li>
+        </ul>
+      </div>
+
+      <div class="module">
+        <h3>Module 5: Hands-On — Set Up Dola <span class="length">60 mins</span></h3>
+        <ul>
+          <li>Connect Dola to your calendar (Google / Outlook / Apple where supported).</li>
+          <li>Practice creating events and reminders; troubleshoot common setup issues.</li>
+          <li>Share one practical use case and discuss when AI reminders help versus a human nudge.</li>
+        </ul>
+      </div>
+
+      <div class="module">
+        <h3>Module 6: Staying Safe &amp; Smart Online <span class="length">15 mins</span></h3>
+        <ul>
+          <li>How to spot wrong or misleading AI output and fact-check before posting.</li>
+          <li>Privacy basics: what not to share with AI tools; keeping personal and SaDeaf-related information safe.</li>
+        </ul>
+      </div>
+
+      <div class="module">
+        <h3>Module 7: Wrap-Up, Feedback &amp; Next Steps <span class="length">15 mins</span></h3>
+        <ul>
+          <li>Open Q&amp;A, quick feedback, and one thing each person will try this week.</li>
+          <li>MOS Burger &amp; networking.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-tag">Before the day</div>
+      <h2>Pre-workshop facilitator briefing</h2>
+      <p><strong>Date:</strong> 4 February 2027 · <strong>Time:</strong> 7:30 PM</p>
+      <p><strong>Attendees:</strong> Meng Wee Tan, Julie, Sam Heng, volunteers, and sign language interpreters.</p>
+      <ul>
+        <li>Workshop run-through and role confirmations.</li>
+        <li>Accessibility walkthrough for SaDeaf participants.</li>
+        <li><strong>Sign-Language Awareness Programme Training</strong> (~30 mins): basic deaf-culture awareness, interpreter etiquette, visual communication tips, and how to support participants effectively.</li>
+        <li>Tech check: projector, WiFi, BYO laptop logistics, and Dola demo accounts.</li>
+        <li>Final Q&amp;A and contingency planning.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-tag">Action items</div>
+      <h2>Checklist</h2>
+      <ul class="checklist">
+        <li><strong>Sam Heng:</strong> Confirm 12 Dec venue/projector, arrange interpreters, inform participants to BYO laptop.</li>
+        <li><strong>Julie:</strong> Coordinate MOS burger order and prepare demo accounts/content prompts for both TikTok and Instagram tracks.</li>
+        <li><strong>Meng Wee:</strong> Prepare Dola setup guide, sample prompts, and 1-page cheat sheet for participants.</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <hr class="rule" style="margin-bottom:28px;">
+    <div class="foot-grid">
+      <div>
+        <div class="logo" style="margin-bottom:6px;">Sagelion</div>
+        <div class="fine">AI-inspired art, education, and events — SageLion Capital Ltd.</div>
+      </div>
+      <div class="fine">Crafted with care — Thorne 🌒</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
