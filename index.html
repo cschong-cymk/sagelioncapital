@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sagelion — Steady yourself. Learn the tools.</title>
+<script src="https://js.stripe.com/dahlia/stripe.js"></script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=Atkinson+Hyperlegible:wght@400;700&display=swap');
 
@@ -226,6 +227,12 @@
   .w-20 { width: 20%; }
   .w-10 { width: 10%; }
 
+  /* embedded stripe checkout */
+  .checkout-card { border: 1px solid var(--rule); background: var(--paper); padding: 28px; margin-top: 28px; max-width: 640px; }
+  .checkout-card h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.35rem; margin: 0 0 6px; }
+  .checkout-card p { color: var(--ink-soft); margin: 0 0 18px; }
+  .checkout-error { color: var(--rust); font-family: var(--font-mono); font-size: 0.85rem; margin-top: 12px; }
+
 </style>
 </head>
 <body>
@@ -372,6 +379,12 @@
         <div class="tier-card"><div class="amt">S$100</div><h4>Patron</h4><p>Pays for a full workshop seat for one learner.</p><a class="btn btn-secondary" href="https://buy.stripe.com/5kQ9ATdUg0ga5mU60r8Vi01">Become a patron</a></div>
         <div class="tier-card"><div class="amt">Any</div><h4>Benefactor</h4><p>Underwrites a whole community night: venue, prints, the lot.</p><a class="btn btn-secondary" href="mailto:contact@sagelioncapital.org?subject=Benefactor">Become a benefactor</a></div>
       </div>
+      <div class="checkout-card">
+        <h3>Or pay by card</h3>
+        <p>Enter any amount and pay securely with Stripe.</p>
+        <div id="checkout-form"></div>
+        <p id="checkout-error" class="checkout-error"></p>
+      </div>
     </div>
   </section>
 
@@ -419,5 +432,55 @@
   </div>
 </footer>
 
+<script>
+  (async function () {
+    const publishableKey = "pk_test_...";
+    if (!publishableKey || publishableKey === "pk_test_...") {
+      console.error("Stripe publishable key not configured.");
+      return;
+    }
+
+    const stripe = Stripe(publishableKey);
+    const appearance = {
+      theme: "stripe",
+      labels: "auto",
+      inputs: "spaced",
+      variables: {
+        borderRadius: "4px",
+        colorBackground: "#ffffff",
+        colorDanger: "#df1b41",
+        colorPrimary: "#0570de",
+        colorSuccess: "#00c853",
+        colorText: "#30313d",
+        fontFamily: "default",
+        fontSizeBase: "16px",
+        spacingUnit: "4px"
+      }
+    };
+
+    try {
+      const response = await fetch("/api/create-checkout-session", { method: "POST" });
+      if (!response.ok) throw new Error("Failed to start checkout");
+      const { client_secret } = await response.json();
+      const checkout = stripe.initCheckoutFormSdk({ clientSecret: client_secret, appearance });
+      const form = checkout.createForm({ layout: "expanded" });
+      form.mount("#checkout-form");
+      const loadActionsResult = await checkout.loadActions();
+      if (loadActionsResult.type === "success") {
+        form.on("confirm", async (event) => {
+          try {
+            await loadActionsResult.actions.confirm({ formConfirmEvent: event });
+          } catch (error) {
+            console.error("Payment confirmation error:", error);
+            document.getElementById("checkout-error").textContent = error.message || "Payment could not be confirmed.";
+          }
+        });
+      }
+    } catch (error) {
+      console.error("Checkout setup error:", error);
+      document.getElementById("checkout-error").textContent = "Checkout is temporarily unavailable.";
+    }
+  })();
+</script>
 </body>
 </html>
