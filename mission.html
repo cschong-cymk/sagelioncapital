@@ -4,15 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mission — Sagelion</title>
-<meta name="description" content="Sagelion is a donor-funded Singapore studio teaching AI for free to PMETs, the Deaf community, people with disabilities, and young seniors.">
-<meta property="og:title" content="Mission — Sagelion">
-<meta property="og:description" content="Sagelion is a donor-funded Singapore studio teaching AI for free to PMETs, the Deaf community, people with disabilities, and young seniors.">
-<meta property="og:type" content="website">
+<meta name="description" content="Sagelion is a donor-funded Singapore studio teaching AI for free to PMETs, the deaf community, people with disabilities, and young seniors, with free talks on health and home safety.">
 <link rel="canonical" href="https://sagelioncapital.org/mission.html">
-<link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/public/apple-touch-icon.png">
-<link rel="manifest" href="/public/site.webmanifest">
+<meta property="og:title" content="Mission — Sagelion">
+<meta property="og:description" content="Sagelion is a donor-funded Singapore studio teaching AI for free to PMETs, the deaf community, people with disabilities, and young seniors, with free talks on health and home safety.">
+<meta property="og:type" content="website">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=Atkinson+Hyperlegible:wght@400;700&display=swap');
 
@@ -42,13 +38,13 @@
     line-height: 1.55;
   }
   img { max-width:100%; display:block; }
-  video { max-width:100%; display:block; }
   a { color: var(--rust); }
   a:focus-visible, button:focus-visible { outline: 2px solid var(--rust); outline-offset: 3px; }
 
   .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
   .rule { border: none; border-top: 1px solid var(--rule); margin: 0; }
 
+  /* ---------- NAV ---------- */
   header.site {
     position: sticky; top: 0; z-index: 20;
     background: var(--paper);
@@ -73,191 +69,263 @@
     font-family: var(--font-mono); font-size: 0.85rem;
     background: var(--ink); color: var(--paper);
     padding: 9px 16px; text-decoration:none; border-radius: 2px;
-    margin-left: 12px;
   }
-  .menu-toggle {
-    display:none;
-    background: transparent; border: 1px solid var(--ink);
-    color: var(--ink); font-family: var(--font-mono); font-size: 1rem;
-    padding: 6px 10px; border-radius: 2px; cursor: pointer;
-  }
-  @media (max-width: 760px){
-    .menu-toggle { display:block; }
-    nav.links {
-      display:none;
-      position: absolute; top: 100%; left: 0; right: 0;
-      background: var(--paper); border-bottom: 1px solid var(--rule);
-      flex-direction: column; gap: 0; padding: 8px 0;
-    }
-    nav.links.open { display:flex; }
-    nav.links a { padding: 12px 28px; border-top: 1px solid var(--rule); }
-    nav.links a:first-child { border-top: none; }
-    header.site { position: relative; }
-  }
+  @media (max-width: 760px){ nav.links{ display:none; } }
 
-  section { padding: 64px 0; }
-  section.alt { background: var(--paper-deep); }
-  .section-tag { font-family: var(--font-mono); font-size: 0.76rem; color: var(--rust); margin-bottom: 10px; }
-  .section-tag::before { content: "// "; }
-  h1.page-title {
-    font-family: var(--font-display); font-weight: 500;
-    font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 1.12; margin: 0 0 22px; color: var(--ink); max-width: 26ch;
-  }
-  h2 {
-    font-family: var(--font-display); font-weight: 500;
-    font-size: clamp(1.35rem, 2.4vw, 1.9rem);
-    margin: 0 0 20px; max-width: 34ch; color: var(--ink);
-  }
-  h3 {
-    font-family: var(--font-display); font-weight: 500;
-    font-size: 1.25rem; margin: 0 0 10px; color: var(--ink);
-  }
-  p.lead {
-    font-size: 1.1rem; color: var(--ink-soft); max-width: 58ch; margin: 0 0 28px;
-  }
-  p { max-width: 64ch; }
-  ul, ol { padding-left: 22px; margin: 0 0 22px; color: var(--ink-soft); }
-  li { margin-bottom: 8px; max-width: 60ch; }
-  strong { color: var(--ink); }
-
+  /* ---------- HERO ---------- */
   .hero { padding: 76px 0 56px; }
-  .hero-inline-img { width: 100%; max-height: 520px; object-fit: cover; object-position: top center; border: 1px solid var(--rule); margin-top: 28px; display: block; }
-  .cta-row { display:flex; gap: 14px; flex-wrap:wrap; margin-top: 28px; }
+  .hero-grid { display:grid; grid-template-columns: 1.25fr 0.85fr; gap: 56px; align-items:start; }
+  .kicker { font-family: var(--font-mono); font-size: 0.78rem; color: var(--mono-mute); margin-bottom: 18px; }
+  .kicker::before { content: "// "; }
+  h1.headline {
+    font-family: var(--font-display); font-weight: 500;
+    font-size: clamp(2.1rem, 4.4vw, 3.35rem);
+    line-height: 1.12; margin: 0 0 22px; color: var(--ink);
+  }
+  .hero p.lede { font-size: 1.12rem; color: var(--ink-soft); max-width: 46ch; margin: 0 0 30px; }
+  .cta-row { display:flex; gap: 14px; flex-wrap:wrap; }
   .btn { font-family: var(--font-body); font-weight: 700; text-decoration:none; padding: 13px 22px; border-radius: 2px; font-size: 0.97rem; display:inline-block; }
   .btn-primary { background: var(--rust); color: var(--paper); }
   .btn-secondary { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
 
-  .ledger-row { display:flex; justify-content:space-between; align-items:baseline; padding: 18px 0; border-bottom: 1px solid var(--rule); }
+  /* receipt-style stat card */
+  .receipt {
+    background: var(--paper-deep);
+    border: 1px solid var(--rule);
+    padding: 26px 24px;
+    transform: rotate(-0.6deg);
+    box-shadow: 3px 4px 0 rgba(36,31,23,0.06);
+  }
+  .receipt-head { font-family: var(--font-mono); font-size: 0.72rem; color: var(--mono-mute); border-bottom: 1px dashed var(--rule); padding-bottom: 12px; margin-bottom: 6px; }
+  .ledger-row { display:flex; justify-content:space-between; align-items:baseline; padding: 11px 0; border-bottom: 1px solid var(--rule); }
   .ledger-row:last-child { border-bottom: none; }
-  .ledger-row .label { font-family: var(--font-display); font-size: 1.15rem; color: var(--ink); display:block; }
-  .ledger-row .note { color: var(--ink-soft); font-size: 0.94rem; display:block; margin-top: 4px; max-width: 52ch; }
-  .ledger-row .figure { font-family: var(--font-mono); font-size: 0.85rem; color: var(--pine); align-self: flex-start; padding-top: 4px; }
+  .ledger-row .label { font-size: 0.92rem; color: var(--ink-soft); }
+  .ledger-row .figure { font-family: var(--font-mono); font-size: 1rem; color: var(--pine); font-weight: 500; }
 
-  .card-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border:1px solid var(--rule); margin-top: 28px; }
-  .card { background: var(--paper); padding: 26px; }
-  .card .mark { font-family: var(--font-mono); color: var(--rust); font-size: 0.9rem; }
-  .card h3 { margin: 10px 0 8px; }
-  .card p { color: var(--ink-soft); font-size: 0.95rem; margin:0 0 14px; }
-  .card a { font-family: var(--font-mono); font-size: 0.85rem; }
-  @media (max-width: 760px){ .card-grid{ grid-template-columns: 1fr; } }
+  /* ---------- SECTION HEADERS ---------- */
+  section { padding: 64px 0; }
+  section.alt { background: var(--paper-deep); }
+  .section-tag { font-family: var(--font-mono); font-size: 0.76rem; color: var(--rust); margin-bottom: 10px; }
+  h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.5rem, 2.8vw, 2.1rem); margin: 0 0 28px; max-width: 30ch; color: var(--ink); }
 
+  /* mission ledger rows */
+  .mission-ledger .ledger-row { padding: 22px 0; }
+  .mission-ledger .label { font-family: var(--font-display); font-size: 1.15rem; color: var(--ink); display:block; }
+  .mission-ledger .note { color: var(--ink-soft); font-size: 0.94rem; display:block; margin-top: 4px; max-width: 52ch; }
+  .mission-ledger .figure { font-size: 0.8rem; align-self: flex-start; padding-top: 4px; }
+
+  /* programmes */
+  .prog-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border:1px solid var(--rule); }
+  .prog-card { background: var(--paper); padding: 26px; }
+  .prog-card .mark { font-family: var(--font-mono); color: var(--rust); font-size: 0.9rem; }
+  .prog-card h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.25rem; margin: 10px 0 8px; }
+  .prog-card p { color: var(--ink-soft); font-size: 0.95rem; margin:0; }
+  @media (max-width: 760px){ .prog-grid{ grid-template-columns: 1fr; } .hero-grid{ grid-template-columns: 1fr; } }
+
+  /* catalogue */
+  .cat-table { width:100%; border-collapse: collapse; }
+  .cat-table th { text-align:left; font-family: var(--font-mono); font-size: 0.72rem; color: var(--mono-mute); font-weight:400; padding: 0 0 10px; border-bottom: 1px solid var(--ink); }
+  .cat-table td { padding: 16px 0; border-bottom: 1px solid var(--rule); vertical-align: middle; }
+  .cat-thumb { width:64px; height:64px; object-fit:cover; border: 1px solid var(--rule); }
+  .cat-no { font-family: var(--font-mono); color: var(--mono-mute); font-size:0.85rem; }
+  .cat-title { font-family: var(--font-display); font-size: 1.05rem; }
+  .cat-meta { color: var(--ink-soft); font-size: 0.86rem; }
+  .cat-table tr:hover td { background: var(--paper-deep); }
+
+  /* donation ledger */
+  .fund-table { width:100%; border-collapse: collapse; margin-bottom: 40px; }
+  .fund-table td { padding: 10px 0; }
+  .fund-bar-row td:first-child { width: 140px; font-family: var(--font-mono); font-size: 0.88rem; color: var(--pine); }
+  .fund-bar-track { background: var(--paper); border: 1px solid var(--rule); height: 10px; position:relative; }
+  .fund-bar-fill { position:absolute; left:0; top:0; bottom:0; background: var(--pine); }
+  .fund-bar-row td:last-child { width: 220px; padding-left: 16px; color: var(--ink-soft); font-size: 0.88rem; }
+
+  .tier-grid { display:grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+  .tier-card { border: 1px solid var(--ink); padding: 22px; background: var(--paper); }
+  .tier-card .amt { font-family: var(--font-mono); font-size: 1.3rem; color: var(--rust); }
+  .tier-card h4 { font-family: var(--font-display); font-weight:500; margin: 6px 0 8px; font-size:1.1rem; }
+  .tier-card p { font-size: 0.9rem; color: var(--ink-soft); margin: 0 0 16px; }
+  @media (max-width:760px){ .tier-grid{ grid-template-columns:1fr; } }
+
+  /* journal */
   .journal-list { display:flex; flex-direction:column; }
   .journal-item { display:grid; grid-template-columns: 110px 1fr; gap: 20px; padding: 22px 0; border-bottom: 1px solid var(--rule); }
   .journal-item .date { font-family: var(--font-mono); font-size: 0.78rem; color: var(--mono-mute); padding-top: 4px; }
   .journal-item h3 { font-family: var(--font-display); font-weight:500; font-size: 1.15rem; margin: 0 0 6px; }
   .journal-item p { color: var(--ink-soft); font-size: 0.93rem; margin:0; max-width: 62ch; }
 
-  .journal-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
-  .journal-card { background: var(--paper-deep); border: 1px solid var(--rule); }
-  .journal-card img { width:100%; aspect-ratio: 16/10; object-fit:cover; border-bottom: 1px solid var(--rule); }
-  .journal-card-body { padding: 18px; }
-  .journal-card-body .date { font-family: var(--font-mono); font-size: 0.72rem; color: var(--mono-mute); margin-bottom: 6px; }
-  .journal-card-body h3 { font-family: var(--font-display); font-weight:500; font-size: 1.15rem; margin: 0 0 8px; }
-  .journal-card-body h3 a { color: inherit; text-decoration:none; }
-  .journal-card-body h3 a:hover { color: var(--rust); }
-  .journal-card-body p { color: var(--ink-soft); font-size: 0.92rem; margin:0; }
-  @media (max-width: 760px){ .journal-grid{ grid-template-columns: 1fr; } }
-
-  .article-body { max-width: 680px; }
-  .article-body p { color: var(--ink-soft); margin-bottom: 18px; }
-  .article-meta { font-family: var(--font-mono); font-size: 0.78rem; color: var(--mono-mute); margin-bottom: 22px; }
-  .article-meta .tag {
-    background: var(--paper-deep); border: 1px solid var(--rule);
-    padding: 2px 8px; border-radius: 2px; margin-right: 8px; color: var(--rust);
-  }
-  .article-hero-img, .article-inline-img {
-    width:100%; max-height: 480px; object-fit: cover; border: 1px solid var(--rule); margin: 28px 0;
-  }
-  .video-pair { display:grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin: 28px 0; }
-  .video-pair video { width:100%; border: 1px solid var(--rule); }
-
-  .cat-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 28px; margin-top: 32px; }
-  .cat-item { background: var(--paper-deep); border: 1px solid var(--rule); padding: 16px; }
-  .cat-item img { width:100%; aspect-ratio: 1/1; object-fit:cover; border: 1px solid var(--rule); margin-bottom: 14px; }
-  .cat-item .cat-no { font-family: var(--font-mono); font-size: 0.72rem; color: var(--mono-mute); margin-bottom: 4px; }
-  .cat-item .cat-title { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 4px; }
-  .cat-item .cat-meta { color: var(--ink-soft); font-size: 0.85rem; }
-  .cat-item .cat-note { display:inline-block; font-family: var(--font-mono); font-size: 0.68rem; color: var(--rust); border: 1px solid var(--rule); padding: 1px 5px; margin-left: 6px; }
-
   footer { padding: 50px 0 36px; border-top: 1px solid var(--rule); }
   footer .foot-grid { display:flex; justify-content:space-between; flex-wrap:wrap; gap: 20px; align-items:flex-end; }
   footer .fine { font-family: var(--font-mono); font-size: 0.78rem; color: var(--mono-mute); }
-</style>
+
+  .strip { background: var(--ink); color: var(--paper); font-size: 0.9rem; }
+  .strip .wrap { padding-top:9px; padding-bottom:9px; display:flex; gap:10px; flex-wrap:wrap; align-items:baseline; justify-content:center; text-align:center; }
+  .strip b { font-family: var(--font-mono); font-weight:500; font-size:0.78rem; color:#E7B9A8; }
+  .strip a { color: var(--paper); }
+  .next { padding: 36px 0; border-bottom:1px solid var(--rule); }
+  .next-card { display:flex; gap:28px; align-items:center; justify-content:space-between; flex-wrap:wrap; background: var(--paper-deep); border:1px solid var(--rule); padding: 22px 26px; }
+  .next-card .when { font-family: var(--font-mono); color: var(--rust); font-size:0.85rem; margin-bottom:4px; }
+  .next-card h3 { font-family: var(--font-display); font-weight:500; font-size:1.35rem; margin:0 0 4px; }
+  .next-card p { margin:0; color:var(--ink-soft); font-size:0.94rem; }
+  .quote { font-family: var(--font-display); font-style: italic; font-size: clamp(1.8rem, 3.6vw, 2.6rem); line-height:1.2; margin: 0 0 18px; max-width: 22ch; }
+  .also { margin-top: 22px; color: var(--ink-soft); font-size: 0.95rem; max-width: 70ch; }
+
+  /* nav tweaks */
+  nav.links { align-items:center; }
+  details.about { position:relative; }
+  details.about summary { list-style:none; cursor:pointer; color: var(--ink-soft); font-size:0.96rem; }
+  details.about summary::-webkit-details-marker { display:none; }
+  details.about summary::after { content:" ▾"; font-size:0.75rem; }
+  details.about .menu { position:absolute; right:0; top:calc(100% + 10px); background:var(--paper); border:1px solid var(--rule); padding:8px 0; min-width:150px; box-shadow:3px 4px 0 rgba(36,31,23,0.06); }
+  details.about .menu a { display:block; padding:8px 16px; }
+  @media (max-width: 760px){
+    .nav-inner{ flex-wrap:wrap; gap:10px; }
+    nav.links{ display:flex; order:3; width:100%; overflow-x:auto; gap:18px; padding-bottom:4px; }
+    details.about .menu{ left:0; right:auto; }
+  }
+  .strip { background: var(--ink); color: var(--paper); font-size: 0.9rem; }
+  .strip .wrap { padding-top:9px; padding-bottom:9px; display:flex; gap:10px; flex-wrap:wrap; align-items:baseline; justify-content:center; text-align:center; }
+  .strip b { font-family: var(--font-mono); font-weight:500; font-size:0.78rem; color:#E7B9A8; }
+  .strip a { color: var(--paper); }
+  .photo { margin:0; border:1px solid var(--rule); }
+  .photo img { width:100%; height:auto; }
+  .door-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  @media (max-width:980px){ .door-grid{ grid-template-columns:1fr; } }
+  .door { border:1px solid var(--ink); background: var(--paper); padding: 24px; }
+  .door h3 { font-family: var(--font-display); font-weight:500; font-size:1.4rem; margin: 6px 0 8px; }
+  .door > p { color: var(--ink-soft); margin: 0 0 14px; }
+  .tag { font-family: var(--font-mono); font-size:0.74rem; padding:2px 8px; border:1px solid var(--pine); color: var(--pine); border-radius:2px; white-space:nowrap; }
+  .events .what b .tag { margin-left:8px; vertical-align:middle; }
+  .tag.paid { border-color: var(--rust); color: var(--rust); }
+  .door .ledger-row .label a { color: var(--ink); text-decoration-color: var(--rule); text-underline-offset:3px; }
+  .door .ledger-row .label small { display:block; color: var(--ink-soft); font-size:0.84rem; margin-top:2px; }
+  .note-line { font-size:0.86rem; color: var(--ink-soft); margin: 14px 0 0; }
+  .events .ledger-row { padding: 18px 0; gap: 20px; }
+  .events .when { font-family: var(--font-mono); font-size:0.82rem; color: var(--rust); min-width: 150px; }
+  .events .what { flex:1; }
+  .events .what b { font-family: var(--font-display); font-weight:500; font-size:1.1rem; display:block; }
+  .events .what span { color: var(--ink-soft); font-size:0.92rem; }
+  @media (max-width:760px){ .events .ledger-row{ flex-direction:column; gap:4px; } }
+  .quote { font-family: var(--font-display); font-style: italic; font-size: clamp(1.8rem, 3.6vw, 2.6rem); line-height:1.2; margin: 0 0 18px; max-width: 22ch; }
+  .thumbs { display:flex; gap:14px; margin: 22px 0 22px; flex-wrap:wrap; }
+  .thumbs img { width:150px; height:150px; object-fit:cover; border:1px solid var(--rule); }
+  .tier-card .btn { display:inline-block; }
+  .foot-cols { display:grid; grid-template-columns: repeat(3, auto); gap: 40px; justify-content:space-between; margin-bottom: 28px; }
+  @media (max-width:760px){ .foot-cols{ grid-template-columns:1fr 1fr; } }
+  .foot-cols h5 { font-family: var(--font-mono); font-size:0.74rem; color: var(--mono-mute); font-weight:400; margin:0 0 10px; }
+  .foot-cols a { display:block; color: var(--ink-soft); text-decoration:none; font-size:0.93rem; padding:3px 0; }
+  .foot-cols a:hover { color: var(--rust); }
+  .logo { display:flex; align-items:center; gap:10px; }
+  .logo-mark { width:36px; height:36px; border-radius:8px; flex:none; }
+  .logo-text { display:block; }
+  .logo-text span { color: var(--mono-mute); font-family: var(--font-mono); font-size: 0.62rem; display:block; letter-spacing: 0.08em; margin-top:2px; font-weight:400; }
+
+.page-head { padding: 64px 0 36px; }
+  .page-head p.lede { font-size:1.1rem; color:var(--ink-soft); max-width:56ch; margin:0; }
+  .spec { background: var(--paper-deep); border:1px solid var(--rule); padding: 8px 24px; margin: 0 0 36px; }
+  .spec .ledger-row .figure { color: var(--ink); text-align:right; }
+  </style>
 </head>
 <body>
 
 <header class="site">
   <div class="nav-inner">
-    <a class="logo" href="/">Sagelion<span>AI EDUCATION &amp; ART STUDIO — SINGAPORE</span></a>
-    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" onclick="document.querySelector('nav.links').classList.toggle('open'); this.setAttribute('aria-expanded', document.querySelector('nav.links').classList.contains('open')); this.textContent = document.querySelector('nav.links').classList.contains('open') ? '✕' : '☰';">☰</button>
+    <a class="logo" href="https://sagelioncapital.org/"><img class="logo-mark" src="https://sagelioncapital.org/public/apple-touch-icon.png" alt="" width="36" height="36"><span class="logo-text">Sagelion<span>AI EDUCATION &amp; ART STUDIO — SINGAPORE</span></span></a>
     <nav class="links">
-      <a href="/mission.html">Mission</a>
-      <a href="/for-pmets.html">For PMETs</a>
-      <a href="/programmes.html">Programmes</a>
-      <a href="/exhibition.html">Exhibition</a>
-      <a href="/studio.html">Studio</a>
-      <a href="/journal.html">Journal</a>
-      <a href="/leadership.html">Leadership</a>
-      <a href="/#support">Support</a>
+      <a href="https://sagelioncapital.org/for-pmets.html">For PMETs</a>
+      <a href="https://sagelioncapital.org/programmes.html">Programmes</a>
+      <a href="https://sagelioncapital.org/exhibition.html">Exhibition</a>
+      <a href="https://sagelioncapital.org/journal.html">Journal</a>
+      <details class="about"><summary>About</summary>
+        <div class="menu">
+          <a href="https://sagelioncapital.org/mission.html">Mission</a>
+          <a href="https://sagelioncapital.org/studio.html">Studio</a>
+          <a href="https://sagelioncapital.org/leadership.html">Leadership</a>
+        </div>
+      </details>
     </nav>
-    <a class="nav-cta" href="/#support">Fund a seat →</a>
+    <a class="nav-cta" href="https://sagelioncapital.org/#support">Fund a seat →</a>
   </div>
 </header>
 
-<main>
-<section class="hero">
-  <div class="wrap">
-    <div class="section-tag">Mission</div>
-    <h1 class="page-title">Restructuring doesn't send a memo first.</h1>
-    <p class="lead">We want people to see it coming and have somewhere to go. Sagelion is a donor-funded studio in Singapore that teaches AI — free — to the people the tech rollout leaves behind.</p>
-    <figure class="hero-figure" style="margin-top: 28px;">
-      <img class="hero-inline-img" src="/assets/mission-hero-trex.jpg" alt="A person in an inflatable T-rex costume sitting in an office — a humorous take on someone who got restructured out of a job">
-      <figcaption>Sometimes restructuring makes you feel like the only dinosaur in the room. We get it. That's exactly who we're here for.</figcaption>
-    </figure>
-  </div>
-</section>
+<main id="top">
 
-<section class="alt">
-  <div class="wrap">
-    <h2>What we believe</h2>
-    <div class="ledger-row">
-      <span><span class="label">Built for real people</span><span class="note">Mostly PMETs feeling the restructuring pressure. We're just as glad to have the deaf community, people with disabilities, and young seniors in the room. Everyone sits at the same table.</span></span>
-      <span class="figure">01</span>
+  <section class="page-head">
+    <div class="wrap">
+      <div class="section-tag">Mission</div>
+      <h1 class="headline">Restructuring doesn't send a memo first.</h1>
+      <p class="lede">We want people to see it coming and have somewhere to go. Sagelion is a donor-funded studio in Singapore that teaches AI, free, to the people the tech rollout leaves behind, and runs free talks on looking after your body, your mind and your home.</p>
     </div>
-    <div class="ledger-row">
-      <span><span class="label">Rigour, not reassurance</span><span class="note">Run by people who've sat through real restructurings. We teach what actually holds up — practical skills, honest limits, and no pep talks about "the future of work."</span></span>
-      <span class="figure">02</span>
+    <div class="wrap" style="margin-top:36px;">
+      <figure class="photo"><img src="https://sagelioncapital.org/assets/mission-hero-trex.jpg" alt="A person in an inflatable T-rex costume sitting in an office, a humorous take on someone who got restructured out of a job"></figure>
+      <p class="note-line">Sometimes restructuring makes you feel like the only dinosaur in the room. We get it. That's exactly who we're here for.</p>
     </div>
-    <div class="ledger-row">
-      <span><span class="label">Free, and it stays free</span><span class="note">Donors fund every seat. No one we serve ever pays to learn. We steward every dollar so it reaches the people in the room.</span></span>
-      <span class="figure">03</span>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <div class="wrap">
-    <h2>Why this exists</h2>
-    <p>PMETs are getting the sharp end of this — roles reshaped or cut, often with little warning. Our founders spent 25 to 37 years in finance and tech, watching companies restructure from the inside. Sagelion is them putting that experience to use for the people it's actually happening to.</p>
-    <p>We don't think everyone needs to become an engineer. We think they need to be the person in the room who isn't afraid of the tools — who can read the risk early, build a small working toolkit, and leave with proof, not promises.</p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="/programmes.html">See the programmes</a>
-      <a class="btn btn-secondary" href="/for-pmets.html">For PMETs</a>
+  <hr class="rule">
+
+  <section>
+    <div class="wrap">
+      <div class="section-tag">What we believe</div>
+      <div class="mission-ledger">
+        <div class="ledger-row">
+          <span><span class="label">Built for real people</span><span class="note">Mostly PMETs feeling the restructuring pressure. We're just as glad to have the deaf community, people with disabilities, and young seniors in the room. Everyone sits at the same table.</span></span>
+          <span class="figure">01</span>
+        </div>
+        <div class="ledger-row">
+          <span><span class="label">Rigour, not reassurance</span><span class="note">Run by people who've sat through real restructurings. We teach what actually holds up: practical skills, honest limits, and no pep talks about "the future of work."</span></span>
+          <span class="figure">02</span>
+        </div>
+        <div class="ledger-row">
+          <span><span class="label">Free for the people we serve</span><span class="note">Donors fund every community workshop and talk seat, so no learner pays. Two things do cost money, and we label them clearly: OPERATOR, our professional certification, and the children's camp. We steward every dollar so it reaches the people in the room.</span></span>
+          <span class="figure">03</span>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-tag">Why this exists</div>
+      <h2>PMETs are getting the sharp end of this.</h2>
+      <p style="max-width:62ch;color:var(--ink-soft);margin:0 0 16px;">Roles reshaped or cut, often with little warning. Our founders spent 25 to 37 years in finance and tech, watching companies restructure from the inside. Sagelion is them putting that experience to use for the people it's actually happening to.</p>
+      <p style="max-width:62ch;color:var(--ink-soft);margin:0 0 28px;">We don't think everyone needs to become an engineer. We think they need to be the person in the room who isn't afraid of the tools: someone who can read the risk early, build a small working toolkit, and leave with proof, not promises.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://sagelioncapital.org/programmes.html">See the programmes</a>
+        <a class="btn btn-secondary" href="https://sagelioncapital.org/for-pmets.html">For PMETs</a>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer>
   <div class="wrap">
     <hr class="rule" style="margin-bottom:28px;">
+    <div class="foot-cols">
+      <div><h5>Learn</h5>
+        <a href="https://sagelioncapital.org/for-pmets.html">For PMETs</a>
+        <a href="https://sagelioncapital.org/programmes.html">Programmes</a>
+        <a href="https://sagelioncapital.org/programmes.html#train">Train-the-Trainer</a>
+        <a href="https://sagelioncapital.org/programmes.html#operator">OPERATOR</a>
+        <a href="https://sagelioncapital.org/sadeaf-workshop.html">SaDeaf workshop</a>
+        <a href="https://sound-machine-minds.sagelioncapital.org/">Children AI Camp</a></div>
+      <div><h5>The art</h5>
+        <a href="https://sagelioncapital.org/exhibition.html">Exhibition</a>
+        <a href="https://sagelioncapital.org/catalogue.html">Catalogue</a>
+        <a href="https://sagelioncapital.org/studio.html">Studio</a>
+        <a href="https://sagelioncapital.org/journal.html">Journal</a></div>
+      <div><h5>About</h5>
+        <a href="https://sagelioncapital.org/mission.html">Mission</a>
+        <a href="https://sagelioncapital.org/leadership.html">Leadership</a>
+        <a href="https://sagelioncapital.org/#support">Fund a seat</a></div>
+    </div>
     <div class="foot-grid">
       <div>
         <div class="logo" style="margin-bottom:6px;">Sagelion</div>
         <div class="fine">AI-inspired art, education, and events — SageLion Capital Ltd.</div>
       </div>
-      <div class="fine">Crafted with care in Singapore</div>
+      <div class="fine">Crafted with care — Thorne 🌒</div>
     </div>
   </div>
 </footer>
