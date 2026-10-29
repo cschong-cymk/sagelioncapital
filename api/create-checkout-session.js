@@ -19,7 +19,7 @@ export default async function handler(req, res) {
     payment_method_collection: "always",
     submit_type: "auto",
     integration_identifier: "custom_embedded_web_0001",
-    line_items: [{ price: "price_...", quantity: 1 }],
+    line_items: [{ price: "price_1UUk4YDpzb9yX4cCCBFXqxrT", quantity: 1 }],
   };
 
   try {

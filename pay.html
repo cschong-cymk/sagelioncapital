@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pay by card — Sagelion</title>
+<meta name="description" content="Make a secure payment to Sagelion by card.">
+<link rel="canonical" href="https://sagelioncapital.org/pay.html">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=Atkinson+Hyperlegible:wght@400;700&display=swap');
+
+  :root{
+    --paper: #EDE7D9;
+    --paper-deep: #E3D9C1;
+    --ink: #241F17;
+    --ink-soft: #4A4234;
+    --rule: #C3B692;
+    --rust: #A23B2E;
+    --pine: #3F5745;
+    --mono-mute: #6E6650;
+
+    --font-display: 'Newsreader', Georgia, serif;
+    --font-body: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.55;
+  }
+  a { color: var(--rust); }
+
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 28px; }
+  .rule { border: none; border-top: 1px solid var(--rule); margin: 0; }
+
+  header.site {
+    position: sticky; top: 0; z-index: 20;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-inner {
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 16px 28px;
+    max-width: 1080px; margin: 0 auto;
+  }
+  .logo {
+    font-family: var(--font-display);
+    font-size: 1.3rem; font-weight: 600;
+    text-decoration:none; color: var(--ink);
+    letter-spacing: 0.01em;
+  }
+  .logo span { color: var(--mono-mute); font-family: var(--font-mono); font-size: 0.62rem; display:block; letter-spacing: 0.08em; margin-top:2px; }
+
+  section { padding: 64px 0; }
+  .section-tag { font-family: var(--font-mono); font-size: 0.76rem; color: var(--rust); margin-bottom: 10px; }
+  h1 {
+    font-family: var(--font-display); font-weight: 500;
+    font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+    margin: 0 0 18px; color: var(--ink);
+  }
+  p { color: var(--ink-soft); max-width: 56ch; margin: 0 0 28px; }
+
+  #checkout { margin-top: 28px; min-height: 240px; }
+  #status {
+    font-family: var(--font-mono); font-size: 0.9rem;
+    padding: 18px; background: var(--paper-deep); border: 1px solid var(--rule);
+    margin-top: 18px; display: none;
+  }
+
+  footer { padding: 36px 0; border-top: 1px solid var(--rule); }
+  footer .fine { font-family: var(--font-mono); font-size: 0.78rem; color: var(--mono-mute); }
+</style>
+<script src="https://js.stripe.com/v3/" async></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav-inner">
+    <a class="logo" href="https://sagelioncapital.org/">Sagelion<span>AI EDUCATION &amp; ART STUDIO — SINGAPORE</span></a>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <div class="section-tag">Secure payment</div>
+      <h1>Pay by card</h1>
+      <p>Your payment is processed securely by Stripe. Sagelion does not store your card details.</p>
+      <div id="checkout"></div>
+      <div id="status"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fine">AI-inspired art, education, and events — SageLion Capital Ltd.</div>
+  </div>
+</footer>
+
+<script>
+  const PUBLISHABLE_KEY = 'pk_test_...'; // TODO: replace with your Stripe publishable key
+
+  async function initializeCheckout() {
+    const checkout = document.getElementById('checkout');
+    const status = document.getElementById('status');
+
+    if (PUBLISHABLE_KEY.startsWith('pk_test_')) {
+      checkout.innerHTML = '<p style="color:var(--rust)">Stripe publishable key not configured yet.</p>';
+      return;
+    }
+
+    try {
+      const response = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' }
+      });
+
+      if (!response.ok) {
+        const err = await response.json().catch(() => ({}));
+        throw new Error(err.error || 'Unable to start checkout');
+      }
+
+      const { client_secret } = await response.json();
+      const stripe = Stripe(PUBLISHABLE_KEY);
+
+      const checkoutInstance = await stripe.initEmbeddedCheckout({ clientSecret: client_secret });
+      checkoutInstance.mount('#checkout');
+    } catch (err) {
+      console.error(err);
+      status.style.display = 'block';
+      status.textContent = 'Could not load checkout: ' + err.message;
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', initializeCheckout);
+</script>
+
+</body>
+</html>
