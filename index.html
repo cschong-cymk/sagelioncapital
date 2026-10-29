@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sagelion — Steady yourself. Learn the tools.</title>
-<script src="https://js.stripe.com/dahlia/stripe.js"></script>
+<title>Sagelion — Steady yourself. Stay safe. Learn the tools.</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=Atkinson+Hyperlegible:wght@400;700&display=swap');
 
@@ -56,9 +55,7 @@
     font-size: 1.3rem; font-weight: 600;
     text-decoration:none; color: var(--ink);
     letter-spacing: 0.01em;
-    display: flex; align-items: center; gap: 10px;
   }
-  .logo img { width: 24px; height: 24px; border-radius: 3px; display: block; }
   .logo span { color: var(--mono-mute); font-family: var(--font-mono); font-size: 0.62rem; display:block; letter-spacing: 0.08em; margin-top:2px; }
   nav.links { display:flex; gap: 26px; }
   nav.links a { color: var(--ink-soft); text-decoration:none; font-size: 0.96rem; }
@@ -187,12 +184,13 @@
   .strip a { color: var(--paper); }
   .photo { margin:0; border:1px solid var(--rule); }
   .photo img { width:100%; height:auto; }
-  .door-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-  @media (max-width:760px){ .door-grid{ grid-template-columns:1fr; } }
-  .door { border:1px solid var(--ink); background: var(--paper); padding: 28px; }
-  .door h3 { font-family: var(--font-display); font-weight:500; font-size:1.5rem; margin: 6px 0 8px; }
+  .door-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  @media (max-width:980px){ .door-grid{ grid-template-columns:1fr; } }
+  .door { border:1px solid var(--ink); background: var(--paper); padding: 24px; }
+  .door h3 { font-family: var(--font-display); font-weight:500; font-size:1.4rem; margin: 6px 0 8px; }
   .door > p { color: var(--ink-soft); margin: 0 0 14px; }
   .tag { font-family: var(--font-mono); font-size:0.74rem; padding:2px 8px; border:1px solid var(--pine); color: var(--pine); border-radius:2px; white-space:nowrap; }
+  .events .what b .tag { margin-left:8px; vertical-align:middle; }
   .tag.paid { border-color: var(--rust); color: var(--rust); }
   .door .ledger-row .label a { color: var(--ink); text-decoration-color: var(--rule); text-underline-offset:3px; }
   .door .ledger-row .label small { display:block; color: var(--ink-soft); font-size:0.84rem; margin-top:2px; }
@@ -212,36 +210,19 @@
   .foot-cols h5 { font-family: var(--font-mono); font-size:0.74rem; color: var(--mono-mute); font-weight:400; margin:0 0 10px; }
   .foot-cols a { display:block; color: var(--ink-soft); text-decoration:none; font-size:0.93rem; padding:3px 0; }
   .foot-cols a:hover { color: var(--rust); }
-
-  /* qa fixes: moved from inline styles */
-  .hero-photo-wrap { margin-top: 44px; }
-  .events-note { margin-top: 18px; }
-  .voice-body { max-width: 58ch; color: var(--ink-soft); margin: 0 0 14px; }
-  .voice-cta { margin: 0; }
-  .exhibition-lede { max-width: 60ch; color: var(--ink-soft); margin: -8px 0 0; }
-  .journal-item h3 a { color: inherit; text-decoration: none; }
-  .journal-more { margin-top: 18px; }
-  .foot-rule { margin-bottom: 28px; }
-  .foot-logo { margin-bottom: 6px; }
-  .w-70 { width: 70%; }
-  .w-20 { width: 20%; }
-  .w-10 { width: 10%; }
-
-  /* embedded stripe checkout */
-  .checkout-card { border: 1px solid var(--rule); background: var(--paper); padding: 28px; margin-top: 28px; max-width: 640px; }
-  .checkout-card h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.35rem; margin: 0 0 6px; }
-  .checkout-card p { color: var(--ink-soft); margin: 0 0 18px; }
-  .checkout-error { color: var(--rust); font-family: var(--font-mono); font-size: 0.85rem; margin-top: 12px; }
-
+  .logo { display:flex; align-items:center; gap:10px; }
+  .logo-mark { width:36px; height:36px; border-radius:8px; flex:none; }
+  .logo-text { display:block; }
+  .logo-text span { color: var(--mono-mute); font-family: var(--font-mono); font-size: 0.62rem; display:block; letter-spacing: 0.08em; margin-top:2px; font-weight:400; }
 </style>
 </head>
 <body>
 
-<div class="strip"><div class="wrap"><b>Upcoming · 8–10 December 2026</b><span>Children AI Camp: three days of AI and sound science for Primary 1–6.</span><a href="https://sound-machine-minds.sagelioncapital.org/">Find out more →</a></div></div>
+<div class="strip"><div class="wrap"><b>December 2026</b><span>Sound &amp; Machine Minds: a four-day AI and sound science camp for Primary 1–6. Final dates confirmed by 31 October.</span><a href="https://sound-machine-minds.sagelioncapital.org/">Find out more →</a></div></div>
 
 <header class="site">
   <div class="nav-inner">
-    <a class="logo" href="https://sagelioncapital.org/"><img src="/public/apple-touch-icon.png" alt="">Sagelion<span>AI EDUCATION &amp; ART STUDIO — SINGAPORE</span></a>
+    <a class="logo" href="https://sagelioncapital.org/"><img class="logo-mark" src="https://sagelioncapital.org/public/apple-touch-icon.png" alt="" width="36" height="36"><span class="logo-text">Sagelion<span>AI EDUCATION &amp; ART STUDIO — SINGAPORE</span></span></a>
     <nav class="links">
       <a href="https://sagelioncapital.org/for-pmets.html">For PMETs</a>
       <a href="https://sagelioncapital.org/programmes.html">Programmes</a>
@@ -265,8 +246,8 @@
     <div class="wrap hero-grid">
       <div>
         <div class="kicker">A donor-funded studio, Singapore</div>
-        <h1 class="headline">Steady yourself. Learn the tools.</h1>
-        <p class="lede">Free talks on looking after your body and mind, and free hands-on AI workshops, mainly for PMETs in their 30s and 40s who can feel restructuring getting closer. Just as open to the deaf community, people with disabilities, and young seniors. No jargon, no sales pitch. Donors cover the seat.</p>
+        <h1 class="headline">Steady yourself. Stay safe. Learn the tools.</h1>
+        <p class="lede">Free talks and workshops to help ordinary people get ready for a fast-changing world: your body, your mind, your home, and your work. Mainly for PMETs in their 30s and 40s who can feel restructuring getting closer, and just as open to the deaf community, people with disabilities, and young seniors. No jargon, no sales pitch. Donors cover the seat.</p>
         <div class="cta-row">
           <a class="btn btn-primary" href="#doors">See what's on</a>
           <a class="btn btn-secondary" href="mailto:contact@sagelioncapital.org?subject=Next%20workshop">Get notified of open sessions</a>
@@ -279,7 +260,7 @@
         <div class="ledger-row"><span class="label">To overhead, ever</span><span class="figure">S$0</span></div>
       </div>
     </div>
-    <div class="wrap hero-photo-wrap">
+    <div class="wrap" style="margin-top:44px;">
       <figure class="photo"><img src="https://sagelioncapital.org/assets/hero-new-1.jpg" alt="Sagelion workshop participants with certificates and a Singapore flag"></figure>
     </div>
   </section>
@@ -289,16 +270,25 @@
   <section id="doors">
     <div class="wrap">
       <div class="section-tag">What we offer</div>
-      <h2>Start with whichever one feels right. You don't have to do both.</h2>
+      <h2>We can't stop the change. But nobody should have to meet it alone and unprepared.</h2>
+      <p style="max-width:56ch;color:var(--ink-soft);margin:-8px 0 28px;">Start with whichever door feels right. You don't have to use them all.</p>
       <div class="door-grid">
 
         <div class="door">
           <span class="tag">Free</span>
           <h3>Steady yourself</h3>
           <p>An uncertain job market sits in the body as well as the head. These are short, free talks for people carrying that.</p>
-          <div class="ledger-row"><span class="label">Health Talks by Physiotherapist<small>Dates and speaker to be announced</small></span></div>
+          <div class="ledger-row"><span class="label">Health talk by a physiotherapist<small>Dates and speaker to be announced</small></span></div>
           <div class="ledger-row"><span class="label">Art therapy talk<small>Dates and speaker to be announced</small></span></div>
           <p class="note-line">These are talks, not treatment, and they don't replace seeing a professional.</p>
+        </div>
+
+        <div class="door">
+          <span class="tag">Free</span>
+          <h3>Stay safe</h3>
+          <p>Home fire risks have changed: power banks, e-bikes, mobility scooters. A free talk on spotting the risks at home.</p>
+          <div class="ledger-row"><span class="label">Fire safety at home<small>Common causes of home fires, charging devices safely, kitchen and electrical safety, and when to put a fire out and when to just get out. Dates to be announced.</small></span></div>
+          <p class="note-line">In an emergency, call 995.</p>
         </div>
 
         <div class="door">
@@ -307,7 +297,7 @@
           <p>Hands-on AI workshops where you leave with files and prompts, not a slide deck. Built for people who don't think of themselves as tech people.</p>
           <div class="ledger-row"><span class="label"><a href="https://sagelioncapital.org/for-pmets.html">Workshops for PMETs</a><small>Reading the risk, building a toolkit, a small portfolio</small></span><span class="tag">Free</span></div>
           <div class="ledger-row"><span class="label"><a href="https://sagelioncapital.org/programmes.html">Workshops for the deaf community, people with disabilities, and young seniors</a></span><span class="tag">Free</span></div>
-          <div class="ledger-row"><span class="label"><a href="https://sagelioncapital.org/programmes.html#train">Train-the-Trainer</a><small>For volunteers who want to help run workshops</small></span><span class="tag">Free</span></div>
+          <div class="ledger-row"><span class="label"><a href="https://sagelioncapital.org/programmes.html#train">Train-the-Trainer</a><small>For volunteers who want to help run workshops. Next one: 5–7 January 2027.</small></span><span class="tag">Free</span></div>
           <div class="ledger-row"><span class="label"><a href="https://sagelioncapital.org/programmes.html#operator">OPERATOR</a><small>Enterprise AI certification, 3 days</small></span><span class="tag paid">Paid</span></div>
         </div>
 
@@ -321,9 +311,9 @@
       <h2>Where we'll be next.</h2>
       <div class="events">
         <div class="ledger-row">
-          <div class="when">8–10 Dec 2026</div>
-          <div class="what"><b>Children AI Camp</b><span>Three days of AI and sound science for Primary 1–6.</span></div>
-          <a href="https://sound-machine-minds.sagelioncapital.org/">Find out more →</a>
+          <div class="when">December 2026<br>7–10 or 11–14 Dec</div>
+          <div class="what"><b>Sound &amp; Machine Minds camp <span class="tag paid">Paid</span></b><span>Four days of sound science and AI for Primary 1–6, 9:00 AM to 1:30 PM. Final dates confirmed by 31 October; fees and details are on the camp site.</span></div>
+          <a href="https://sound-machine-minds.sagelioncapital.org/">Camp details →</a>
         </div>
         <div class="ledger-row">
           <div class="when">12 Dec 2026<br>1:00–5:00 PM</div>
@@ -331,12 +321,17 @@
           <a href="https://sagelioncapital.org/sadeaf-workshop.html">Full details →</a>
         </div>
         <div class="ledger-row">
+          <div class="when">5–7 Jan 2027<br>Tue–Thu, 9 AM–5 PM</div>
+          <div class="what"><b>Train-the-Trainer Intensive <span class="tag">Free</span></b><span>Three full days, 9 AM to 5 PM, to get ready to help run our community workshops. Free for registered volunteers. No coding or AI background needed.</span></div>
+          <a href="https://sagelioncapital.org/programmes.html#train">Details →</a>
+        </div>
+        <div class="ledger-row">
           <div class="when">To be announced</div>
-          <div class="what"><b>Physiotherapy and art therapy talks</b><span>Free and open. Tell us you're interested and you'll hear first.</span></div>
-          <a href="mailto:contact@sagelioncapital.org?subject=Next%20workshop">Get notified →</a>
+          <div class="what"><b>Free talks: physiotherapy, art therapy, and fire safety at home</b><span>Free and open. Tell us you're interested and you'll hear first.</span></div>
+          <a href="mailto:contact@sagelioncapital.org?subject=Next%20talks">Get notified →</a>
         </div>
       </div>
-      <p class="note-line events-note">Recently: on 22 October we taught a session with <a href="https://awwa.org.sg/our-services/rehab-and-day-care-centre/">AWWA's Rehab and Day Care Centre</a> for their participants.</p>
+      <p class="note-line" style="margin-top:18px;">Recently: on 22 October we taught a session with <a href="https://awwa.org.sg/our-services/rehab-and-day-care-centre/">AWWA's Rehab and Day Care Centre</a> for their participants.</p>
     </div>
   </section>
 
@@ -344,8 +339,9 @@
     <div class="wrap">
       <div class="section-tag">Why it matters</div>
       <p class="quote">"Their eyes were open."</p>
-      <p class="voice-body">That's what a participant said after our June workshop: a PMET in his 40s who came in worried and left with files, prompts, and a small portfolio he could point to. One seat, one Saturday morning, one person no longer left out of the conversation.</p>
-      <p class="voice-cta">Every funded seat is a chance at that moment. <a href="#support">Fund one →</a></p>
+      <p style="max-width:58ch;color:var(--ink-soft);margin:0 0 14px;">That's what a participant said after our June workshop: a PMET in his 40s who came in worried and left with files, prompts, and a small portfolio he could point to. One seat, one Saturday morning, one person no longer left out of the conversation.</p>
+      <p style="max-width:58ch;color:var(--ink-soft);margin:0 0 14px;">Our third PMET workshop, on 30 September, was free for everyone in the room thanks to the SG Partnerships Fund. <a href="https://sagelioncapital.org/journal/ai-workshop-pmets-oct-2026.html">Read the field notes →</a></p>
+      <p style="margin:0;">Every funded seat is a chance at that moment. <a href="#support">Fund one →</a></p>
     </div>
   </section>
 
@@ -353,13 +349,13 @@
     <div class="wrap">
       <div class="section-tag">The art</div>
       <h2>Come for the paintings. Stay to find out what else we do.</h2>
-      <p class="exhibition-lede">Our exhibitions are how we introduce ourselves: seventeen works from 2017 to 2026, in oil, acrylic, pencil, and mixed media. The art is the front door, and the talks and workshops are in the next room.</p>
+      <p style="max-width:62ch;color:var(--ink-soft);margin:-8px 0 0;">Our next exhibition, <i>To AI or not AI</i>, is planned for the second half of 2027: AI-inspired pieces and oil-on-canvas originals, with a corner where you can try the tools yourself. Admission is free and 70% of proceeds go to charity. Eighteen works are already on the books.</p>
       <div class="thumbs">
         <a href="https://sagelioncapital.org/exhibition.html"><img src="https://sagelioncapital.org/assets/26-8-14/bush.png" alt="The Burning Bush, oil on canvas, 2026"></a>
         <a href="https://sagelioncapital.org/exhibition.html"><img src="https://sagelioncapital.org/assets/26-8-14/pool.png" alt="The Living Water, acrylic on paper, 2026"></a>
         <a href="https://sagelioncapital.org/exhibition.html"><img src="https://sagelioncapital.org/assets/art3.jpg" alt="Angel Fish, oil on canvas, 2017"></a>
       </div>
-      <a class="btn btn-secondary" href="https://sagelioncapital.org/exhibition.html">See the exhibition</a>
+      <div class="cta-row"><a class="btn btn-secondary" href="https://sagelioncapital.org/exhibition.html">See the exhibition</a><a class="btn btn-secondary" href="https://sagelioncapital.org/catalogue.html">Browse the catalogue</a></div>
     </div>
   </section>
 
@@ -368,22 +364,19 @@
       <div class="section-tag">Fund a seat</div>
       <h2>Where every dollar goes, plainly.</h2>
       <table class="fund-table">
-        <tbody>
-        <tr class="fund-bar-row"><td>Workshop seats</td><td><div class="fund-bar-track"><div class="fund-bar-fill w-70"></div></div></td><td>70% — the seats themselves</td></tr>
-        <tr class="fund-bar-row"><td>Materials &amp; access</td><td><div class="fund-bar-track"><div class="fund-bar-fill w-20"></div></div></td><td>20% — kits, captioning, ramps</td></tr>
-        <tr class="fund-bar-row"><td>Venues &amp; exhibitions</td><td><div class="fund-bar-track"><div class="fund-bar-fill w-10"></div></div></td><td>10% — rooms, printing</td></tr>
-        </tbody>
+        <tr class="fund-bar-row"><td>Workshop seats</td><td><div class="fund-bar-track"><div class="fund-bar-fill" style="width:70%"></div></div></td><td>70% — the seats themselves</td></tr>
+        <tr class="fund-bar-row"><td>Materials &amp; access</td><td><div class="fund-bar-track"><div class="fund-bar-fill" style="width:20%"></div></div></td><td>20% — kits, captioning, ramps</td></tr>
+        <tr class="fund-bar-row"><td>Venues &amp; exhibitions</td><td><div class="fund-bar-track"><div class="fund-bar-fill" style="width:10%"></div></div></td><td>10% — rooms, printing</td></tr>
       </table>
       <div class="tier-grid">
         <div class="tier-card"><div class="amt">S$10</div><h4>Friend</h4><p>Covers a workshop kit and a kopi for one person.</p><a class="btn btn-secondary" href="https://buy.stripe.com/fZueVd17u5Au5mU88z8Vi00">Become a friend</a></div>
         <div class="tier-card"><div class="amt">S$100</div><h4>Patron</h4><p>Pays for a full workshop seat for one learner.</p><a class="btn btn-secondary" href="https://buy.stripe.com/5kQ9ATdUg0ga5mU60r8Vi01">Become a patron</a></div>
-        <div class="tier-card"><div class="amt">Any</div><h4>Benefactor</h4><p>Underwrites a whole community night: venue, prints, the lot.</p><a class="btn btn-secondary" href="mailto:contact@sagelioncapital.org?subject=Benefactor">Become a benefactor</a></div>
+        <div class="tier-card"><div class="amt">Any</div><h4>Benefactor</h4><p>Underwrites a whole community night: venue, prints, the lot.</p><a class="btn btn-secondary" href="#pay-by-card">Become a benefactor</a></div>
       </div>
-      <div class="checkout-card">
-        <h3>Or pay by card</h3>
-        <p>Enter any amount and pay securely with Stripe.</p>
-        <div id="checkout-form"></div>
-        <p id="checkout-error" class="checkout-error"></p>
+      <div id="pay-by-card" style="margin-top:36px;">
+        <!-- PASTE YOUR EXISTING "Or pay by card" BLOCK HERE (heading "Or pay by card", the any-amount Stripe form). Keep this wrapper's id so the Benefactor button scrolls to it. -->
+        <h3 class="sub">Or pay by card</h3>
+        <p style="color:var(--ink-soft);">Enter any amount and pay securely with Stripe.</p>
       </div>
     </div>
   </section>
@@ -393,10 +386,10 @@
       <div class="section-tag">Journal</div>
       <h2>Notes from the work, updated when something's worth saying.</h2>
       <div class="journal-list">
-        <div class="journal-item"><div class="date">09 SEP 2026</div><div><h3><a href="https://sagelioncapital.org/journal.html">Same prompt, two machines: what Linyan and OpenArt heard</a></h3><p>A small test from the studio: same idea, two AI video tools, two very different results. The lesson for teaching: the tool shapes the message.</p></div></div>
-        <div class="journal-item"><div class="date">06 AUG 2026</div><div><h3><a href="https://sagelioncapital.org/journal.html">TikTok &amp; CapCut with seniors at Care Corner Toa Payoh</a></h3><p>20+ seniors, one unplanned piano performance during the tea break, and a curriculum pilot for the Forward Deployed Engineer programme.</p></div></div>
+        <div class="journal-item"><div class="date">30 SEP 2026</div><div><h3><a href="https://sagelioncapital.org/journal/ai-workshop-pmets-oct-2026.html" style="color:inherit;text-decoration:none;">Third AI workshop for PMETs</a></h3><p>About 15 people in the room, hands-on with OpenClaw, and past attendees back as volunteer facilitators.</p></div></div>
+        <div class="journal-item"><div class="date">06 AUG 2026</div><div><h3><a href="https://sagelioncapital.org/journal/tiktok-capcut-seniors.html" style="color:inherit;text-decoration:none;">TikTok &amp; CapCut with seniors at Care Corner Toa Payoh</a></h3><p>20+ seniors, one unplanned piano performance during the tea break, and a curriculum pilot for the Forward Deployed Engineer programme.</p></div></div>
       </div>
-      <p class="journal-more"><a href="https://sagelioncapital.org/journal.html">All journal entries →</a></p>
+      <p style="margin-top:18px;"><a href="https://sagelioncapital.org/journal.html">All journal entries →</a></p>
     </div>
   </section>
 
@@ -404,7 +397,7 @@
 
 <footer>
   <div class="wrap">
-    <hr class="rule foot-rule">
+    <hr class="rule" style="margin-bottom:28px;">
     <div class="foot-cols">
       <div><h5>Learn</h5>
         <a href="https://sagelioncapital.org/for-pmets.html">For PMETs</a>
@@ -415,6 +408,7 @@
         <a href="https://sound-machine-minds.sagelioncapital.org/">Children AI Camp</a></div>
       <div><h5>The art</h5>
         <a href="https://sagelioncapital.org/exhibition.html">Exhibition</a>
+        <a href="https://sagelioncapital.org/catalogue.html">Catalogue</a>
         <a href="https://sagelioncapital.org/studio.html">Studio</a>
         <a href="https://sagelioncapital.org/journal.html">Journal</a></div>
       <div><h5>About</h5>
@@ -424,7 +418,7 @@
     </div>
     <div class="foot-grid">
       <div>
-        <div class="logo foot-logo">Sagelion</div>
+        <div class="logo" style="margin-bottom:6px;">Sagelion</div>
         <div class="fine">AI-inspired art, education, and events — SageLion Capital Ltd.</div>
       </div>
       <div class="fine">Crafted with care — Thorne 🌒</div>
@@ -432,55 +426,5 @@
   </div>
 </footer>
 
-<script>
-  (async function () {
-    const publishableKey = "pk_test_...";
-    if (!publishableKey || publishableKey === "pk_test_...") {
-      console.error("Stripe publishable key not configured.");
-      return;
-    }
-
-    const stripe = Stripe(publishableKey);
-    const appearance = {
-      theme: "stripe",
-      labels: "auto",
-      inputs: "spaced",
-      variables: {
-        borderRadius: "4px",
-        colorBackground: "#ffffff",
-        colorDanger: "#df1b41",
-        colorPrimary: "#0570de",
-        colorSuccess: "#00c853",
-        colorText: "#30313d",
-        fontFamily: "default",
-        fontSizeBase: "16px",
-        spacingUnit: "4px"
-      }
-    };
-
-    try {
-      const response = await fetch("/api/create-checkout-session", { method: "POST" });
-      if (!response.ok) throw new Error("Failed to start checkout");
-      const { client_secret } = await response.json();
-      const checkout = stripe.initCheckoutFormSdk({ clientSecret: client_secret, appearance });
-      const form = checkout.createForm({ layout: "expanded" });
-      form.mount("#checkout-form");
-      const loadActionsResult = await checkout.loadActions();
-      if (loadActionsResult.type === "success") {
-        form.on("confirm", async (event) => {
-          try {
-            await loadActionsResult.actions.confirm({ formConfirmEvent: event });
-          } catch (error) {
-            console.error("Payment confirmation error:", error);
-            document.getElementById("checkout-error").textContent = error.message || "Payment could not be confirmed.";
-          }
-        });
-      }
-    } catch (error) {
-      console.error("Checkout setup error:", error);
-      document.getElementById("checkout-error").textContent = "Checkout is temporarily unavailable.";
-    }
-  })();
-</script>
 </body>
 </html>
