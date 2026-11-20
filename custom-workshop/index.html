@@ -57,24 +57,38 @@
     .grid-2, .grid-3 { grid-template-columns: 1fr; }
     .slide { padding: 3vh 6vw; }
   }
+
+  .cover-slide { background: #000; padding: 0; }
+  .cover-slide img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .section-label { position: absolute; top: 2vh; left: 3vw; color: var(--accent); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; background: rgba(11,16,32,0.7); padding: 0.3em 0.7em; border-radius: 0.4em; border: 1px solid rgba(245,158,11,0.3); }
 </style>
 </head>
 <body>
 <div id="deck">
-
 <!-- Slide 1 -->
+<section class="slide active cover-slide">
+  <img src="/assets/sadeaf-ai-workshop-cover.jpg" alt="Sagelion AI Workshop cover">
+  <div class="section-label">Cover</div>
+  <div class="slide-num">1</div>
+</section>
+
+<!-- Slide 2 -->
 <section class="slide active">
+  <div class="section-label">Welcome</div>
+
   <div class="content center">
     <div class="logo" style="margin-bottom:1rem">SADEAF</div>
     <h1>AI for Social Media</h1>
     <p class="subtitle">Create content smarter, faster, and safer with AI</p>
     <p><span class="tag">12 December 2026</span><span class="tag">1:00 PM – 5:00 PM</span><span class="tag">20–25 participants</span></p>
   </div>
-  <div class="slide-num">1</div>
+  <div class="slide-num">2</div>
 </section>
 
-<!-- Slide 2 -->
+<!-- Slide 3 -->
 <section class="slide">
+  <div class="section-label">Welcome</div>
+
   <div class="content">
     <h2>Welcome</h2>
     <p class="subtitle">Today you will use AI to create one real piece of social media content.</p>
@@ -91,11 +105,13 @@
       </div>
     </div>
   </div>
-  <div class="slide-num">2</div>
+  <div class="slide-num">3</div>
 </section>
 
-<!-- Slide 3 -->
+<!-- Slide 4 -->
 <section class="slide">
+  <div class="section-label">Welcome</div>
+
   <div class="content">
     <h2>Accessibility First</h2>
     <div class="grid grid-2">
@@ -111,11 +127,13 @@
       </div>
     </div>
   </div>
-  <div class="slide-num">3</div>
+  <div class="slide-num">4</div>
 </section>
 
-<!-- Slide 4 -->
+<!-- Slide 5 -->
 <section class="slide">
+  <div class="section-label">Welcome</div>
+
   <div class="content">
     <h2>Meet the Team</h2>
     <div class="grid grid-2">
@@ -130,11 +148,13 @@
     </div>
     <p class="muted" style="margin-top:1.5rem">We rotate around the room during hands-on time. Wave us over.</p>
   </div>
-  <div class="slide-num">4</div>
+  <div class="slide-num">5</div>
 </section>
 
-<!-- Slide 5 -->
+<!-- Slide 6 -->
 <section class="slide">
+  <div class="section-label">Welcome</div>
+
   <div class="content">
     <h2>Our Promise</h2>
     <p class="subtitle">By the end of today, you will:</p>
@@ -157,11 +177,13 @@
       </div>
     </div>
   </div>
-  <div class="slide-num">5</div>
+  <div class="slide-num">6</div>
 </section>
 
-<!-- Slide 6 -->
+<!-- Slide 7 -->
 <section class="slide">
+  <div class="section-label">Part 1</div>
+
   <div class="content">
     <h2>Today’s Plan</h2>
     <table style="width:100%; border-collapse:collapse; font-size:clamp(1.1rem,2vw,1.5rem)">
@@ -188,21 +210,25 @@
     </table>
     <p class="muted" style="margin-top:1rem">Note: We focus on <strong>one platform only</strong> today — TikTok <em>or</em> Instagram.</p>
   </div>
-  <div class="slide-num">6</div>
-</section>
-
-<!-- Slide 7 -->
-<section class="slide">
-  <div class="content center">
-    <p class="logo">Part 1</p>
-    <h1>AI + Social Media Foundations</h1>
-    <p class="subtitle">105 minutes · no jargon</p>
-  </div>
   <div class="slide-num">7</div>
 </section>
 
 <!-- Slide 8 -->
 <section class="slide">
+  <div class="section-label">Part 1</div>
+
+  <div class="content center">
+    <p class="logo">Part 1</p>
+    <h1>AI + Social Media Foundations</h1>
+    <p class="subtitle">105 minutes · no jargon</p>
+  </div>
+  <div class="slide-num">8</div>
+</section>
+
+<!-- Slide 9 -->
+<section class="slide">
+  <div class="section-label">Part 1</div>
+
   <div class="content">
     <h2>What Is AI?</h2>
     <p class="subtitle">AI is a smart assistant that can read, write, suggest, and sometimes act — but it does not think like a human.</p>
@@ -217,11 +243,13 @@
       </div>
     </div>
   </div>
-  <div class="slide-num">8</div>
+  <div class="slide-num">9</div>
 </section>
 
-<!-- Slide 9 -->
+<!-- Slide 10 -->
 <section class="slide">
+  <div class="section-label">Part 1</div>
+
   <div class="content">
     <h2>Level 1 AI: Ask and It Answers</h2>
     <p class="subtitle">You type a request. AI gives you a response.</p>
@@ -244,11 +272,13 @@
       </div>
     </div>
   </div>
-  <div class="slide-num">9</div>
+  <div class="slide-num">10</div>
 </section>
 
-<!-- Slide 10 -->
+<!-- Slide 11 -->
 <section class="slide">
+  <div class="section-label">Part 1</div>
+
   <div class="content">
     <h2>Level 2 AI: Agentic AI</h2>
     <p class="subtitle">AI that remembers context and completes steps for you.</p>
@@ -268,11 +298,13 @@
     </div>
     <p class="muted" style="margin-top:1rem">We will demo this later with <strong>Dola</strong>, an AI calendar assistant.</p>
   </div>
-  <div class="slide-num">10</div>
+  <div class="slide-num">11</div>
 </section>
 
-<!-- Slide 11 -->
+<!-- Slide 12 -->
 <section class="slide">
+  <div class="section-label">Part 1</div>
+
   <div class="content">
     <h2>What AI Can and Cannot Do</h2>
     <div class="grid grid-2">
@@ -296,11 +328,13 @@
       </div>
     </div>
   </div>
-  <div class="slide-num">11</div>
+  <div class="slide-num">12</div>
 </section>
 
-<!-- Slide 12 -->
+<!-- Slide 13 -->
 <section class="slide">
+  <div class="section-label">Part 1</div>
+
   <div class="content">
     <h2>Basic Prompting for Social Media</h2>
     <p class="subtitle">A good prompt tells AI what you want, who it is for, and how it should sound.</p>
@@ -309,11 +343,13 @@
     </div>
     <p class="muted">Try it now on your phone if you are ready.</p>
   </div>
-  <div class="slide-num">12</div>
+  <div class="slide-num">13</div>
 </section>
 
-<!-- Slide 13 -->
+<!-- Slide 14 -->
 <section class="slide">
+  <div class="section-label">Part 1</div>
+
   <div class="content">
     <h2>Prompt Recipe</h2>
     <div class="grid grid-2">
@@ -335,11 +371,13 @@
       </div>
     </div>
   </div>
-  <div class="slide-num">13</div>
+  <div class="slide-num">14</div>
 </section>
 
-<!-- Slide 14 -->
+<!-- Slide 15 -->
 <section class="slide">
+  <div class="section-label">Part 1</div>
+
   <div class="content">
     <h2>Platform Deep-Dive</h2>
     <p class="subtitle">Today we focus on <strong>one</strong> platform only.</p>
@@ -365,11 +403,13 @@
     </div>
     <p class="muted" style="margin-top:1rem">Which platform did we choose for today?</p>
   </div>
-  <div class="slide-num">14</div>
+  <div class="slide-num">15</div>
 </section>
 
-<!-- Slide 15 -->
+<!-- Slide 16 -->
 <section class="slide">
+  <div class="section-label">Break</div>
+
   <div class="content">
     <h2>Live Demo</h2>
     <p class="subtitle">Watch as we generate content for today’s chosen platform.</p>
@@ -378,31 +418,37 @@
     </div>
     <p class="muted">We will edit the output together. Notice how one small change in the prompt changes the result.</p>
   </div>
-  <div class="slide-num">15</div>
-</section>
-
-<!-- Slide 16 -->
-<section class="slide">
-  <div class="content center">
-    <h1 style="font-size:clamp(3rem,7vw,6rem)">☕ Break</h1>
-    <p class="subtitle">2:55 PM – 3:25 PM · 30 minutes</p>
-    <p>Stretch, refill your drink, and be back ready to create.</p>
-  </div>
   <div class="slide-num">16</div>
 </section>
 
 <!-- Slide 17 -->
 <section class="slide">
+  <div class="section-label">Part 2</div>
+
   <div class="content center">
-    <p class="logo">Part 2</p>
-    <h1>Create with AI</h1>
-    <p class="subtitle">100 minutes · hands-on</p>
+    <h1 style="font-size:clamp(3rem,7vw,6rem)">☕ Break</h1>
+    <p class="subtitle">2:55 PM – 3:25 PM · 30 minutes</p>
+    <p>Stretch, refill your drink, and be back ready to create.</p>
   </div>
   <div class="slide-num">17</div>
 </section>
 
 <!-- Slide 18 -->
 <section class="slide">
+  <div class="section-label">Part 2</div>
+
+  <div class="content center">
+    <p class="logo">Part 2</p>
+    <h1>Create with AI</h1>
+    <p class="subtitle">100 minutes · hands-on</p>
+  </div>
+  <div class="slide-num">18</div>
+</section>
+
+<!-- Slide 19 -->
+<section class="slide">
+  <div class="section-label">Part 2</div>
+
   <div class="content">
     <h2>Get Ready</h2>
     <div class="grid grid-2">
@@ -425,11 +471,13 @@
       </div>
     </div>
   </div>
-  <div class="slide-num">18</div>
+  <div class="slide-num">19</div>
 </section>
 
-<!-- Slide 19 -->
+<!-- Slide 20 -->
 <section class="slide">
+  <div class="section-label">Part 2</div>
+
   <div class="content">
     <h2>Your Task</h2>
     <p class="subtitle">Use Level 1 AI on your phone to create one real piece of content.</p>
@@ -454,11 +502,13 @@
       </div>
     </div>
   </div>
-  <div class="slide-num">19</div>
+  <div class="slide-num">20</div>
 </section>
 
-<!-- Slide 20 -->
+<!-- Slide 21 -->
 <section class="slide">
+  <div class="section-label">Part 2</div>
+
   <div class="content">
     <h2>Prompt to Start</h2>
     <div class="prompt-box">
@@ -466,11 +516,13 @@
     </div>
     <p class="muted">Facilitators and interpreters will circulate. Wave if you need help.</p>
   </div>
-  <div class="slide-num">20</div>
+  <div class="slide-num">21</div>
 </section>
 
-<!-- Slide 21 -->
+<!-- Slide 22 -->
 <section class="slide">
+  <div class="section-label">Part 2</div>
+
   <div class="content">
     <h2>Shooting Tips</h2>
     <div class="grid grid-3">
@@ -489,11 +541,13 @@
     </div>
     <p class="muted" style="margin-top:1rem">If you do not want to be on camera, you can create text-only or photo-based content.</p>
   </div>
-  <div class="slide-num">21</div>
+  <div class="slide-num">22</div>
 </section>
 
-<!-- Slide 22 -->
+<!-- Slide 23 -->
 <section class="slide">
+  <div class="section-label">Part 3</div>
+
   <div class="content">
     <h2>Sharing & Quick Wins</h2>
     <p class="subtitle">A few volunteers show what they created.</p>
@@ -515,21 +569,25 @@
       </div>
     </div>
   </div>
-  <div class="slide-num">22</div>
-</section>
-
-<!-- Slide 23 -->
-<section class="slide">
-  <div class="content center">
-    <p class="logo">Part 3</p>
-    <h1>Advanced Demo, Next Steps & Wrap-Up</h1>
-    <p class="subtitle">15 minutes</p>
-  </div>
   <div class="slide-num">23</div>
 </section>
 
 <!-- Slide 24 -->
 <section class="slide">
+  <div class="section-label">Part 3</div>
+
+  <div class="content center">
+    <p class="logo">Part 3</p>
+    <h1>Advanced Demo, Next Steps & Wrap-Up</h1>
+    <p class="subtitle">15 minutes</p>
+  </div>
+  <div class="slide-num">24</div>
+</section>
+
+<!-- Slide 25 -->
+<section class="slide">
+  <div class="section-label">Part 3</div>
+
   <div class="content">
     <h2>Dola: Your AI Calendar Assistant</h2>
     <p class="subtitle">Demo only — no setup required.</p>
@@ -545,11 +603,13 @@
       </div>
     </div>
   </div>
-  <div class="slide-num">24</div>
+  <div class="slide-num">25</div>
 </section>
 
-<!-- Slide 25 -->
+<!-- Slide 26 -->
 <section class="slide">
+  <div class="section-label">Part 3</div>
+
   <div class="content">
     <h2>Coming Next: AI for Everyday Productivity</h2>
     <p class="subtitle">A follow-up session on AI for calendar, email, reminders, and task management.</p>
@@ -558,11 +618,13 @@
       <p>Sign up on the sheet being passed around. We will contact you with the date.</p>
     </div>
   </div>
-  <div class="slide-num">25</div>
+  <div class="slide-num">26</div>
 </section>
 
-<!-- Slide 26 -->
+<!-- Slide 27 -->
 <section class="slide">
+  <div class="section-label">Part 3</div>
+
   <div class="content">
     <h2>Staying Safe & Smart Online</h2>
     <div class="grid grid-2">
@@ -586,11 +648,13 @@
       </div>
     </div>
   </div>
-  <div class="slide-num">26</div>
+  <div class="slide-num">27</div>
 </section>
 
-<!-- Slide 27 -->
+<!-- Slide 28 -->
 <section class="slide">
+  <div class="section-label">Part 3</div>
+
   <div class="content">
     <h2>Q&A + One Thing to Try</h2>
     <p class="subtitle">Before you leave, write down:</p>
@@ -606,18 +670,20 @@
       </div>
     </div>
   </div>
-  <div class="slide-num">27</div>
+  <div class="slide-num">28</div>
 </section>
 
-<!-- Slide 28 -->
+<!-- Slide 29 -->
 <section class="slide">
+  <div class="section-label">Part 3</div>
+
   <div class="content center">
     <h1 style="font-size:clamp(2.8rem,6vw,5rem)">Thank you!</h1>
     <p class="subtitle">Keep creating. Keep checking. Stay in charge.</p>
     <p style="margin-top:1.5rem"><span class="tag">AI creates.</span><span class="tag">AI can act.</span><span class="tag">Humans decide.</span></p>
     <p class="muted" style="margin-top:2rem">Questions? Ask any facilitator or interpreter.</p>
   </div>
-  <div class="slide-num">28</div>
+  <div class="slide-num">29</div>
 </section>
 
 </div>
