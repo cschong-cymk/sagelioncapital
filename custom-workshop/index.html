@@ -60,6 +60,9 @@
 
   .cover-slide { background: #000; padding: 0; }
   .cover-slide img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .bg-slide { position: relative; background-size: cover; background-position: center; }
+  .bg-slide::before { content: ""; position: absolute; inset: 0; background: rgba(11,16,32,0.72); z-index: 0; }
+  .bg-slide .content, .bg-slide .section-label, .bg-slide .slide-num { position: relative; z-index: 1; }
   .split-slide { display: grid !important; grid-template-columns: 1fr 1.3fr; gap: 3rem; align-items: center; padding: 0; }
   .split-slide .slide-visual { width: 100%; height: 100%; max-height: 100vh; }
   .split-slide .slide-visual img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 0; }
@@ -142,7 +145,7 @@
 </section>
 
 <!-- Slide 5 -->
-<section class="slide">
+<section class="slide bg-slide" style="background-image: url('/public/assets/slide5-team.jpg');">
   <div class="section-label">Welcome</div>
 
   <div class="content">
@@ -157,7 +160,7 @@
         <p>2 Sign Language Interpreters</p>
       </div>
     </div>
-    <p class="muted" style="margin-top:1.5rem">We rotate around the room during hands-on time. Wave us over.</p>
+    <p class="muted" style="margin-top:1.5rem; color: #cbd5e1;">We rotate around the room during hands-on time. Wave us over.</p>
   </div>
   <div class="slide-num">5</div>
 </section>
