@@ -64,12 +64,15 @@
   .bg-slide::before { content: ""; position: absolute; inset: 0; background: rgba(11,16,32,0.72); z-index: 0; }
   .bg-slide .content, .bg-slide .section-label, .bg-slide .slide-num { position: relative; z-index: 1; }
   .split-slide { display: grid !important; grid-template-columns: 1fr 1.3fr; gap: 3rem; align-items: center; padding: 0; }
+  .split-slide.right { grid-template-columns: 1.3fr 1fr; }
+  .split-slide.right .slide-visual { order: 2; }
   .split-slide .slide-visual { width: 100%; height: 100%; max-height: 100vh; }
   .split-slide .slide-visual img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 0; }
   .split-slide .content { padding: 4vh 4vw; text-align: left; }
   .split-slide .content.center { text-align: left; }
   @media (max-width: 900px) {
     .split-slide { grid-template-columns: 1fr !important; }
+    .split-slide.right .slide-visual { order: unset; }
     .split-slide .slide-visual { max-height: 40vh; }
   }
   .section-label { position: absolute; top: 2vh; left: 3vw; color: var(--accent); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; background: rgba(11,16,32,0.7); padding: 0.3em 0.7em; border-radius: 0.4em; border: 1px solid rgba(245,158,11,0.3); }
@@ -352,9 +355,11 @@
 </section>
 
 <!-- Slide 13 -->
-<section class="slide">
+<section class="slide split-slide right">
   <div class="section-label">Part 1</div>
-
+  <div class="slide-visual">
+    <img src="/public/assets/slide13-prompting.jpg" alt="Pigeons gathering">
+  </div>
   <div class="content">
     <h2>Basic Prompting for Social Media</h2>
     <p class="subtitle">A good prompt tells AI what you want, who it is for, and how it should sound.</p>
@@ -395,9 +400,11 @@
 </section>
 
 <!-- Slide 15 -->
-<section class="slide">
+<section class="slide split-slide">
   <div class="section-label">Part 1</div>
-
+  <div class="slide-visual">
+    <img src="/public/assets/slide15-platform.jpg" alt="Sake bar storefront">
+  </div>
   <div class="content">
     <h2>Platform Deep-Dive</h2>
     <p class="subtitle">Today we focus on <strong>one</strong> platform only.</p>
@@ -427,8 +434,11 @@
 </section>
 
 <!-- Slide 16 -->
-<section class="slide">
+<section class="slide split-slide">
   <div class="section-label">Break</div>
+  <div class="slide-visual">
+    <img src="/public/assets/slide16-break.jpg" alt="Colourful door and window">
+  </div>
 
   <div class="content">
     <h2>Live Demo</h2>
@@ -442,8 +452,11 @@
 </section>
 
 <!-- Slide 17 -->
-<section class="slide">
+<section class="slide split-slide">
   <div class="section-label">Part 2</div>
+  <div class="slide-visual">
+    <img src="/public/assets/slide17-hands-on.jpg" alt="Beach scene">
+  </div>
 
   <div class="content center">
     <h1 style="font-size:clamp(3rem,7vw,6rem)">☕ Break</h1>
@@ -495,9 +508,11 @@
 </section>
 
 <!-- Slide 20 -->
-<section class="slide">
+<section class="slide split-slide">
   <div class="section-label">Part 2</div>
-
+  <div class="slide-visual">
+    <img src="/public/assets/slide20-create.jpg" alt="Group in living room">
+  </div>
   <div class="content">
     <h2>Your Task</h2>
     <p class="subtitle">Use Level 1 AI on your phone to create one real piece of content.</p>
