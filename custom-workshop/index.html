@@ -52,6 +52,11 @@
   .slide-num { position: absolute; top: 2vh; right: 3vw; color: var(--muted); font-size: 0.9rem; }
   .logo { font-weight: 800; letter-spacing: 0.05em; color: var(--accent); }
   .kbd { background: rgba(255,255,255,0.1); padding: 0.1em 0.4em; border-radius: 0.3em; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9em; }
+  .nav-btn { position: fixed; bottom: 3vh; z-index: 100; background: var(--surface); border: 1px solid rgba(148,163,184,0.3); color: var(--text); padding: 0.7rem 1.2rem; border-radius: 0.5rem; font-size: 1rem; cursor: pointer; transition: opacity 0.2s, background 0.2s; }
+  .nav-btn:hover { background: rgba(59,130,246,0.2); }
+  .nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+  .nav-btn.prev { left: 3vw; }
+  .nav-btn.next { right: 3vw; }
   .prompt-box { background: #0f172a; border: 1px solid rgba(59,130,246,0.4); border-radius: 0.8rem; padding: 1rem 1.4rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 1.1rem; color: #e2e8f0; margin: 1rem 0; }
   @media (max-width: 760px) {
     .grid-2, .grid-3 { grid-template-columns: 1fr; }
@@ -657,9 +662,11 @@
 </section>
 
 <!-- Slide 27 -->
-<section class="slide">
+<section class="slide split-slide">
   <div class="section-label">Part 3</div>
-
+  <div class="slide-visual">
+    <img src="/public/assets/slide27-safety.jpg" alt="Hand holding phone in crowd">
+  </div>
   <div class="content">
     <h2>Staying Safe & Smart Online</h2>
     <div class="grid grid-2">
@@ -723,6 +730,9 @@
 
 </div>
 
+<button class="nav-btn prev" id="prevBtn" aria-label="Previous slide">← Previous</button>
+<button class="nav-btn next" id="nextBtn" aria-label="Next slide">Next →</button>
+
 <script>
   const slides = document.querySelectorAll('.slide');
   let current = 0;
@@ -733,7 +743,13 @@
       else if (idx < i) s.classList.add('prev');
     });
     current = i;
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current === slides.length - 1;
   }
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  prevBtn.addEventListener('click', e => { e.stopPropagation(); if (current > 0) show(current - 1); });
+  nextBtn.addEventListener('click', e => { e.stopPropagation(); if (current < slides.length - 1) show(current + 1); });
   document.addEventListener('keydown', e => {
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
       if (current < slides.length - 1) show(current + 1);
